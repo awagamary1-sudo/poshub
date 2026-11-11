@@ -475,13 +475,13 @@ class SyncAgentManager {
     if (line.includes('cycle failed') && this._syncState !== 'offline') {
       this._syncState = 'offline';
       this._notify(
-        'Posnic Cloud sync is offline',
+        'PosHub Cloud sync is offline',
         'Billing continues normally. Sales will sync automatically when internet returns.'
       );
       this._broadcastSyncStatus({ online: false, state: 'offline' });
     } else if (/pushed [1-9]\d*, pulled \d+/.test(line) && this._syncState === 'offline') {
       this._syncState = 'online';
-      this._notify('Posnic Cloud sync restored', 'Pending sales are uploading now.');
+      this._notify('PosHub Cloud sync restored', 'Pending sales are uploading now.');
       this._broadcastSyncStatus({ online: true, state: 'online' });
     }
   }

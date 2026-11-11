@@ -110,6 +110,7 @@ if (!hasSingleInstanceLock) {
  */
 try {
   if (app.isPackaged && !customUserData) {
+    app.setAsDefaultProtocolClient('poshub');
     app.setAsDefaultProtocolClient('posnic');
   }
 } catch (err) {
@@ -249,7 +250,7 @@ function ensureDailyLog() {
   if (activeDate !== today || !fs.existsSync(LOG_FILE)) {
     fs.writeFileSync(
       LOG_FILE,
-      `=== Posnic Daily Log: ${today} ===\n`,
+      `=== PosHub Daily Log: ${today} ===\n`,
       'utf8'
     );
     fs.writeFileSync(LOG_DATE_FILE, today, 'utf8');
@@ -270,7 +271,7 @@ function rotateLogIfNeeded(incomingBytes = 0) {
 
     fs.writeFileSync(
       LOG_FILE,
-      `=== Posnic Daily Log: ${getLocalDateKey()} ===\n` +
+      `=== PosHub Daily Log: ${getLocalDateKey()} ===\n` +
       `=== Log rotated at ${new Date().toISOString()} | previous=${path.basename(OLD_LOG_FILE)} | maxSizeMB=10 ===\n`,
       'utf8'
     );
@@ -280,7 +281,7 @@ function rotateLogIfNeeded(incomingBytes = 0) {
       // the active file and recording the rotation problem.
       fs.writeFileSync(
         LOG_FILE,
-        `=== Posnic Daily Log: ${getLocalDateKey()} ===\n` +
+        `=== PosHub Daily Log: ${getLocalDateKey()} ===\n` +
         `=== Log rotation fallback at ${new Date().toISOString()} | error=${redactSecrets(error.message)} ===\n`,
         'utf8'
       );
@@ -1660,7 +1661,7 @@ ipcMain.handle('cloud:pair', async (_event, { serverUrl, code, waitForShopMs } =
     }
     return await connectCloudDevice(await response.json(), base);
   } catch (e) {
-    return { ok: false, error: 'Could not reach Posnic. Check the internet connection.' };
+    return { ok: false, error: 'Could not reach PosHub. Check the internet connection.' };
   }
 });
 
@@ -1711,7 +1712,7 @@ ipcMain.handle('cloud:authorize-browser', async (_event, { intent = 'login', ser
     return await connectCloudDevice(activation, serverUrl ? cloudServerUrl(serverUrl) : 'https://gateway.posnic.com');
   } catch (error) {
     return { ok: false, error: /fetch failed|ENOTFOUND|abort/i.test(error.message)
-      ? 'Could not reach Posnic Cloud. Check your internet connection and try again.' : error.message };
+      ? 'Could not reach PosHub Cloud. Check your internet connection and try again.' : error.message };
   }
 });
 ipcMain.handle('cloud:cancel-authorization', () => { browserCloudAuth.cancel(); return { ok: true }; });
@@ -1726,7 +1727,7 @@ ipcMain.handle('cloud:captcha', async () => {
     if (!r.ok) return { ok: false, error: `spam check unavailable (${r.status})` };
     return { ok: true, challenge: await r.json() };
   } catch (e) {
-    return { ok: false, error: 'Could not reach Posnic. Check the internet connection.' };
+    return { ok: false, error: 'Could not reach PosHub. Check the internet connection.' };
   }
 });
 
@@ -1758,7 +1759,7 @@ ipcMain.handle('cloud:create-account', async (_event, details = {}) => {
     }
     return { ok: true, subdomain: body.subdomain, webUrl: body.webUrl };
   } catch (e) {
-    return { ok: false, error: 'Could not reach Posnic. Check the internet connection.' };
+    return { ok: false, error: 'Could not reach PosHub. Check the internet connection.' };
   }
 });
 
@@ -1810,7 +1811,7 @@ ipcMain.handle('connectors:enable', async (event, payload) => {
       return { ok: false, error: 'Not a valid connector name' };
     }
     if (typeof token !== 'string' || !token.startsWith('posnic_')) {
-      return { ok: false, error: 'That does not look like a Posnic API token' };
+      return { ok: false, error: 'That does not look like a PosHub API token' };
     }
     if (!connectorSupervisor) return { ok: false, error: 'Connector runtime unavailable' };
     const file = path.join(app.getPath('userData'), 'connector-runtime', name + '.config.json');
@@ -1959,7 +1960,7 @@ ipcMain.handle('desktop:behaviour-save', (_event, patch) => {
     return { success: false, error: 'Manage startup applications in your operating system settings.' };
   }
   if (!patch || typeof patch.openAtLogin !== 'boolean') {
-    return { success: false, error: 'Choose whether to start Posnic at login.' };
+    return { success: false, error: 'Choose whether to start PosHub at login.' };
   }
   app.setLoginItemSettings({ openAtLogin: patch.openAtLogin, args: ['--hidden'] });
   return { success: true };
@@ -3063,7 +3064,7 @@ ipcMain.handle('support:open-issue', (_event, details) => {
       '',
       '### This computer',
       '```',
-      `Posnic   ${s.app}`,
+      `PosHub   ${s.app}`,
       `System   ${s.osName} ${s.platform}`,
       `Memory   ${s.memoryGB} GB`,
       `Electron ${s.electron} / Node ${s.node}`,
@@ -3418,7 +3419,7 @@ function openAboutWindow() {
       </div>
       <div class="repo">
         <div class="u">${esc(REPO)}</div>
-        <div class="n">Posnic is free software under the <b>GNU AGPL-3.0</b>. Every line running
+        <div class="n">PosHub is free software under the <b>GNU AGPL-3.0</b>. Every line running
           on this computer is published there — you may read it, change it and pass it on.
           Select the address above to copy it.</div>
       </div>
@@ -3433,7 +3434,7 @@ function openAboutWindow() {
       </div>
       <div class="foot">
         Your sales and customers stay on this computer. Nothing here is sent anywhere
-        unless you connect Posnic Cloud.<br>
+        unless you connect PosHub Cloud.<br>
         <b>Help &rarr; Contact Support</b> gathers all of this for you when you report a problem.
       </div>
     </div>
@@ -4374,7 +4375,7 @@ function openBackupManager() {
           <body style="font-family:Arial;padding:40px;background:#f5f6fa">
             <h2>Backup Manager could not be opened</h2>
             <p>${String(error.message || error)}</p>
-            <p>Please install the latest Posnic build.</p>
+            <p>Please install the latest PosHub build.</p>
           </body>
         </html>
       `)}`);
@@ -4518,7 +4519,7 @@ app.whenReady().then(async () => {
      reader doubt everything under it. */
   const PLATFORM_NAME = { win32: 'Windows', darwin: 'macOS', linux: 'Linux' }[process.platform]
     || process.platform;
-  console.log(`   Posnic for ${PLATFORM_NAME}`);
+  console.log(`   PosHub for ${PLATFORM_NAME}`);
   console.log('='.repeat(55));
   console.log('');
 
@@ -4702,7 +4703,7 @@ app.whenReady().then(async () => {
           'error',
           'Database could not be started',
           error.code === 'MONGODB_PROFILE_MISMATCH' ? error.message :
-            'Automatic repair was attempted. Click Restart App; if this repeats, open the log file and contact Posnic support.'
+            'Automatic repair was attempted. Click Restart App; if this repeats, open the log file and contact PosHub support.'
         );
         return; // do not start the API against a dead database
       }
@@ -5092,7 +5093,7 @@ async function reportHandsetReachability() {
     title: 'Handsets cannot reach this till',
     message: 'Staff phones running the Captain app will not be able to send orders to this computer.',
     detail: `${handsets.explain(result)}\n\n`
-      + 'Posnic itself is running normally. Allowing it through Windows Firewall needs an '
+      + 'PosHub itself is running normally. Allowing it through Windows Firewall needs an '
       + 'administrator, so Windows will ask for permission first.',
     buttons: ['Allow through Windows Firewall', 'Not now', 'We do not use handsets'],
     defaultId: 0,
@@ -5115,7 +5116,7 @@ async function reportHandsetReachability() {
       title: 'Nothing was changed',
       message: 'Windows did not grant permission, so the firewall was left as it was.',
       detail: 'Nothing on this computer has changed. You can try again from the Windows Firewall '
-        + 'settings, or the next time Posnic starts.',
+        + 'settings, or the next time PosHub starts.',
       buttons: ['OK'],
       noLink: true,
     });
@@ -5129,7 +5130,7 @@ async function reportHandsetReachability() {
     type: after.ok ? 'info' : 'warning',
     title: after.ok ? 'Handsets can reach this till' : 'Still blocked',
     message: after.ok
-      ? 'Windows Firewall now allows Posnic to accept connections from the shop network.'
+      ? 'Windows Firewall now allows PosHub to accept connections from the shop network.'
       : 'The rule was added, but something is still refusing connections.',
     detail: after.ok
       ? 'Staff phones on the same Wi-Fi should find this till straight away. There is nothing '
@@ -5656,7 +5657,7 @@ function startServer() {
       if (mainWindow) {
         if (!mainWindow.isVisible()) mainWindow.show();
         mainWindow.loadFile(path.join(__dirname, 'loading.html'), {
-          query: { startupError: 'Posnic could not start its local database', details: 'Posnic includes its own database. Your data has not been removed. Open Log for details or restart Posnic to try again.' }
+          query: { startupError: 'PosHub could not start its local database', details: 'PosHub includes its own database. Your data has not been removed. Open Log for details or restart PosHub to try again.' }
         }).catch(error => console.error('Could not display startup recovery:', error));
       }
     }
@@ -5679,7 +5680,7 @@ function startServer() {
     if (mainWindow && !mainWindow.isDestroyed()) {
       if (!mainWindow.isVisible()) mainWindow.show();
       mainWindow.loadFile(path.join(__dirname, 'loading.html'), {
-        query: { startupError: 'Posnic could not start', details: String(error.message || error) }
+        query: { startupError: 'PosHub could not start', details: String(error.message || error) }
       }).catch(loadError => console.error('Could not display startup recovery:', loadError));
     }
   });

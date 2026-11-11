@@ -473,7 +473,7 @@
                     <!--
                         THIS COMPUTER'S KEY, FOR PASTING INTO THE SHOP.
 
-                        Every Posnic installation makes its own printing key the
+                        Every PosHub installation makes its own printing key the
                         first time it starts, and a shop's internet server is an
                         installation: it has a different one. So a till asking
                         its shop over the internet is turned away every time,
@@ -518,7 +518,7 @@
                 </section>
                 <section id="printer-panel-3" class="printer-panel" role="tabpanel" aria-labelledby="printer-nav-3" hidden>
                     <div class="printer-card printer-guide"><h2>Printing stops after idle</h2><p class="printer-note">Change one setting at a time and record its original value. Check the queue before sending another copy.</p><ol id="printerEnvironmentSteps"></ol></div>
-                    <div class="printer-card printer-guide"><h2>Power &amp; connections</h2><div id="wrPower"></div><p>For a dedicated counter, keep the computer plugged in and prevent sleep or hibernate while serving. Battery settings affect battery life. Posnic does not change these Windows settings.</p><p>If USB disconnects, inspect the affected USB hub in Device Manager → Properties → Power Management. Temporarily test without “Allow the computer to turn off this device to save power”, where available. Restore it if there is no improvement.</p><p>For extender connections, test with a short direct USB cable across the usual idle period. Initialization cannot restore a device Windows cannot see.</p></div>
+                    <div class="printer-card printer-guide"><h2>Power &amp; connections</h2><div id="wrPower"></div><p>For a dedicated counter, keep the computer plugged in and prevent sleep or hibernate while serving. Battery settings affect battery life. PosHub does not change these Windows settings.</p><p>If USB disconnects, inspect the affected USB hub in Device Manager → Properties → Power Management. Temporarily test without “Allow the computer to turn off this device to save power”, where available. Restore it if there is no improvement.</p><p>For extender connections, test with a short direct USB cable across the usual idle period. Initialization cannot restore a device Windows cannot see.</p></div>
                     <div class="printer-card printer-guide"><h2>About idle initialization</h2><p>ESC @ resets printer state; it is not a guaranteed wake command. Enable only for compatible ESC/POS printers. It pauses during app printing or disconnection. Do not run a separate keep-alive helper alongside it.</p><p class="printer-note">Checks refresh while this page is open. System results may be cached for one minute. Windows recovery controls are available on Windows only.</p></div>
                 </section>
             </div>
@@ -718,7 +718,7 @@
                     </div>
                 </div>
 
-                <p style="color:#526174;font-size:13px;">While kitchen printing is running, Posnic prevents automatic system sleep. Your screen can still turn off or lock. Pause printing to allow normal sleep. Keep Posnic running; this does not prevent USB disconnections.</p>
+                <p style="color:#526174;font-size:13px;">While kitchen printing is running, PosHub prevents automatic system sleep. Your screen can still turn off or lock. Pause printing to allow normal sleep. Keep PosHub running; this does not prevent USB disconnections.</p>
                 <!-- Action buttons -->
                 <div style="display:flex;gap:14px;margin-bottom:24px;">
                     <button id="kotStartBtn" onclick="kotStart()" class="btn btn-success" style="flex:1;padding:16px;font-size:16px;">▶ Resume kitchen printing</button>
@@ -1060,7 +1060,7 @@
                             <label class="sound-check"><input type="checkbox" id="kitchenItemTing"><span>Chime before each dish</span></label>
                             <label class="sound-field" for="kitchenItemBell">Dish chime</label><div class="sound-picker"><select id="kitchenItemBell"></select><button type="button" class="btn" data-kitchen-play="item">Play</button></div>
                             <label class="sound-field" for="kitchenVoice">Reading voice</label><div class="sound-picker"><select id="kitchenVoice"></select><button type="button" class="btn" id="kitchenVoicePlay">Play</button></div>
-                            <button type="button" class="btn" id="kitchenVoiceGet">Get more voices</button><p class="sound-hint">In Windows speech settings, choose Add voices. Restart Posnic after installing.</p>
+                            <button type="button" class="btn" id="kitchenVoiceGet">Get more voices</button><p class="sound-hint">In Windows speech settings, choose Add voices. Restart PosHub after installing.</p>
                         </details>
                     </section>
                 </div>

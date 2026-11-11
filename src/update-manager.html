@@ -479,7 +479,7 @@
             ? 'This machine receives test builds from the main branch as soon as they '
             + 'are built. They are not release tested. Do not use this on a till that '
             + 'takes real money. Switching back to stable does not undo an update '
-            + 'already installed — Posnic only moves forwards, so this machine stays '
+            + 'already installed — PosHub only moves forwards, so this machine stays '
             + 'on the test build until a stable release passes it.'
             : 'The normal setting. This machine is only ever offered published '
             + 'releases, and never sees a test build.';
@@ -632,7 +632,7 @@
         'available':     { cls:'available',     icon:'🆕', title:'Update available',            sub:'A new version is ready to download.' },
         'downloading':   { cls:'downloading',   icon:'⬇️', title:'Downloading update…',         sub:'Please wait while the update downloads.' },
         /* The sub-line is filled in at render time: what happens next depends
-           on whether the shop has left "install when I close Posnic" on, and
+           on whether the shop has left "install when I close PosHub" on, and
            saying "restart to apply" when it will apply itself is the kind of
            small untruth that makes people stop reading the screen. */
         'downloaded':    { cls:'downloaded',    icon:'✅', title:'Update ready',                sub:'Restart the app to apply the update.' },

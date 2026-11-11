@@ -277,7 +277,7 @@
         var reason = element('textarea'); reason.id = 'business-approval-reason'; reason.maxLength = 500; reason.rows = 3; reason.value = String(data.discount_description || '').slice(0, 500);
         var details = element('div', '', 'business-approval-details'), error = element('p', '', 'business-approval-error'); error.setAttribute('role', 'alert');
         var actions = element('div', '', 'business-approval-actions');
-        dialog.append(closeButton, element('p', 'POSNIC BUSINESS', 'business-approval-eyebrow'), title, message, details, reasonLabel, reason, error, actions);
+        dialog.append(closeButton, element('p', 'POSHUB BUSINESS', 'business-approval-eyebrow'), title, message, details, reasonLabel, reason, error, actions);
         var key = storageKey(capabilities);
         var flow = active = { dialog: dialog, title: title, message: message, closeButton: closeButton, reason: reason, reasonLabel: reasonLabel, details: details, error: error, actions: actions,
             key: key, scope: capabilities, reference: stored(key), payload: data, params: params, proceed: proceed, local: local, busy: false, focus: document.activeElement };

@@ -185,7 +185,7 @@ function openapiSpec() {
   return {
     openapi: '3.0.3',
     info: {
-      title: 'Posnic API',
+      title: 'PosHub API',
       version: '1.0.0',
       description:
         'Authenticate with a scoped API token (Manage > Integrations) via the Authorization: Bearer header. Lists are cursor-paginated; pass meta.next_cursor back as ?cursor= until it returns null. Reads cover every entity; writes exist per entity, deliberately - customers today.',

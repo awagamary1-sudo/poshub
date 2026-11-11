@@ -796,7 +796,7 @@ class BillManager {
       );
 
       const startedAt = Date.now();
-      const result = await this.hardware.sendRawToPrinter(name, bytes, 'Posnic Bill', { jobId: sale._windowsBillJob ? 'bill:' + sale._windowsBillJob : undefined });
+      const result = await this.hardware.sendRawToPrinter(name, bytes, 'PosHub Bill', { jobId: sale._windowsBillJob ? 'bill:' + sale._windowsBillJob : undefined });
 
       /*
        * Written down whether it printed or not, in the same day log the

@@ -430,7 +430,7 @@ class MessagingService {
     const raw = channel === 'sms' ? await this._raw(branchId) : {};
     const smsContext =
       raw.sms_provider === 'msg91' && raw.sms_config?.receipt_template_id
-        ? { purpose: 'receipt', name: 'Posnic TEST', url: 'https://www.posnic.com/' }
+        ? { purpose: 'receipt', name: 'PosHub TEST', url: 'https://www.posnic.com/' }
         : {};
     const r =
       channel === 'whatsapp'

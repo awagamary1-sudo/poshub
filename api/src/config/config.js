@@ -93,7 +93,7 @@ module.exports = {
     },
     brevo: {
       apiKey: process.env.BREVO_API_KEY || process.env.SENDINBLUE_KEY || null,
-      sender: process.env.SMS_SENDER || 'POSNIC',
+      sender: process.env.SMS_SENDER || 'POSHUB',
     },
   },
 

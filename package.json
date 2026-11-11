@@ -263,7 +263,7 @@
       },
       {
         "from": "LICENSE",
-        "to": "licenses/POSNIC-AGPL-3.0.txt"
+        "to": "licenses/POSHUB-AGPL-3.0.txt"
       },
       {
         "from": "THIRD-PARTY-NOTICES.md",
@@ -549,7 +549,7 @@
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": "always",
       "createStartMenuShortcut": true,
-      "shortcutName": "Posnic",
+      "shortcutName": "PosHub",
       "deleteAppDataOnUninstall": false,
       "runAfterFinish": true,
       "include": "builds/installer.nsh",

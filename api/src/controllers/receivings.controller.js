@@ -1477,7 +1477,7 @@ class ReceivingsController extends BaseController {
       const { resolveConfiguredShopTransport } = require('../utils/email');
       const resolved = await resolveConfiguredShopTransport(branch);
       const transporter = resolved.transporter;
-      const shopName = branch.branch_name || 'Posnic POS';
+      const shopName = branch.branch_name || 'PosHub POS';
       const orderId = receiving.receiving_id || String(receiving._id);
       const { brandFor, renderEmail, kvBlock } = require('../utils/email-layout');
       const brand = brandFor(branch);

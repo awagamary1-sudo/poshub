@@ -297,7 +297,7 @@
            supplier, not us, and they should be able to see that. */
         if (CTX.isCloud) {
           $('destination').textContent = 'This goes to ' + CTX.baseUrl
-            + (CTX.baseUrl.includes('posnic.com') ? ' (Posnic support)' : ' — your Posnic provider');
+            + (CTX.baseUrl.includes('posnic.com') ? ' (PosHub support)' : ' — your PosHub provider');
         } else {
           /* No cloud: the email route is not offered at all, because nobody
              has undertaken to answer it. */

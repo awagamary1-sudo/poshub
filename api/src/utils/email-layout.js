@@ -14,7 +14,7 @@
  *    https image - mail clients block most images anyway, so the design
  *    stands WITHOUT them and the logo is an upgrade, never a dependency.
  *  - FOOTER: the shop's company details (address, phone, email) and the
- *    sending brand. "Powered by Posnic" appears only when NOT white-labelled.
+ *    sending brand. "Powered by PosHub" appears only when NOT white-labelled.
  *  - BODY: table-based, 600px, inline styles only - the dialect every mail
  *    client from Outlook down actually renders. No external CSS, no fonts,
  *    no scripts.
@@ -40,7 +40,7 @@ const brandFor = (branch) => {
   const whiteLabelName = String(b.white_label_name || process.env.WHITE_LABEL_NAME || '').trim();
   const logoCandidate = String(b.branch_image_url || b.branch_image || '');
   return {
-    name: whiteLabelName || 'Posnic',
+    name: whiteLabelName || 'PosHub',
     whiteLabel: !!whiteLabelName,
     shopName: String(b.branch_name || '').trim(),
     logoUrl: /^https:\/\//i.test(logoCandidate) ? logoCandidate : '',
@@ -124,7 +124,7 @@ const renderEmail = ({ brand, title, preheader, greeting, bodyHtml, footerNote }
     .join(' &nbsp;·&nbsp; ');
   const powered = b.whiteLabel
     ? `Sent by ${esc(b.name)}`
-    : `Sent by ${esc(b.shopName || 'your shop')} &nbsp;·&nbsp; Powered by Posnic`;
+    : `Sent by ${esc(b.shopName || 'your shop')} &nbsp;·&nbsp; Powered by PosHub`;
 
   return (
     '<!doctype html><html><body style="margin:0;padding:0;background:#eef1f6;">' +

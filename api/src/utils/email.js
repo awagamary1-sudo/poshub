@@ -17,7 +17,7 @@ class Email {
     this.url = url;
 
     const emailFrom = process.env.EMAIL_FROM || 'no-reply@posnic.local';
-    const brandName = process.env.WHITE_LABEL_NAME || 'Posnic';
+    const brandName = process.env.WHITE_LABEL_NAME || 'PosHub';
     this.from = `${brandName} <${emailFrom}>`;
   }
 
@@ -121,7 +121,7 @@ class Email {
   }
 
   async sendWelcome() {
-    await this.send('welcome', `Welcome to ${process.env.WHITE_LABEL_NAME || 'Posnic'}!`);
+    await this.send('welcome', `Welcome to ${process.env.WHITE_LABEL_NAME || 'PosHub'}!`);
   }
 
   async sendPasswordReset() {
@@ -141,7 +141,7 @@ const sendEmail = async (options) => {
 
   // 2) Define the email options
   const mailOptions = {
-    from: `${process.env.WHITE_LABEL_NAME || 'Posnic'} <${process.env.EMAIL_FROM || 'no-reply@posnic.local'}>`,
+    from: `${process.env.WHITE_LABEL_NAME || 'PosHub'} <${process.env.EMAIL_FROM || 'no-reply@posnic.local'}>`,
     to: options.email,
     subject: options.subject,
     text: options.message,

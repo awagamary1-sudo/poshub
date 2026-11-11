@@ -1,4 +1,4 @@
-// PM2 process configuration for POSNIC ApiV2
+// PM2 process configuration for POSHUB ApiV2
 // Docs: https://pm2.keymetrics.io/docs/usage/application-declaration/
 //
 // NOTE: fork mode with a SINGLE instance is deliberate. whatsapp-web.js runs a

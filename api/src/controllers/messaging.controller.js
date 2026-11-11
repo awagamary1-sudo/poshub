@@ -62,8 +62,8 @@ class MessagingController extends BaseController {
       const result = await transporter.sendMail({
         from,
         to,
-        subject: 'Posnic email delivery test',
-        text: 'This is a test from your Posnic email settings. No payment or action is required.',
+        subject: 'PosHub email delivery test',
+        text: 'This is a test from your PosHub email settings. No payment or action is required.',
       });
       if (
         !result.messageId ||
@@ -165,7 +165,7 @@ class MessagingController extends BaseController {
         return this._denied(res);
       const runner = require('../services/ask-posnic-runner.service');
       const report = await runner.buildReport(row, new Date(), await BaseModel.getDb());
-      report.answer = 'POSNIC TEST - report delivery check.\n' + report.answer;
+      report.answer = 'POSHUB TEST - report delivery check.\n' + report.answer;
       const result = await runner.deliver({ ...row, test: true }, report);
       return this.success(
         res,

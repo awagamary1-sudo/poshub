@@ -21,7 +21,7 @@ function createRegistry(core, extensions = []) {
         id: 'posnic.' + key,
         key,
         english: value,
-        module: 'Posnic',
+        module: 'PosHub',
         defaults: { en: value },
       });
   }
@@ -130,7 +130,7 @@ function validateDraft(input, labels, locales) {
 }
 function resolveBundle(state, branch, locale, labels) {
   if (state.schemaVersion !== 1)
-    throw Object.assign(new Error('This profile requires a newer Posnic version'), { status: 409 });
+    throw Object.assign(new Error('This profile requires a newer PosHub version'), { status: 409 });
   const assignment = state.assignments?.[branch]?.[locale];
   const profile = state.profiles?.find((p) => !p.deletedAt && p.id === assignment?.profileId);
   const revision = profile?.revisions.find((r) => r.id === assignment?.revisionId);
@@ -220,7 +220,7 @@ class WordingProfiles {
   }
   async update(expected, actor, change) {
     const state = await this.read();
-    if (state.schemaVersion !== 1) fail('This profile requires a newer Posnic version', 409);
+    if (state.schemaVersion !== 1) fail('This profile requires a newer PosHub version', 409);
     if (!Number.isSafeInteger(expected) || state.revision !== expected)
       fail('Wording changed. Reload before saving.', 409);
     change(state);

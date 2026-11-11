@@ -160,7 +160,7 @@ class AskPosnicController {
         : null;
     return res.json({
       type: 'success',
-      message: enabled ? 'Ask Posnic is available' : 'Ask Posnic is off',
+      message: enabled ? 'Ask PosHub is available' : 'Ask PosHub is off',
       data: {
         enabled,
         mode: aiMode === 'managed' ? 'managed' : aiMode === 'own_key' ? 'own_key' : 'direct',
@@ -242,7 +242,7 @@ class AskPosnicController {
       if (!platform.capabilityAllowed(preferences, capability, req.user))
         return res.status(403).json({
           type: 'error',
-          message: `Ask Posnic ${capability} are not enabled for your role.`,
+          message: `Ask PosHub ${capability} are not enabled for your role.`,
           data: null,
         });
       const conversationId = await platform.saveMessage(req, req.body?.conversation_id, 'user', {
@@ -277,7 +277,7 @@ class AskPosnicController {
           intent,
           conversation_id: conversationId,
           mode: 'direct',
-          source: 'Posnic feature catalog',
+          source: 'PosHub feature catalog',
           answer:
             groups
               .map(
@@ -295,10 +295,10 @@ class AskPosnicController {
               .filter((row) => row.mode === 'action' && row.enabled)
               .map((row) => row.name)
               .join(', ') +
-            '. Other operations use their module pages. Normal Posnic permissions and enabled features apply.',
+            '. Other operations use their module pages. Normal PosHub permissions and enabled features apply.',
         };
         await platform.saveMessage(req, conversationId, 'assistant', data);
-        return res.json({ type: 'success', message: 'Posnic capabilities', data });
+        return res.json({ type: 'success', message: 'PosHub capabilities', data });
       }
       if (
         [
@@ -315,7 +315,7 @@ class AskPosnicController {
           return res.status(403).json({
             type: 'error',
             message:
-              'This action is not enabled for your account. Ask an owner to review Ask Posnic Access & actions and your normal module permissions.',
+              'This action is not enabled for your account. Ask an owner to review Ask PosHub Access & actions and your normal module permissions.',
             data: null,
           });
         const descriptions = {
@@ -681,7 +681,7 @@ class AskPosnicController {
           .json({ type: 'error', message: error.message, data: null });
       return res
         .status(500)
-        .json({ type: 'error', message: 'Ask Posnic could not load the answer.', data: null });
+        .json({ type: 'error', message: 'Ask PosHub could not load the answer.', data: null });
     }
   }
 
@@ -843,7 +843,7 @@ class AskPosnicController {
     return res.json({
       type: 'success',
       data: await platform.listAudit(req),
-      message: 'Ask Posnic audit history',
+      message: 'Ask PosHub audit history',
     });
   }
 
@@ -897,13 +897,13 @@ class AskPosnicController {
     if (!platform.capabilityAllowed(preferences, 'actions', req.user))
       return res.status(403).json({
         type: 'error',
-        message: 'Ask Posnic actions are not enabled for your role.',
+        message: 'Ask PosHub actions are not enabled for your role.',
         data: null,
       });
     if (!preferences.allowed_actions.includes(type))
       return res
         .status(403)
-        .json({ type: 'error', message: 'That Ask Posnic action is disabled.', data: null });
+        .json({ type: 'error', message: 'That Ask PosHub action is disabled.', data: null });
     if (!canPrepare(req, type))
       return res
         .status(403)
@@ -1018,7 +1018,7 @@ class AskPosnicController {
           if (type === 'stock_count') {
             const repository = new InventoryCountRepository();
             const result = await repository.createDraft(
-              { items: payload.items, scope: payload.scope, notes: 'Prepared by Ask Posnic' },
+              { items: payload.items, scope: payload.scope, notes: 'Prepared by Ask PosHub' },
               actionContext
             );
             if (!result.status)
@@ -1063,7 +1063,7 @@ class AskPosnicController {
     if (!platform.capabilityAllowed(preferences, 'actions', req.user))
       return res.status(403).json({
         type: 'error',
-        message: 'Ask Posnic actions are not enabled for your role.',
+        message: 'Ask PosHub actions are not enabled for your role.',
         data: null,
       });
     const data = await platform.actionOutcome(req, req.params.id);
@@ -1148,7 +1148,7 @@ class AskPosnicController {
   async preferences(req, res) {
     return res.json({
       type: 'success',
-      message: 'Ask Posnic preferences',
+      message: 'Ask PosHub preferences',
       data: await platform.getPreferences(req),
     });
   }
@@ -1161,7 +1161,7 @@ class AskPosnicController {
     try {
       return res.json({
         type: 'success',
-        message: 'Ask Posnic preferences saved.',
+        message: 'Ask PosHub preferences saved.',
         data: await platform.savePreferences(req, req.body || {}),
       });
     } catch (error) {

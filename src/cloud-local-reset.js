@@ -13,7 +13,7 @@ async function verifyLocalDatabase({ uri, dataPath, MongoClient }) {
     const options = await client.db('admin').command({ getCmdLineOpts: 1 });
     const actual = options.parsed?.storage?.dbPath;
     if (!actual || path.resolve(actual) !== path.resolve(dataPath)) {
-      throw new Error('Another Posnic installation is using this database port. Close it and retry.');
+      throw new Error('Another PosHub installation is using this database port. Close it and retry.');
     }
   } finally { await client.close(); }
 }
@@ -25,7 +25,7 @@ async function stopSync(manager) {
   await new Promise((resolve, reject) => {
     const timeout = setTimeout(() => {
       child.removeListener('exit', exited);
-      reject(new Error('Cloud sync has not stopped. Restart Posnic before deleting local data.'));
+      reject(new Error('Cloud sync has not stopped. Restart PosHub before deleting local data.'));
     }, 10000);
     function exited() { clearTimeout(timeout); resolve(); }
     child.once('exit', exited);

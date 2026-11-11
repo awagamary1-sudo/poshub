@@ -22,7 +22,7 @@ async function refresh() {
   el('state').textContent = state.remote ? 'Connected to support' : step === 'running' ? 'Recording locally' : step === 'done' ? 'Finished' : 'Ready';
   if (state.remote && step !== 'running') showStep('running');
   if (step === 'running' && !state.active) showStep('done');
-  el('session').textContent = state.active ? 'Use Posnic as usual to reproduce the problem. Checks end at ' + new Date(state.expiresAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) + '.' : 'Start a new check to collect a fresh report.';
+  el('session').textContent = state.active ? 'Use PosHub as usual to reproduce the problem. Checks end at ' + new Date(state.expiresAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) + '.' : 'Start a new check to collect a fresh report.';
   const rows = state.health || [];
   const pending = state.checking || rows.some(row => row.status === 'pending');
   const attention = rows.filter(row => row.status === 'attention').length;

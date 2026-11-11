@@ -145,7 +145,7 @@ async function main() {
       console.log('[local] shop install skipped: ' + e.message);
     }
     console.log('\n' + '='.repeat(66));
-    console.log('  POSNIC (LOCAL)  ->  http://localhost:' + PORT + '/login.html');
+    console.log('  POSHUB (LOCAL)  ->  http://localhost:' + PORT + '/login.html');
     console.log('  login: ' + LOGIN.user + '   password: ' + LOGIN.pass);
     console.log('  database: local only (api/.local-db) - production untouched');
     console.log('='.repeat(66) + '\n');
@@ -153,7 +153,7 @@ async function main() {
 
   const shutdown = async () => {
     console.log('\n[local] stopping…');
-    await mongo.stop().catch(() => {});
+    await mongo.stop().catch(() => { });
     process.exit(0);
   };
   process.on('SIGINT', shutdown);

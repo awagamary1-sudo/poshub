@@ -37,7 +37,7 @@ function powerGuidance(settings) {
         : `${name} (${label}) is enabled. For a dedicated printing counter, set ${change} (${label}).`);
     }
   }
-  if (settings.externalKeepAlive) messages.push('A separate Posnic printer keep-alive helper is running. Stop that helper and remove its Startup shortcut before enabling app initialization or idle commands; two writers can interrupt a ticket.');
+  if (settings.externalKeepAlive) messages.push('A separate PosHub printer keep-alive helper is running. Stop that helper and remove its Startup shortcut before enabling app initialization or idle commands; two writers can interrupt a ticket.');
   if (settings.externalKeepAlive === null) messages.push('Could not verify external keep-alive helpers. Do not run the diagnostic helper alongside app initialization or idle commands.');
   return messages;
 }

@@ -1397,13 +1397,13 @@ const form = document.getElementById('installForm');
             next.disabled = true;
             saved.onchange = () => { next.disabled = !saved.checked; };
             document.getElementById('saveRecoveryCodes').onclick = () => {
-                const text = 'POSNIC - OFFLINE RECOVERY CODES\nAccount: ' + data.recoveryAccount + '\n\n' +
+                const text = 'POSHUB - OFFLINE RECOVERY CODES\nAccount: ' + data.recoveryAccount + '\n\n' +
                     'Each line is a separate recovery code. To reset your password, enter only one complete line, not the whole list.\n\n' + codes.join('\n') +
                     '\n\nEach code works once. Keep this sheet away from the till. Anyone with a code can reset this account.\n';
                 const url = URL.createObjectURL(new Blob([text], { type: 'text/plain;charset=utf-8' }));
                 const link = document.createElement('a');
                 link.href = url;
-                link.download = 'posnic-recovery-codes.txt';
+                link.download = 'poshub-recovery-codes.txt';
                 document.body.appendChild(link);
                 link.click();
                 link.remove();

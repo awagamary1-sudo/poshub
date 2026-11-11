@@ -1,16 +1,16 @@
-POSNIC - LICENCE AND TERMS
+POSHUB - LICENCE AND TERMS
 
 Please read this before installing.
 
 WHAT THIS IS
-Posnic is free and open source software, licensed under the GNU Affero
+PosHub is free and open source software, licensed under the GNU Affero
 General Public License version 3 (AGPL-3.0-only). You may use it in your
 business for free, for as long as you like, on as many computers as you like.
 There is no trial period and no licence fee for the software itself.
 
 THIS IS A BETA
-Posnic works and is tested, but it is early software and it will hold your
-sales records. Keep your own backups. Posnic takes automatic backups to your
+PosHub works and is tested, but it is early software and it will hold your
+sales records. Keep your own backups. PosHub takes automatic backups to your
 Documents folder, but a copy that lives only on the same computer is not a
 backup - copy it to a pen drive or another machine as well.
 
@@ -18,19 +18,19 @@ NO WARRANTY
 This software is provided without warranty of any kind, as set out in
 sections 15 and 16 of the licence below. You are responsible for your own
 data, your own backups, and for meeting your own tax and legal obligations.
-Posnic calculates GST from the rates you enter; checking that those rates and
+PosHub calculates GST from the rates you enter; checking that those rates and
 the resulting returns are correct remains your responsibility.
 
 YOUR DATA STAYS ON THIS COMPUTER
 The Community Edition sends nothing anywhere. There is no account, no
-telemetry and no usage tracking. If you later subscribe to Posnic Cloud,
+telemetry and no usage tracking. If you later subscribe to PosHub Cloud,
 separate terms apply to that service and are shown when you sign up:
-https://www.posnic.com/terms.html
+https://www.poshub.com/terms.html
 
-IF YOU MODIFY AND DISTRIBUTE POSNIC
+IF YOU MODIFY AND DISTRIBUTE POSHUB
 The AGPL requires that anyone you give a modified version to - including
 people who use it over a network - can get the source of your changes. If you
-are only using Posnic in your own shop, this does not affect you.
+are only using PosHub in your own shop, this does not affect you.
 
 Full licence text follows.
 

@@ -36,7 +36,7 @@ for (const entry of fs.readdirSync(seedDir)) {
 
 if (removed > 0) {
   console.log(
-    `[brand-seed] cleared ${removed} leftover item${removed === 1 ? "" : "s"} - this build is stock Posnic`,
+    `[brand-seed] cleared ${removed} leftover item${removed === 1 ? "" : "s"} - this build is stock PosHub`,
   );
 } else {
   console.log("[brand-seed] empty, as a stock build needs it to be");

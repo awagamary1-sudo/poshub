@@ -14,7 +14,7 @@ function settingsUpdate(data, previous = {}) {
     if (data[field] !== undefined) out[field] = String(data[field] || '').trim();
   for (const field of SECRETS) Object.assign(out, secretUpdate(field, data[field]));
   if (out.email_method && !['platform', 'smtp', 'api'].includes(out.email_method))
-    throw new Error('Choose SMTP, API or Posnic email.');
+    throw new Error('Choose SMTP, API or PosHub email.');
   if (out.email_encryption && !['starttls', 'tls'].includes(out.email_encryption))
     throw new Error('Choose STARTTLS or SSL/TLS.');
   if (
@@ -119,7 +119,7 @@ function resolve(b) {
     return { transporter, from, shopOwned: true, branch: b };
   }
   if (b.email_method !== 'api' || !API_PROVIDERS.includes(b.email_provider))
-    throw new Error('This email provider does not support API sending in Posnic.');
+    throw new Error('This email provider does not support API sending in PosHub.');
   if (!b.email_api_key) throw new Error('Add your email API key in Email settings.');
   return {
     from,

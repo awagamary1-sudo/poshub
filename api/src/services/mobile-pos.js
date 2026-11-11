@@ -197,7 +197,7 @@ async function bootstrap(req) {
   const shop = {
     id: c.shopId,
     branchId: id(c.branchId),
-    name: c.branch.company_name || c.branch.branch_name || 'Posnic',
+    name: c.branch.company_name || c.branch.branch_name || 'PosHub',
     branchName: c.branch.branch_name || '',
     currency: currency(c.branch),
     staffId: id(c.userId),

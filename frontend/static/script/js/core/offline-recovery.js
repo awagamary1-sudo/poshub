@@ -15,13 +15,13 @@
         });
     }
     function saveCodes(account, codes) {
-        var text = PosnicPro.i18n.t('lang_recovery_download_title', 'POSNIC - OFFLINE RECOVERY CODES') + '\n' +
+        var text = PosnicPro.i18n.t('lang_recovery_download_title', 'POSHUB - OFFLINE RECOVERY CODES') + '\n' +
             PosnicPro.i18n.t('lang_recovery_account_label', 'Account: {account}').replace('{account}', account) + '\n\n' +
             PosnicPro.i18n.t('lang_recovery_one_line_hint', 'Each line is a separate recovery code. To reset your password, enter only one complete line, not the whole list.') + '\n\n' + codes.join('\n') + '\n\n' +
             PosnicPro.i18n.t('lang_recovery_sheet_warning', 'Each code works once. Keep this sheet away from the till. Anyone with a code can reset this account.') + '\n';
         var url = URL.createObjectURL(new Blob([text], { type: 'text/plain;charset=utf-8' }));
         var link = document.createElement('a');
-        link.href = url; link.download = 'posnic-recovery-codes.txt';
+        link.href = url; link.download = 'poshub-recovery-codes.txt';
         document.body.appendChild(link); link.click(); link.remove();
         setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
     }

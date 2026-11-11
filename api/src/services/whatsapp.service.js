@@ -120,7 +120,7 @@ class WhatsAppService extends EventEmitter {
       client = new Client({
         authTimeoutMs: 90000,
         webVersionCache: { type: 'none' },
-        deviceName: 'Posnic',
+        deviceName: 'PosHub',
         authStrategy: new LocalAuth({
           clientId: clientKey,
           dataPath: this.sessionPath,

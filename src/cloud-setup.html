@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Posnic Cloud</title>
+    <title>PosHub Cloud</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -60,7 +60,7 @@
   <link rel="stylesheet" href="desktop-design.css">
 </head>
 <body class="desktop-window" data-desktop-window="cloud">
-    <h1>☁️ Posnic Cloud</h1>
+    <h1>☁️ PosHub Cloud</h1>
     <div class="subtitle">Offline-safe sync between this shop and your cloud account.</div>
 
     <!-- Connected: status + management -->
@@ -89,7 +89,7 @@
     <!-- Not connected: connect form + subscription link -->
     <div id="disconnectedView">
         <div class="card">
-            <h3>Connect this machine to Posnic Cloud</h3>
+            <h3>Connect this machine to PosHub Cloud</h3>
             <p class="subtitle">Approve this computer in your browser. Staff login stays local after the first download, including when offline.</p>
             <button class="btn" id="browserBtn">Sign in with browser</button>
             <button class="btn secondary" id="trialBtn">Start cloud trial</button>
@@ -177,7 +177,7 @@
 
         $('disconnectBtn').addEventListener('click', async () => {
             const sure = confirm(
-                'Disconnect this device from Posnic Cloud?\n\n' +
+                'Disconnect this device from PosHub Cloud?\n\n' +
                 'Local data stays untouched and the app keeps working offline. ' +
                 'Sync stops until you connect again.'
             );
