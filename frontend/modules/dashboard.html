@@ -1,0 +1,656 @@
+<div class="vertical-layout page_loader" id="dashboard" style="display: none">
+    <div id="containerbar" class="blur-dashboard">
+        <div class="breadcrumbbar pt-3 pb-4">
+            <div class="col-md-12 loader-login spin px-3">
+                <!-- Setup checklist & Sample data notification (preserved) -->
+                <div class="row" id="demo_data_card" style="display:none;">
+                    <div class="col-lg-12">
+                        <div class="card m-b-30 demo-data-card">
+                            <div class="card-body py-2">
+                                <div class="d-flex align-items-center justify-content-between flex-wrap mb-1"
+                                    style="gap:8px;">
+                                    <span class="demo-data-card-title">
+                                        <i class="feather icon-package mr-1"></i>
+                                        <lang class="lang_demo_card_title">Your shop still has its sample records</lang>
+                                    </span>
+                                    <span class="demo-data-card-actions">
+                                        <button type="button" class="btn btn-sm btn-outline-danger"
+                                            id="demo_card_remove">
+                                            <lang class="lang_demoremove_button">Remove the sample data</lang>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-link text-muted"
+                                            id="demo_card_keep">
+                                            <lang class="lang_demo_card_keep">Keep them for now</lang>
+                                        </button>
+                                    </span>
+                                </div>
+                                <div class="demo-data-card-counts" id="demo_data_card_counts"></div>
+                                <small class="text-muted d-block mt-1">
+                                    <lang class="lang_demo_card_help">These came with the demo so you could try the
+                                        till, and the figures on this page include them.
+                                        Removing them takes nothing you created yourself.</lang>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="setup_checklist_strip" style="display:none;">
+                    <div class="col-lg-12">
+                        <div class="card m-b-30">
+                            <div class="card-body py-2">
+                                <div class="d-flex align-items-center justify-content-between flex-wrap mb-1">
+                                    <span style="font-weight:600;">
+                                        <lang class="lang_setup_title">Let's finish setting up your store</lang>
+                                    </span>
+                                    <a href="javascript:void(0)" class="text-muted"
+                                        onclick="PosnicPro.dashboard.dismissSetupChecklist();" style="font-size:.8rem;">
+                                        <lang class="lang_setup_dismiss">Dismiss</lang>
+                                    </a>
+                                </div>
+                                <div class="d-flex flex-wrap" id="setup_checklist_cards" style="gap:8px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Top Header: 3-Card Modern Banner -->
+                <div class="row dash-header-row">
+                    <!-- Branch Card -->
+                    <div class="col-lg-3 col-md-4 mb-3 mb-md-0">
+                        <div class="dash-header-card">
+                            <div class="dash-header-icon">
+                                <i class="feather icon-home"></i>
+                            </div>
+                            <div class="overflow-hidden">
+                                <h4 class="dash-branch-name branch-name text-truncate" id="dashboard_branch_name">Kojo
+                                    Branch</h4>
+                                <p class="dash-branch-location text-truncate" id="dashboard_branch_location">Accra,
+                                    Ghana</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Welcome Banner -->
+                    <div class="col-lg-6 col-md-4 mb-3 mb-md-0">
+                        <div class="dash-header-card dash-header-welcome">
+                            <div class="w-100">
+                                <h3 class="dash-welcome-title" id="dashboard_greeting">Good Morning, Demo!</h3>
+                                <p class="dash-welcome-sub">
+                                    <lang class="lang_dash_subtitle">Here's what's happening with your business today.
+                                    </lang>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Live Date & Clock Card -->
+                    <div class="col-lg-3 col-md-4">
+                        <div class="dash-header-card">
+                            <div class="dash-header-icon">
+                                <i class="feather icon-calendar"></i>
+                            </div>
+                            <div class="overflow-hidden">
+                                <p class="dash-date-text text-truncate" id="dashboard_live_date">Sunday, 02 November
+                                    2026</p>
+                                <h3 class="dash-time-text" id="dashboard_live_time">07:38 AM</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hidden period filter & refresh triggers to preserve all legacy callbacks -->
+                <div style="display:none;">
+                    <button type="button" id="dashboard_refresh"
+                        onclick="PosnicPro.dashboard.refreshOverview();"></button>
+                    <button type="button" id="btnDashboardCountDay"
+                        onclick="PosnicPro.dashboard.activeInActiveFilterButtons('day', this)"></button>
+                    <button type="button" id="btnDashboardCountWeek"
+                        onclick="PosnicPro.dashboard.activeInActiveFilterButtons('week', this)"></button>
+                    <button type="button" id="btnDashboardCountMonth"
+                        onclick="PosnicPro.dashboard.activeInActiveFilterButtons('month', this)"></button>
+                    <button type="button" id="btnDashboardCountYear"
+                        onclick="PosnicPro.dashboard.activeInActiveFilterButtons('year', this)"></button>
+                    <span id="dashboard_refresh_status"></span>
+                    <span id="kpi_period_label"></span>
+                    <span id="profit_period_label"></span>
+                    <span id="kpi_card"></span>
+                </div>
+
+                <!-- Pill Period Filter at Top -->
+                <div class="dash-kpi-filter-bar">
+                    <div class="dash-pill-group" role="tablist">
+                        <button type="button" class="dash-pill-btn active" id="kpi_tab_day" onclick="PosnicPro.dashboard.switchKpiPeriod('day', this)">
+                            <lang class="lang_today">Today</lang>
+                        </button>
+                        <button type="button" class="dash-pill-btn" id="kpi_tab_week" onclick="PosnicPro.dashboard.switchKpiPeriod('week', this)">
+                            <lang class="lang_this_week">This Week</lang>
+                        </button>
+                        <button type="button" class="dash-pill-btn" id="kpi_tab_month" onclick="PosnicPro.dashboard.switchKpiPeriod('month', this)">
+                            <lang class="lang_this_month">This Month</lang>
+                        </button>
+                        <button type="button" class="dash-pill-btn" id="kpi_tab_year" onclick="PosnicPro.dashboard.switchKpiPeriod('year', this)">
+                            <lang class="lang_this_year">This Year</lang>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 6 KPI Metric Cards in 3-column x 2-row Grid -->
+                <div class="row dash-kpi-grid" data-module="dashboard" data-access="financials">
+                    <!-- Card 1: Total Sales -->
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-4">
+                        <div class="dash-kpi-card">
+                            <div class="kpi-card-content">
+                                <div class="kpi-icon-badge badge-sales">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="9" cy="21" r="1.5"></circle>
+                                        <circle cx="20" cy="21" r="1.5"></circle>
+                                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                    </svg>
+                                </div>
+                                <div class="kpi-card-details">
+                                    <span class="kpi-card-title"><lang class="lang_total_sales">Total Sales</lang></span>
+                                    <div class="kpi-card-val-row">
+                                        <span class="kpi-card-val" id="kpi_sales">&mdash;</span>
+                                        <span class="kpi-card-badge kpi-badge-up" id="kpi_sales_trend">&#9650; +12.5%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <svg class="kpi-card-wave" viewBox="0 0 320 60" preserveAspectRatio="none">
+                                <defs>
+                                    <linearGradient id="waveGradSales" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#0066ff" stop-opacity="0.22" />
+                                        <stop offset="100%" stop-color="#0066ff" stop-opacity="0.0" />
+                                    </linearGradient>
+                                </defs>
+                                <path d="M0,48 C25,40 50,32 75,34 C100,36 125,24 150,24 C175,24 200,34 225,32 C250,28 275,16 300,16 C310,16 318,19 320,22 L320,60 L0,60 Z" fill="url(#waveGradSales)" />
+                                <path d="M0,48 C25,40 50,32 75,34 C100,36 125,24 150,24 C175,24 200,34 225,32 C250,28 275,16 300,16 C310,16 318,19 320,22" fill="none" stroke="#0066ff" stroke-width="2.5" stroke-linecap="round" />
+                                <circle cx="10" cy="45" r="3" fill="#0066ff" />
+                                <circle cx="75" cy="34" r="3" fill="#0066ff" />
+                                <circle cx="150" cy="24" r="3" fill="#0066ff" />
+                                <circle cx="225" cy="32" r="3" fill="#0066ff" />
+                                <circle cx="300" cy="16" r="3" fill="#0066ff" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Total Purchase -->
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-4">
+                        <div class="dash-kpi-card">
+                            <div class="kpi-card-content">
+                                <div class="kpi-icon-badge badge-purchase">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="7 10 12 15 17 10"></polyline>
+                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                    </svg>
+                                </div>
+                                <div class="kpi-card-details">
+                                    <span class="kpi-card-title"><lang class="lang_total_purchase">Total Purchase</lang></span>
+                                    <div class="kpi-card-val-row">
+                                        <span class="kpi-card-val" id="kpi_purchase">&mdash;</span>
+                                        <span class="kpi-card-badge kpi-badge-up" id="kpi_purchase_trend">&#9650; +8.7%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <svg class="kpi-card-wave" viewBox="0 0 320 60" preserveAspectRatio="none">
+                                <defs>
+                                    <linearGradient id="waveGradPurchase" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#00c067" stop-opacity="0.22" />
+                                        <stop offset="100%" stop-color="#00c067" stop-opacity="0.0" />
+                                    </linearGradient>
+                                </defs>
+                                <path d="M0,46 C35,42 70,38 105,32 C140,26 175,20 210,34 C245,28 275,14 305,14 C312,14 318,16 320,18 L320,60 L0,60 Z" fill="url(#waveGradPurchase)" />
+                                <path d="M0,46 C35,42 70,38 105,32 C140,26 175,20 210,34 C245,28 275,14 305,14 C312,14 318,16 320,18" fill="none" stroke="#00c067" stroke-width="2.5" stroke-linecap="round" />
+                                <circle cx="8" cy="45" r="3" fill="#00c067" />
+                                <circle cx="105" cy="32" r="3" fill="#00c067" />
+                                <circle cx="175" cy="22" r="3" fill="#00c067" />
+                                <circle cx="240" cy="30" r="3" fill="#00c067" />
+                                <circle cx="305" cy="14" r="3" fill="#00c067" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Total Expenses -->
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-4">
+                        <div class="dash-kpi-card">
+                            <div class="kpi-card-content">
+                                <div class="kpi-icon-badge badge-expenses">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"></path>
+                                        <path d="M4 6v12a2 2 0 0 0 2 2h14v-4"></path>
+                                        <path d="M18 12a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4v-4h-4z"></path>
+                                    </svg>
+                                </div>
+                                <div class="kpi-card-details">
+                                    <span class="kpi-card-title"><lang class="lang_total_expenses">Total Expenses</lang></span>
+                                    <div class="kpi-card-val-row">
+                                        <span class="kpi-card-val" id="kpi_expenses">&mdash;</span>
+                                        <span class="kpi-card-badge kpi-badge-down" id="kpi_expenses_trend">&#9660; -3.2%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <svg class="kpi-card-wave" viewBox="0 0 320 60" preserveAspectRatio="none">
+                                <defs>
+                                    <linearGradient id="waveGradExpenses" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#ff3b30" stop-opacity="0.22" />
+                                        <stop offset="100%" stop-color="#ff3b30" stop-opacity="0.0" />
+                                    </linearGradient>
+                                </defs>
+                                <path d="M0,46 C35,38 70,32 105,28 C140,24 175,16 210,34 C245,26 275,12 305,12 C312,12 318,14 320,16 L320,60 L0,60 Z" fill="url(#waveGradExpenses)" />
+                                <path d="M0,46 C35,38 70,32 105,28 C140,24 175,16 210,34 C245,26 275,12 305,12 C312,12 318,14 320,16" fill="none" stroke="#ff3b30" stroke-width="2.5" stroke-linecap="round" />
+                                <circle cx="8" cy="46" r="3" fill="#ff3b30" />
+                                <circle cx="105" cy="28" r="3" fill="#ff3b30" />
+                                <circle cx="175" cy="20" r="3" fill="#ff3b30" />
+                                <circle cx="245" cy="28" r="3" fill="#ff3b30" />
+                                <circle cx="305" cy="12" r="3" fill="#ff3b30" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Total Tax -->
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-4">
+                        <div class="dash-kpi-card">
+                            <div class="kpi-card-content">
+                                <div class="kpi-icon-badge badge-tax">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1-2-1z"></path>
+                                        <path d="M9 9h.01"></path>
+                                        <path d="M15 15h.01"></path>
+                                        <path d="M15 9l-6 6"></path>
+                                    </svg>
+                                </div>
+                                <div class="kpi-card-details">
+                                    <span class="kpi-card-title"><lang class="lang_total_tax">Total Tax</lang></span>
+                                    <div class="kpi-card-val-row">
+                                        <span class="kpi-card-val" id="kpi_tax">&mdash;</span>
+                                        <span class="kpi-card-badge kpi-badge-up" id="kpi_tax_trend">&#9650; +6.1%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <svg class="kpi-card-wave" viewBox="0 0 320 60" preserveAspectRatio="none">
+                                <defs>
+                                    <linearGradient id="waveGradTax" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.22" />
+                                        <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.0" />
+                                    </linearGradient>
+                                </defs>
+                                <path d="M0,48 C35,36 70,30 105,36 C140,24 175,22 210,38 C245,34 275,18 305,18 C312,18 318,20 320,22 L320,60 L0,60 Z" fill="url(#waveGradTax)" />
+                                <path d="M0,48 C35,36 70,30 105,36 C140,24 175,22 210,38 C245,34 275,18 305,18" fill="none" stroke="#8b5cf6" stroke-width="2.5" stroke-linecap="round" />
+                                <circle cx="8" cy="48" r="3" fill="#8b5cf6" />
+                                <circle cx="105" cy="36" r="3" fill="#8b5cf6" />
+                                <circle cx="175" cy="24" r="3" fill="#8b5cf6" />
+                                <circle cx="245" cy="34" r="3" fill="#8b5cf6" />
+                                <circle cx="305" cy="18" r="3" fill="#8b5cf6" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Total UPI -->
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-4">
+                        <div class="dash-kpi-card">
+                            <div class="kpi-card-content">
+                                <div class="kpi-icon-badge badge-upi">
+                                    <svg width="34" height="24" viewBox="0 0 34 24" fill="#ffffff">
+                                        <text x="1" y="17" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-style="italic" font-size="14" fill="#ffffff" letter-spacing="-0.5">UPI<tspan font-size="16" font-style="normal" font-weight="bold">&#187;</tspan></text>
+                                    </svg>
+                                </div>
+                                <div class="kpi-card-details">
+                                    <span class="kpi-card-title"><lang class="lang_total_upi">Total UPI</lang></span>
+                                    <div class="kpi-card-val-row">
+                                        <span class="kpi-card-val" id="kpi_upi">&mdash;</span>
+                                        <span class="kpi-card-badge kpi-badge-up" id="kpi_upi_trend">&#9650; +14.2%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <svg class="kpi-card-wave" viewBox="0 0 320 60" preserveAspectRatio="none">
+                                <defs>
+                                    <linearGradient id="waveGradUpi" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#ff9800" stop-opacity="0.22" />
+                                        <stop offset="100%" stop-color="#ff9800" stop-opacity="0.0" />
+                                    </linearGradient>
+                                </defs>
+                                <path d="M0,50 C35,42 70,38 105,44 C140,34 175,30 210,38 C245,30 275,14 305,14 C312,14 318,16 320,18 L320,60 L0,60 Z" fill="url(#waveGradUpi)" />
+                                <path d="M0,50 C35,42 70,38 105,44 C140,34 175,30 210,38 C245,30 275,14 305,14" fill="none" stroke="#ff9800" stroke-width="2.5" stroke-linecap="round" />
+                                <circle cx="8" cy="50" r="3" fill="#ff9800" />
+                                <circle cx="105" cy="44" r="3" fill="#ff9800" />
+                                <circle cx="175" cy="30" r="3" fill="#ff9800" />
+                                <circle cx="245" cy="32" r="3" fill="#ff9800" />
+                                <circle cx="305" cy="14" r="3" fill="#ff9800" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: Total Cash -->
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-4">
+                        <div class="dash-kpi-card">
+                            <div class="kpi-card-content">
+                                <div class="kpi-icon-badge badge-cash">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                        <path d="M6 12h.01M18 12h.01"></path>
+                                    </svg>
+                                </div>
+                                <div class="kpi-card-details">
+                                    <span class="kpi-card-title"><lang class="lang_total_cash">Total Cash</lang></span>
+                                    <div class="kpi-card-val-row">
+                                        <span class="kpi-card-val" id="kpi_cash">&mdash;</span>
+                                        <span class="kpi-card-badge kpi-badge-up" id="kpi_cash_trend">&#9650; +9.3%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <svg class="kpi-card-wave" viewBox="0 0 320 60" preserveAspectRatio="none">
+                                <defs>
+                                    <linearGradient id="waveGradCash" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#00bcd4" stop-opacity="0.22" />
+                                        <stop offset="100%" stop-color="#00bcd4" stop-opacity="0.0" />
+                                    </linearGradient>
+                                </defs>
+                                <path d="M0,46 C35,36 70,32 105,38 C140,28 175,24 210,38 C245,32 275,14 305,14 C312,14 318,16 320,18 L320,60 L0,60 Z" fill="url(#waveGradCash)" />
+                                <path d="M0,46 C35,36 70,32 105,38 C140,28 175,24 210,38 C245,32 275,14 305,14" fill="none" stroke="#00bcd4" stroke-width="2.5" stroke-linecap="round" />
+                                <circle cx="8" cy="46" r="3" fill="#00bcd4" />
+                                <circle cx="105" cy="38" r="3" fill="#00bcd4" />
+                                <circle cx="175" cy="26" r="3" fill="#00bcd4" />
+                                <circle cx="245" cy="34" r="3" fill="#00bcd4" />
+                                <circle cx="305" cy="14" r="3" fill="#00bcd4" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Action Bar -->
+                <div class="dash-quick-bar">
+                    <a href="#/sales/new" data-module="sales" data-access="write"
+                        class="dash-action-btn dash-btn-primary">
+                        <i class="feather icon-shopping-cart"></i>
+                        <span>
+                            <lang class="lang_pos">POS</lang>
+                        </span>
+                    </a>
+                    <a href="#/sales" data-module="sales" data-access="read||write||delete"
+                        class="dash-action-btn dash-btn-white">
+                        <i class="feather icon-file-text"></i>
+                        <span>
+                            <lang class="lang_salehistory_title">Sales History</lang>
+                        </span>
+                    </a>
+                    <a href="#/quickreport" data-module="report" data-access="read"
+                        class="dash-action-btn dash-btn-white">
+                        <i class="feather icon-bar-chart-2"></i>
+                        <span>
+                            <lang class="lang_daily_report">Daily Report</lang>
+                        </span>
+                    </a>
+                    <a href="#/items" data-module="item" data-access="read" class="dash-action-btn dash-btn-white">
+                        <i class="feather icon-box"></i>
+                        <span>
+                            <lang class="lang_itemdetail_title">Items / Products</lang>
+                        </span>
+                    </a>
+                    <a href="#/items/new" data-module="item" data-access="write" class="dash-action-btn dash-btn-white">
+                        <i class="feather icon-plus"></i>
+                        <span>
+                            <lang class="lang_additem_title">Add Item</lang>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Middle Row: Sales Overview & Profit Summary -->
+                <div class="row">
+                    <!-- Sales Overview Chart -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="dash-box-card h-100">
+                            <div class="card-header">
+                                <div class="d-flex align-items-center">
+                                    <div class="dash-card-icon icon-blue">
+                                        <i class="feather icon-bar-chart-2"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="dash-card-heading">
+                                            <lang class="lang_sales_overview">Sales Overview</lang>
+                                        </h5>
+                                        <p class="dash-card-subtitle" id="salesChartSubtitle">Daily sales for this month
+                                        </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <select class="dash-dropdown-filter" id="salesChartFilter"
+                                        onchange="PosnicPro.dashboard.changeSalesChartFilter(this.value);">
+                                        <option value="month" selected>This Month</option>
+                                        <option value="week">This Week</option>
+                                        <option value="day">Today</option>
+                                        <option value="year">This Year</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="dash-chart-container" id="salesChartContainer">
+                                    <!-- Area Chart injected dynamically -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Profit Summary -->
+                    <div class="col-lg-6 mb-4" data-module="dashboard" data-access="financials">
+                        <div class="dash-box-card h-100">
+                            <div class="card-header">
+                                <div class="d-flex align-items-center">
+                                    <div class="dash-card-icon icon-green">
+                                        <i class="feather icon-trending-up"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="dash-card-heading">
+                                            <lang class="lang_profit">Profit Summary</lang>
+                                        </h5>
+                                        <p class="dash-card-subtitle">
+                                            <lang class="lang_overview_business_perf">Overview of your business
+                                                performance</lang>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <select class="dash-dropdown-filter" id="profitFilterSelect"
+                                        onchange="PosnicPro.dashboard.changeProfitFilter(this.value);">
+                                        <option value="day" selected>Today</option>
+                                        <option value="week">This Week</option>
+                                        <option value="month">This Month</option>
+                                        <option value="year">This Year</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <!-- 2x2 Metric Tiles -->
+                                <div class="dash-tile-grid">
+                                    <div class="dash-metric-tile">
+                                        <div class="tile-icon icon-blue">
+                                            <i class="feather icon-shopping-cart"></i>
+                                        </div>
+                                        <div class="tile-info">
+                                            <span class="tile-label">
+                                                <lang class="lang_rgrp_sales">Sales</lang>
+                                            </span>
+                                            <h5 class="tile-val" id="profit_revenue">&mdash;</h5>
+                                        </div>
+                                    </div>
+                                    <div class="dash-metric-tile">
+                                        <div class="tile-icon icon-green">
+                                            <i class="feather icon-box"></i>
+                                        </div>
+                                        <div class="tile-info">
+                                            <span class="tile-label">
+                                                <lang class="lang_cost_of_goods">Cost of Goods</lang>
+                                            </span>
+                                            <h5 class="tile-val" id="profit_cogs">&mdash;</h5>
+                                        </div>
+                                    </div>
+                                    <div class="dash-metric-tile">
+                                        <div class="tile-icon icon-green">
+                                            <i class="feather icon-trending-up"></i>
+                                        </div>
+                                        <div class="tile-info">
+                                            <span class="tile-label">
+                                                <lang class="lang_gross_profit">Gross Profit</lang>
+                                            </span>
+                                            <h5 class="tile-val text-success" id="profit_gross">&mdash;</h5>
+                                        </div>
+                                    </div>
+                                    <div class="dash-metric-tile">
+                                        <div class="tile-icon icon-red">
+                                            <i class="feather icon-credit-card"></i>
+                                        </div>
+                                        <div class="tile-info">
+                                            <span class="tile-label">
+                                                <lang class="lang_expensecut_title">Expenses</lang>
+                                            </span>
+                                            <h5 class="tile-val text-danger" id="profit_expenses">&mdash;</h5>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Net Profit Banner -->
+                                <div class="dash-net-banner">
+                                    <div class="net-left">
+                                        <div class="net-icon">
+                                            <i class="feather icon-bar-chart-2"></i>
+                                        </div>
+                                        <div>
+                                            <span class="net-label">
+                                                <lang class="lang_net_profit">Net Profit</lang>
+                                            </span>
+                                            <div class="net-val-row">
+                                                <h4 class="net-amount" id="profit_net">&mdash;</h4>
+                                                <span class="net-margin" id="profit_margin"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="net-right">
+                                        <div class="net-sales-count" id="profit_sales_count"></div>
+                                        <p class="net-reliability-note" id="profit_cashflow_note"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Row: Best Selling Products & Customer Dues -->
+                <div class="row">
+                    <!-- Best Selling Products -->
+                    <div class="col-lg-6 mb-4" id="dashboard_best_col">
+                        <div class="dash-box-card h-100">
+                            <div class="card-header">
+                                <div class="d-flex align-items-center">
+                                    <div class="dash-card-icon icon-yellow">
+                                        <i class="feather icon-award"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="dash-card-heading">
+                                            <lang class="lang_best_sale">Best Selling Products</lang>
+                                        </h5>
+                                        <p class="dash-card-subtitle">
+                                            <lang class="lang_best_sellers_sub">Top products by quantity sold</lang>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <select class="dash-dropdown-filter" id="bestSellersFilterSelect"
+                                        onchange="PosnicPro.dashboard.changeBestSellersFilter(this.value);">
+                                        <option value="day" selected>Today</option>
+                                        <option value="week">This Week</option>
+                                        <option value="month">This Month</option>
+                                        <option value="year">This Year</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table id="tblBestSellingProducts" class="dash-table">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 8%">#</th>
+                                                <th style="width: 52%">
+                                                    <lang class="lang_name_title">Product</lang>
+                                                </th>
+                                                <th style="width: 18%" class="text-center">
+                                                    <lang class="lang_quantity_title">Qty Sold</lang>
+                                                </th>
+                                                <th style="width: 22%" class="text-right">
+                                                    <lang class="lang_amount_title">Total Sales</lang>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="4" class="text-center text-muted py-4">
+                                                    <lang class="lang_loading">Loading...</lang>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Customer Dues (Money) -->
+                    <div class="col-lg-6 mb-4" id="dashboard_dues_col">
+                        <div class="dash-box-card h-100">
+                            <div class="card-header">
+                                <div class="d-flex align-items-center">
+                                    <div class="dash-card-icon icon-purple">
+                                        <i class="feather icon-users"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="dash-card-heading">
+                                            <lang class="lang_pending_payment">Customer Dues (Money)</lang>
+                                        </h5>
+                                        <p class="dash-card-subtitle">
+                                            <lang class="lang_customer_dues_sub">Customers with outstanding balance
+                                            </lang>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#/customerreport" class="text-primary font-weight-bold"
+                                        style="font-size: 13px; text-decoration: none;">
+                                        <lang class="lang_view_all">View All</lang>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table id="tblCustomerDues" class="dash-table">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 8%">#</th>
+                                                <th style="width: 44%">
+                                                    <lang class="lang_customer">Customer</lang>
+                                                </th>
+                                                <th style="width: 24%">
+                                                    <lang class="lang_phone">Phone</lang>
+                                                </th>
+                                                <th style="width: 24%" class="text-right">
+                                                    <lang class="lang_balance">Balance (GHS)</lang>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tblCustomerDuesBody">
+                                            <tr>
+                                                <td colspan="4" class="text-center text-muted py-4">
+                                                    <lang class="lang_no_customer_owes_money_right_now">No customer owes
+                                                        money right now.</lang>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- Hidden list to maintain compatibility with legacy code -->
+                                    <ul id="lstRecentActivities" style="display:none;"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
