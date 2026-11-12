@@ -115,9 +115,9 @@ to be trusted with a shop's takings should be readable about its failures.
 **Security vulnerabilities:** [SECURITY.md](../.github/SECURITY.md) — privately, never a
 public issue. Acknowledged within 3 working days.
 
-**Suspected breach of your data:** info@posnic.com, marked urgent.
+**Suspected breach of your data:** info@posghana.shop, marked urgent.
 
-**Service problems:** info@posnic.com.
+**Service problems:** info@posghana.shop.
 
 We will not pursue anyone who reports a genuine security issue responsibly and
 gives us reasonable time to fix it.

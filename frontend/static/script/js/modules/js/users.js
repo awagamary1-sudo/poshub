@@ -1393,10 +1393,9 @@ PosnicPro.users = {
                 };
                 PosnicPro.post(params, function (response) {
                     if (response.type === 'success') {
-                        // Store JWT token for Electron authentication
-                        if (response.data.jwt_token && navigator.userAgent.indexOf('Electron') !== -1) {
+                        // Store JWT token for authentication
+                        if (response.data.jwt_token) {
                             localStorage.setItem('posnic_jwt_token', response.data.jwt_token);
-                            console.log('JWT token stored for Electron authentication');
                         }
                         
                         db.customerPlan.put({id: '1', read: response.data['userACLPlan']});
@@ -1532,6 +1531,7 @@ PosnicPro.users = {
             if (response.type === 'success') {
                 let loader = $(".loader-login");
                 $("<div class='loadingSpinner'></div>").appendTo(loader);
+                localStorage.removeItem("posnic_jwt_token");
                 localStorage.removeItem("dropdown-menu");
                 localStorage.removeItem("dropdown-submenu");
                 localStorage.removeItem("dropdown-href");

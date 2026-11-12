@@ -88,7 +88,7 @@ test('provenance explicitly identifies verification rather than a hosted build',
 test('hosted verifier and user instructions use the supported custom predicate type', () => {
   const workflow = fs.readFileSync(path.join(__dirname, '../.github/workflows/windows-release-verify.yml'), 'utf8');
   const guide = fs.readFileSync(path.join(__dirname, '../docs/VERIFY_RELEASE.md'), 'utf8');
-  const type = 'https://posnic.com/attestations/windows-release-verification/v1';
+  const type = 'https://posghana.shop/attestations/windows-release-verification/v1';
   assert.ok(workflow.includes(`predicate-type: ${type}`));
   assert.ok(guide.includes(`--predicate-type ${type}`));
   assert.ok(!workflow.includes('predicate-type: https://slsa.dev/provenance/v1'));

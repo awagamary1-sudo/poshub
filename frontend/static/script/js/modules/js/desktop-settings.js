@@ -6,7 +6,7 @@
     var revision = {}, states = {}, kitchenRunning = false;
     var sections = {
         hardware: ['Devices & Printing', 'Printer connections and accessories on this computer.'],
-        app: ['App Settings', 'Choose how Posnic starts on this computer.'],
+        app: ['App Settings', 'Choose how PosHub starts on this computer.'],
         updates: ['Software Updates', 'Update preferences for this installation.'],
         backups: ['Backup & Recovery', 'Protect the local shop database with scheduled backups.'],
         cloudsync: ['Cloud Sync', 'Connection and synchronization for this computer.'],
@@ -168,11 +168,11 @@
         }
         if (key === 'app') {
             data = api.desktop.getBehaviour ? await api.desktop.getBehaviour() : { supported: false }; states[key] = data;
-            return card(t('startup', 'Startup'), (data.supported ? check('openAtLogin', t('start_login', 'Start Posnic when I sign in to this computer'), data.openAtLogin, t('start_background', 'Starts in the background, ready to open from the system tray.')) + button('save-app', t('save', 'Save settings'), true) : '<p>' + esc(t('os_startup', 'Manage startup applications in your operating system settings.')) + '</p>')) + card(t('background', 'Working in the background'), '<p>' + esc(t('background_help', 'Closing the main window keeps Posnic running in the system tray. Kitchen printing and synchronization continue. Use Quit Posnic to stop the app.')) + '</p>');
+            return card(t('startup', 'Startup'), (data.supported ? check('openAtLogin', t('start_login', 'Start PosHub when I sign in to this computer'), data.openAtLogin, t('start_background', 'Starts in the background, ready to open from the system tray.')) + button('save-app', t('save', 'Save settings'), true) : '<p>' + esc(t('os_startup', 'Manage startup applications in your operating system settings.')) + '</p>')) + card(t('background', 'Working in the background'), '<p>' + esc(t('background_help', 'Closing the main window keeps PosHub running in the system tray. Kitchen printing and synchronization continue. Use Quit PosHub to stop the app.')) + '</p>');
         }
         if (key === 'updates') {
             var result = success(await window.electron.update.getConfig()); data = result.config || {}; states[key] = data;
-            return card(t('update_preferences', 'Update preferences'), check('autoCheck', t('auto_check', 'Check for updates automatically'), data.autoCheck !== false) + field('checkFrequency', t('check_frequency', 'How often'), select('checkFrequency', { daily: t('daily', 'Every day'), weekly: t('weekly', 'Every week') }, data.checkFrequency || 'daily')) + check('installOnQuit', t('install_quit', 'Install updates when I close Posnic'), data.installOnQuit !== false) + field('updateChannel', t('update_channel', 'Release channel'), select('updateChannel', { stable: t('stable', 'Stable releases'), beta: t('beta', 'Test builds') }, data.channel || 'stable'), t('channel_help', 'Use stable releases on a working till. Switching back does not undo a test build already installed; it waits for a newer stable release.')) + button('save-updates', t('save', 'Save settings'), true)) + card(t('update_recovery', 'Updates & recovery'), '<p>' + esc(t('update_recovery_help', 'Check, download or revert an update in the independent update window. You can open it from the desktop menu even when this screen is unavailable.')) + '</p>' + open('update', t('open_updates', 'Open Updates & Recovery')));
+            return card(t('update_preferences', 'Update preferences'), check('autoCheck', t('auto_check', 'Check for updates automatically'), data.autoCheck !== false) + field('checkFrequency', t('check_frequency', 'How often'), select('checkFrequency', { daily: t('daily', 'Every day'), weekly: t('weekly', 'Every week') }, data.checkFrequency || 'daily')) + check('installOnQuit', t('install_quit', 'Install updates when I close PosHub'), data.installOnQuit !== false) + field('updateChannel', t('update_channel', 'Release channel'), select('updateChannel', { stable: t('stable', 'Stable releases'), beta: t('beta', 'Test builds') }, data.channel || 'stable'), t('channel_help', 'Use stable releases on a working till. Switching back does not undo a test build already installed; it waits for a newer stable release.')) + button('save-updates', t('save', 'Save settings'), true)) + card(t('update_recovery', 'Updates & recovery'), '<p>' + esc(t('update_recovery_help', 'Check, download or revert an update in the independent update window. You can open it from the desktop menu even when this screen is unavailable.')) + '</p>' + open('update', t('open_updates', 'Open Updates & Recovery')));
         }
         if (key === 'backups') {
             var capabilities = await api.desktop.capabilities();
@@ -209,7 +209,7 @@
     async function load(key) {
         if (!sections[key] || !host(key).length) return;
         var stamp = revision[key] = (revision[key] || 0) + 1;
-        if (!api || !api.desktop) { host(key).html('<p class="text-muted">' + esc(t('desktop_only', 'Open Posnic on this computer to manage connected devices and desktop settings.')) + '</p>'); return; }
+        if (!api || !api.desktop) { host(key).html('<p class="text-muted">' + esc(t('desktop_only', 'Open PosHub on this computer to manage connected devices and desktop settings.')) + '</p>'); return; }
         if (!allowed()) { host(key).html('<p>' + esc(t('permission', 'An administrator must open these settings.')) + '</p>'); return; }
         host(key).html('<p role="status">' + esc(t('loading', 'Loading settings…')) + '</p>');
         try {

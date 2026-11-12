@@ -32,7 +32,7 @@
 (function () {
     'use strict';
 
-    var DOWNLOAD_URL = 'https://web.posnic.com/download.html';
+    var DOWNLOAD_URL = 'https://web.posghana.shop/download.html';
 
     var DONE = 'posnic_desktop_nudge_done';
     var SHOWN = 'posnic_desktop_nudge_variant';
@@ -161,7 +161,7 @@
             };
             return '<div style="background:#fff;color:#141A2E;padding:28px 26px 26px;">'
                 + '<div style="font-size:22px;font-weight:800;letter-spacing:-.018em;line-height:1.2;">'
-                + 'Posnic runs better on the shop computer</div>'
+                + 'PosHub runs better on the shop computer</div>'
                 + '<div style="font-size:13.5px;color:#6B7390;margin-top:5px;">'
                 + 'Free, no trial clock. Same shop, same data, same login.</div>'
                 + '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px;">'
@@ -193,7 +193,7 @@
         veil.id = 'posnic_desktop_nudge';
         veil.setAttribute('role', 'dialog');
         veil.setAttribute('aria-modal', 'true');
-        veil.setAttribute('aria-label', 'The Posnic desktop app');
+        veil.setAttribute('aria-label', 'The PosHub desktop app');
         veil.setAttribute('style',
             'position:fixed;inset:0;z-index:2147483000;background:rgba(10,14,25,.55);'
             + 'display:flex;align-items:center;justify-content:center;padding:20px;');

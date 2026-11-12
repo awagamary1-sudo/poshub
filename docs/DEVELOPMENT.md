@@ -20,7 +20,7 @@ degrading. `.nvmrc` records the version; Node 24 works too and is what most of
 the development happens on.
 
 ```bash
-git clone https://github.com/Posnic/POS.git
+git clone https://github.com/awagamary1-sudo/poshub.git
 cd POS
 npm install
 cd api && npm install && cd ..

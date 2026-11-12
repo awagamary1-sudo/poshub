@@ -8,7 +8,7 @@
  *
  * WHO. The shop decided owner-versus-support by exact-matching a sentence:
  *
- *     claims.reason === 'owner sign-in from posnic.com'
+ *     claims.reason === 'owner sign-in from posghana.shop'
  *
  * Rewording that sentence in web-api, a different repository that deploys on
  * its own, would have silently reclassified every owner sign-in as support and

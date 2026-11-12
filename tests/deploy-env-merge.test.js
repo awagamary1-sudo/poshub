@@ -160,7 +160,7 @@ test('running the real step keeps every key it did not set', (t) => {
       AWS_ACCESS_KEY_ID: 'AKIAFAKE',
       AWS_SECRET_ACCESS_KEY: 'secretfake',
       BREVO_API_KEY: 'brevo',
-      EMAIL_FROM: 'no-reply@posnic.com',
+      EMAIL_FROM: 'no-reply@posghana.shop',
     },
     encoding: 'utf8',
   });

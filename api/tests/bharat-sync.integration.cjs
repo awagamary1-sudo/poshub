@@ -60,7 +60,7 @@ test('two tills exchange unit snapshots, quotes and clear markers without replay
     assert.deepEqual(received.items[0].unit_conversion, conversion);
     assert.equal(require('../src/helpers/sale-payment-summary').receiptRows(received)[0].method, 'ROOM PENDING · 234');
     assert.equal((await cloud.collection('sales').findOne({_id:saleId})).captain_payments[0].printReference, true);
-    assert.equal(received.receipt_quote.url, 'https://www.posnic.com/tools/thirukural/222');
+    assert.equal(received.receipt_quote.url, 'https://www.posghana.shop/tools/thirukural/222');
     assert.deepEqual(received.receipt_quote, require('../src/helpers/receipt-quote').select({source:'thirukkural',order:'sequential',showQr:true}, 'S222'));
     assert.equal((await b.collection('items').findOne({ _id: itemId })).available_quantity, 6.952);
     const parked = require('../src/services/parked-sales');

@@ -157,11 +157,11 @@ wins.
 
 ## 11. Signing
 
-If you need this executed, write to **info@posnic.com** with your organisation's
+If you need this executed, write to **info@posghana.shop** with your organisation's
 details. We will confirm the version, sign it, and note the execution date.
 
 ---
 
 **Posnic Innovations**, Tamil Nadu, India
-**Data protection contact:** info@posnic.com
-**Security:** info@posnic.com
+**Data protection contact:** info@posghana.shop
+**Security:** info@posghana.shop

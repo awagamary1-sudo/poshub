@@ -19,7 +19,7 @@ function setup({ ipcMain, hardware, sync, audio }) {
   const pkg = require('../package.json');
   const marker = pkg.posnicDiagnostic || {};
   const service = new diagnostic.DiagnosticSession({ directory: path.join(app.getPath('userData'), 'diagnostics'),
-    baseUrl: marker.endpoint || 'https://support.posnic.com',
+    baseUrl: marker.endpoint || 'https://support.posghana.shop',
     build: { version: app.getVersion(), electron: process.versions.electron, node: process.versions.node,
       diagnosticBuild: marker.enabled === true, buildId: marker.buildId || 'standard', sourceCommit: marker.sourceCommit || 'unknown', sourceDirty: marker.sourceDirty, sourceDigest: marker.sourceDigest || 'unknown' },
     providers: {

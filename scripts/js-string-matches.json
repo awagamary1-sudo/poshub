@@ -1,0 +1,162 @@
+[
+  {
+    "file": "frontend/static/script/js/core/billing-outlets.js",
+    "line": 24,
+    "text": "document.title = ui.current.name + ' - ' + data.branch.name + ' - Posnic';"
+  },
+  {
+    "file": "frontend/static/script/js/core/captain-payments.js",
+    "line": 102,
+    "text": "const mobile = () => !!window.POSNIC;"
+  },
+  {
+    "file": "frontend/static/script/js/core/captain-payments.js",
+    "line": 104,
+    "text": "mobile() ? POSNIC.session?.base || POSNIC.server.baseUrl : location.origin;"
+  },
+  {
+    "file": "frontend/static/script/js/core/captain-payments.js",
+    "line": 110,
+    "text": "if (mobile()) return POSNIC.api[method](path, body);"
+  },
+  {
+    "file": "frontend/static/script/js/core/command-palette.js",
+    "line": 67,
+    "text": "name: 'About Posnic', keywords: 'version build cache info support help about this till',"
+  },
+  {
+    "file": "frontend/static/script/js/core/desktop-nudge.js",
+    "line": 164,
+    "text": "+ 'Posnic runs better on the shop computer</div>'"
+  },
+  {
+    "file": "frontend/static/script/js/core/desktop-nudge.js",
+    "line": 196,
+    "text": "veil.setAttribute('aria-label', 'The Posnic desktop app');"
+  },
+  {
+    "file": "frontend/static/script/js/core/PosnicPro.js",
+    "line": 3351,
+    "text": "* stopped using - his log shows three bills landing on \"Posnic"
+  },
+  {
+    "file": "frontend/static/script/js/core/PosnicPro.js",
+    "line": 6138,
+    "text": "* that space: draggable, readable, and carrying the brand rather than \"Posnic\""
+  },
+  {
+    "file": "frontend/static/script/js/core/receipt-designer.js",
+    "line": 390,
+    "text": "if (designs.showBranding !== false) html += '<section class=\"rd-block rd-branding\" style=\"text-align:center;font-size:10px;white-space:pre-line\">' + esc(String(designs.brandingText || '').trim() || 'Made with Posnic · posghana.shop') + '</section>';"
+  },
+  {
+    "file": "frontend/static/script/js/core/version-badge.js",
+    "line": 128,
+    "text": "if (v.app) { return 'Posnic ' + v.app; }"
+  },
+  {
+    "file": "frontend/static/script/js/core/version-badge.js",
+    "line": 129,
+    "text": "if (v.server) { return 'Posnic ' + v.server; }"
+  },
+  {
+    "file": "frontend/static/script/js/core/version-badge.js",
+    "line": 130,
+    "text": "return 'Posnic';"
+  },
+  {
+    "file": "frontend/static/script/js/core/version-badge.js",
+    "line": 136,
+    "text": "bits.push('Posnic ' + (v.app || v.server || '?'));"
+  },
+  {
+    "file": "frontend/static/script/js/modules/js/dashboard.js",
+    "line": 1100,
+    "text": "* Offer the shop's Posnic account, to the person who owns it."
+  },
+  {
+    "file": "frontend/static/script/js/modules/js/dashboard.js",
+    "line": 1109,
+    "text": "* not sold anything called Posnic."
+  },
+  {
+    "file": "frontend/static/script/js/modules/js/dashboard.js",
+    "line": 1131,
+    "text": "// before offering a Posnic account; unknown branding stays hidden."
+  },
+  {
+    "file": "frontend/static/script/js/modules/js/desktop-settings.js",
+    "line": 9,
+    "text": "app: ['App Settings', 'Choose how Posnic starts on this computer.'],"
+  },
+  {
+    "file": "frontend/static/script/js/modules/js/desktop-settings.js",
+    "line": 171,
+    "text": "return card(t('startup', 'Startup'), (data.supported ? check('openAtLogin', t('start_login', 'Start Posnic when I sign in to this computer'), data.openAtLogin, t('start_background', 'Starts in the background, ready to open from the system tray.')) + button('save-app', t('save', 'Save settings'), true) : '<p>' + esc(t('os_startup', 'Manage startup applications in your operating system settings.')) + '</p>')) + card(t('background', 'Working in the background'), '<p>' + esc(t('background_help', 'Closing the main window keeps Posnic running in the system tray. Kitchen printing and synchronization continue. Use Quit Posnic to stop the app.')) + '</p>');"
+  },
+  {
+    "file": "frontend/static/script/js/modules/js/desktop-settings.js",
+    "line": 175,
+    "text": "return card(t('update_preferences', 'Update preferences'), check('autoCheck', t('auto_check', 'Check for updates automatically'), data.autoCheck !== false) + field('checkFrequency', t('check_frequency', 'How often'), select('checkFrequency', { daily: t('daily', 'Every day'), weekly: t('weekly', 'Every week') }, data.checkFrequency || 'daily')) + check('installOnQuit', t('install_quit', 'Install updates when I close Posnic'), data.installOnQuit !== false) + field('updateChannel', t('update_channel', 'Release channel'), select('updateChannel', { stable: t('stable', 'Stable releases'), beta: t('beta', 'Test builds') }, data.channel || 'stable'), t('channel_help', 'Use stable releases on a working till. Switching back does not undo a test build already installed; it waits for a newer stable release.')) + button('save-updates', t('save', 'Save settings'), true)) + card(t('update_recovery', 'Updates & recovery'), '<p>' + esc(t('update_recovery_help', 'Check, download or revert an update in the independent update window. You can open it from the desktop menu even when this screen is unavailable.')) + '</p>' + open('update', t('open_updates', 'Open Updates & Recovery')));"
+  },
+  {
+    "file": "frontend/static/script/js/modules/js/desktop-settings.js",
+    "line": 212,
+    "text": "if (!api || !api.desktop) { host(key).html('<p class=\"text-muted\">' + esc(t('desktop_only', 'Open Posnic on this computer to manage connected devices and desktop settings.')) + '</p>'); return; }"
+  },
+  {
+    "file": "frontend/static/script/js/modules/js/email-providers.js",
+    "line": 4,
+    "text": "platform: {name:'Posnic cloud email', methods:['platform'], steps:'Use the email service managed by Posnic. Receipt and report schedules remain separate choices.', url:'https://posghana.shop'},"
+  },
+  {
+    "file": "frontend/static/script/js/modules/js/email-providers.js",
+    "line": 11,
+    "text": "brevo: {name:'Brevo', host:'smtp-relay.brevo.com', methods:['smtp','api'], steps:'Verify your sender or domain in Brevo. For SMTP, open SMTP & API > SMTP and copy the SMTP login and SMTP key. For API, create an API key instead. These keys are different. Authenticate your domain with the DNS records Brevo provides. SMTP supports 587 or 2525 with STARTTLS and 465 with SSL/TLS.', allow:'If Brevo blocks an unknown IP, approve the sending server in Security > Authorized IPs or follow its approval email. Allow the public outbound IP of the Posnic sending server, not your browser or phone. Ask your Posnic administrator for this IP; a local sender may use a different IP.', url:'https://developers.brevo.com/docs/smtp-integration', links:[['Open SMTP and API settings','https://app.brevo.com/settings/keys/smtp'],['Authorized IP help','https://help.brevo.com/hc/en-us/articles/7959631848850-Create-and-manage-your-SMTP-keys'],['Email API guide','https://developers.brevo.com/reference/send-transac-email']]},"
+  },
+  {
+    "file": "frontend/static/script/js/modules/js/email-providers.js",
+    "line": 56,
+    "text": "(p.methods || ['smtp']).forEach(function (mode) { $('<option>').val(mode).text({platform:'Managed by Posnic',smtp:'SMTP',api:'Email API'}[mode]).appendTo('#email_method'); });"
+  },
+  {
+    "file": "frontend/static/script/js/modules/js/extensions.js",
+    "line": 53,
+    "text": "\"Unable to reach Posnic. Check the connection and retry.\","
+  },
+  {
+    "file": "frontend/static/script/js/modules/js/extensions.js",
+    "line": 109,
+    "text": "\" is queued. Finish pending transactions, close Posnic and reopen it to apply the package.\""
+  },
+  {
+    "file": "frontend/static/script/js/modules/js/extensions.js",
+    "line": 309,
+    "text": "status(\"Install a signed package supplied by Posnic.\");"
+  },
+  {
+    "file": "frontend/static/script/js/modules/js/messaging.js",
+    "line": 263,
+    "text": "\"For templates, use an approved text-body template with one variable for the Posnic message. Media, buttons and multiple variables are not supported here yet.\","
+  },
+  {
+    "file": "frontend/static/script/js/modules/js/messaging.js",
+    "line": 279,
+    "text": "? \"MSG91 uses an approved template. The Posnic message fills body variable 1.\""
+  },
+  {
+    "file": "frontend/static/script/js/modules/js/print-tills.js",
+    "line": 8,
+    "text": "* themselves: every Posnic installation makes its own printing key the first"
+  },
+  {
+    "file": "frontend/static/script/js/modules/js/settings.js",
+    "line": 2578,
+    "text": "/* The page's own headline: how much of Posnic this shop has switched"
+  },
+  {
+    "file": "frontend/static/script/js/modules/js/settings.js",
+    "line": 9985,
+    "text": "* Posnic charges nothing for AI. The shop brings its own account and pays the"
+  }
+]

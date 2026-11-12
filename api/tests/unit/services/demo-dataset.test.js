@@ -1,7 +1,7 @@
 'use strict';
 
 /*
- * The website's dataset zips feed every demo-data door - and posnic.com
+ * The website's dataset zips feed every demo-data door - and posghana.shop
  * being down must never cost a shop its existence.
  *
  * Owner: "demo data ready from website. when demo data install in pos you
@@ -75,7 +75,7 @@ describe('trade vocabulary and URLs', () => {
   });
 });
 
-describe('the availability rule: posnic.com is optional', () => {
+describe('the availability rule: posghana.shop is optional', () => {
   const fs = require('fs');
   const src = fs
     .readFileSync(path.join(__dirname, '../../../src/services/demo-dataset.js'), 'utf8')

@@ -53,15 +53,15 @@ test('AppStream copy is useful, factual and backed by a real product screenshot'
   assert.equal(screenshot.getAttribute('height'), '1032');
   assert.match(screenshot.textContent.trim(), /^https:\/\/raw\.githubusercontent\.com\/Posnic\/POS\/[0-9a-f]{40}\//);
   assert.ok(urls.length >= 4 && urls.every((url) => url.startsWith('https://')));
-  /* Parsed rather than matched as a substring: "https://www.posnic.com/" can
-     sit anywhere inside a longer URL, so evil.example/?x=https://www.posnic.com/
+  /* Parsed rather than matched as a substring: "https://www.posghana.shop/" can
+     sit anywhere inside a longer URL, so evil.example/?x=https://www.posghana.shop/
      would satisfy a substring check. The host is the thing being asserted. */
   assert.ok(
     urls.some((value) => {
       try {
         const parsed = new URL(value);
         return parsed.protocol === 'https:'
-          && parsed.hostname === 'www.posnic.com'
+          && parsed.hostname === 'www.posghana.shop'
           && parsed.pathname === '/';
       } catch (e) {
         return false;

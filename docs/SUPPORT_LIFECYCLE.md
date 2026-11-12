@@ -118,7 +118,7 @@ around the clock rather than left to a queue.
 - **Something is broken:** [open an issue](https://github.com/Posnic/POS/issues)
   with what you did, what happened, and the log attached
 - **A question:** [Discussions](https://github.com/Posnic/POS/discussions)
-- **Paid support or Cloud:** info@posnic.com
+- **Paid support or Cloud:** info@posghana.shop
 
 A clear report with a log attached gets answered fastest. That is not a policy,
 just what actually happens.

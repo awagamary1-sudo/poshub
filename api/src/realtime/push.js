@@ -97,7 +97,7 @@ async function sendToUser(db, userId, payload, endpoint) {
     try {
       await wp.sendNotification(row.subscription, JSON.stringify(payload), {
         vapidDetails: {
-          subject: 'mailto:support@posnic.com',
+          subject: 'mailto:support@posghana.shop',
           publicKey: vapid.publicKey,
           privateKey: vapid.privateKey,
         },

@@ -726,7 +726,7 @@ for (const useLocal of [false, true])
         let request, pairedAt;
         const code = useLocal ? '112233445566' : 'ABCDEF123456';
         const enrolmentId = crypto.randomUUID();
-        await context.route('https://www.posnic.com/api/mobile/**', async (route) => {
+        await context.route('https://www.posghana.shop/api/mobile/**', async (route) => {
           const path = new URL(route.request().url()).pathname;
           if (path.endsWith('/authorize'))
             return route.fulfill({ contentType: 'text/html', body: '<p>Approved test device</p>' });
@@ -738,7 +738,7 @@ for (const useLocal of [false, true])
                 request: 'r'.repeat(43),
                 expiresIn: 900,
                 authorizationUrl:
-                  'https://www.posnic.com/api/mobile/authorize?request=' + 'r'.repeat(43),
+                  'https://www.posghana.shop/api/mobile/authorize?request=' + 'r'.repeat(43),
               },
             });
           }

@@ -98,14 +98,9 @@ PosnicPro.request = function (params, callback, failure = null) {
         if (PosnicPro.csrfToken && !/^(GET|HEAD|OPTIONS)$/i.test(method)) {
             headers['X-XSRF-TOKEN'] = PosnicPro.csrfToken;
         }
-        if (navigator.userAgent.indexOf('Electron') !== -1) {
-            const token = localStorage.getItem('posnic_jwt_token');
-            if (token) {
-                headers['Authorization'] = 'Bearer ' + token;
-                console.log('✅ JWT added to PosnicPro.request:', url.substring(0, 50) + '...');
-            } else {
-                console.log('❌ No JWT for PosnicPro.request:', url.substring(0, 50) + '...');
-            }
+        const token = localStorage.getItem('posnic_jwt_token');
+        if (token) {
+            headers['Authorization'] = 'Bearer ' + token;
         }
 
         var request = $.ajax({
@@ -235,10 +230,7 @@ PosnicPro.request = function (params, callback, failure = null) {
                     && response.message === "Not valid Session" && response.data === null);
 
             if (!isThemeSettingsMissing && unauthenticated) {
-                if (navigator.userAgent.indexOf('Electron') !== -1) {
-                    localStorage.removeItem('posnic_jwt_token');
-                    console.log('JWT token cleared on session invalidation');
-                }
+                localStorage.removeItem('posnic_jwt_token');
                 PosnicPro.users.createCookie('loginuser', '', -1);
                 if (!onAuthPage) {
                     var reason = (response && response.message)

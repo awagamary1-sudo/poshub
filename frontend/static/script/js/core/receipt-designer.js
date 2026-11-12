@@ -387,7 +387,7 @@
             html += '<section class="rd-block rd-quote" style="display:flex;align-items:center;justify-content:center;gap:2mm;max-width:110mm;margin:2mm auto;' + (format === '58' ? 'flex-direction:column;' : '') + 'text-align:center;font-size:' + quoteFont + 'px;font-family:Nirmala UI,Noto Sans Tamil,sans-serif"><div style="min-width:0;white-space:pre-line;overflow-wrap:anywhere;line-height:1.45">' + esc(data.receipt_quote.text) + '</div>' + (quoteQr ? '<img class="rd-quote-qr" src="' + esc(data.receipt_quote.qr) + '" alt="Scan for Tamil and English meaning" style="display:block;flex-shrink:0;width:' + qrSize + 'mm;height:' + qrSize + 'mm;image-rendering:pixelated">' : '') + '</section>';
         }
         if (designs.customHeading) html = '<div class="rd-custom-heading" style="text-align:center;font-weight:bold;overflow-wrap:anywhere">' + esc(designs.customHeading) + '</div>' + html;
-        if (designs.showBranding !== false) html += '<section class="rd-block rd-branding" style="text-align:center;font-size:10px;white-space:pre-line">' + esc(String(designs.brandingText || '').trim() || 'Made with Posnic · posnic.com') + '</section>';
+        if (designs.showBranding !== false) html += '<section class="rd-block rd-branding" style="text-align:center;font-size:10px;white-space:pre-line">' + esc(String(designs.brandingText || '').trim() || 'Made with PosHub · posghana.shop') + '</section>';
         if (pendingGoods) html += '<section class="rd-block rd-payment-status">' + esc(label('Payment pending')) + '</section>';
         if (sheet) {
             var notes = '';

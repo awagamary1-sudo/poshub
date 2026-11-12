@@ -125,7 +125,7 @@ PosnicPro = {
      * add it. Four literals is four places to keep in step, and the thermal
      * path had already fallen out of step without anyone noticing.
      */
-    BRAND_URL: 'https://www.posnic.com',
+    BRAND_URL: 'https://www.posghana.shop',
     config: [],
     modules: ['customers', 'suppliers', 'categories', 'items', 'users', 'branches', 'expenses', 'receivings', 'sales', 'registers'],
     record_url: null,

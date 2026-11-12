@@ -7,10 +7,10 @@ const id = 'a'.repeat(24);
 function fixture(identity = { tenantDb: 'shop_one', branchIds: [id], connections: { cloud: 'https://azure.posnic.io/api' } }) {
   const writes = [];
   return { writes, args: {
-    config: { gatewayUrl: 'https://gateway.posnic.com', deviceToken: 'test-token' }, savedTenant: 'shop_one',
+    config: { gatewayUrl: 'https://gateway.posghana.shop', deviceToken: 'test-token' }, savedTenant: 'shop_one',
     db: { collection: () => ({ find: () => ({ toArray: async () => [{ _id: id }] }), updateMany: async (...args) => { writes.push(args); return { matchedCount: 1 }; } }) },
     fetchImpl: async (url, options) => {
-      assert.equal(url, 'https://gateway.posnic.com/v1/device/identity');
+      assert.equal(url, 'https://gateway.posghana.shop/v1/device/identity');
       assert.equal(options.redirect, 'error'); assert.equal(options.headers.authorization, 'Bearer test-token');
       return { ok: true, json: async () => identity };
     },

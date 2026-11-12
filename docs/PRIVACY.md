@@ -135,7 +135,7 @@ operate in order to provide the service. In that arrangement:
 - **Devices authenticate with a token**, stored as a SHA-256 hash rather than in
   the clear.
 - **You can stop.** Disconnect a device, cancel the subscription, or ask us to
-  delete your cloud data at **info@posnic.com**. Your local copy keeps working
+  delete your cloud data at **info@posghana.shop**. Your local copy keeps working
   either way — that is the point of the design.
 
 Account details you give us when subscribing — name, business name, email,
@@ -163,7 +163,7 @@ you, and we do not pretend to.
 | **Backups** | Encrypted, kept **90 days**, then expire |
 | **Server logs** | Connection and error records, **30 days** |
 
-**Deletion.** Ask at info@posnic.com and we delete your cloud data within
+**Deletion.** Ask at info@posghana.shop and we delete your cloud data within
 **30 days**, keeping only what a law requires us to. Deleted data can persist in
 backups until they rotate out, within 90 days. Your local copy is unaffected —
 that is the point of the design.
@@ -190,7 +190,7 @@ immune to compromise.** If your data is exposed we will tell you within
 
 Under the DPDP Act, and the GDPR where it applies, you and your customers can
 ask for access, correction, erasure, and a portable copy. Export is built into
-the product; anything the tools do not cover, write to info@posnic.com and we
+the product; anything the tools do not cover, write to info@posghana.shop and we
 will do it by hand. We answer within **30 days**.
 
 If you need a signed data processing agreement, see
@@ -198,7 +198,7 @@ If you need a signed data processing agreement, see
 
 ## Questions
 
-- **Privacy questions or a deletion request:** info@posnic.com
+- **Privacy questions or a deletion request:** info@posghana.shop
 - **A security problem:** [SECURITY.md](../.github/SECURITY.md), privately
 - **Anything else:** [Discussions](https://github.com/Posnic/POS/discussions)
 

@@ -30,7 +30,7 @@ test('custom authorization uses only its selected server and does not replace th
   await client.authorize(details);
   assert.deepEqual(urls, [
     'https://customer.example/api/desktop/requests', 'https://customer.example/api/desktop/token',
-    'https://www.posnic.com/api/desktop/requests', 'https://www.posnic.com/api/desktop/token',
+    'https://www.posghana.shop/api/desktop/requests', 'https://www.posghana.shop/api/desktop/token',
   ]);
 });
 
@@ -44,11 +44,11 @@ function fixture(t, options = {}) {
       if (url.endsWith('/requests')) {
         initial = JSON.parse(opts.body);
         if (options.beginError) throw new Error('fetch failed');
-        return Response.json({ authorizationUrl: options.url || 'https://www.posnic.com/api/desktop/authorize?request=' + 'r'.repeat(43) });
+        return Response.json({ authorizationUrl: options.url || 'https://www.posghana.shop/api/desktop/authorize?request=' + 'r'.repeat(43) });
       }
       tokenBody = JSON.parse(opts.body);
       assert.equal(crypto.createHash('sha256').update(tokenBody.codeVerifier).digest('base64url'), initial.codeChallenge);
-      return options.tokenError ? Response.json({ error: 'expired' }, { status: 400 }) : Response.json({ deviceToken: 'a'.repeat(64), deviceId: 'test-device', syncUrl: 'https://gateway.posnic.com' });
+      return options.tokenError ? Response.json({ error: 'expired' }, { status: 400 }) : Response.json({ deviceToken: 'a'.repeat(64), deviceId: 'test-device', syncUrl: 'https://gateway.posghana.shop' });
     },
     openExternal: async (url) => { opened = url; openedResolve(); },
   });
@@ -105,7 +105,7 @@ test('local cancellation, reopening and duplicate starts have predictable result
   await assert.rejects(f.client.reopen(), /Start browser/);
 });
 test('untrusted browser destinations and connection failures do not launch a browser', async (t) => {
-  for (const url of ['https://evil.example/api/desktop/authorize?request=' + 'r'.repeat(43), 'https://www.posnic.com/other?request=' + 'r'.repeat(43), 'file:///tmp/approve']) {
+  for (const url of ['https://evil.example/api/desktop/authorize?request=' + 'r'.repeat(43), 'https://www.posghana.shop/other?request=' + 'r'.repeat(43), 'file:///tmp/approve']) {
     const f = fixture(t, { url }); await assert.rejects(f.client.authorize(details), /could not be verified/); assert.equal(f.opened, undefined);
   }
   const f = fixture(t, { beginError: true }); await assert.rejects(f.client.authorize(details), /fetch failed/); assert.equal(f.client.active, null);
@@ -141,7 +141,7 @@ test('successful browser approval restores its initiating window without blockin
     vm.runInNewContext(main.slice(start, end), {
       ipcMain: {handle(_name, callback) {handler = callback;}},
       browserCloudAuth: {authorize: async () => activation},
-      WEBSITE_API: 'https://www.posnic.com',
+      WEBSITE_API: 'https://www.posghana.shop',
       cloudServerUrl: require('../src/cloud-activation').cloudServerUrl,
       getMachineId: () => 'machine', require,
       BrowserWindow: {fromWebContents(value) {

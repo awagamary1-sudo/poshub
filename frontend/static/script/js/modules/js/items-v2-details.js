@@ -60,7 +60,7 @@
     }
     function openHsnSearch() {
         if (!caps.hsn) return;
-        var origin = 'https://www.posnic.com', requestId = crypto.randomUUID();
+        var origin = 'https://www.posghana.shop', requestId = crypto.randomUUID();
         var dialog = document.createElement('dialog'), frame = document.createElement('iframe');
         dialog.id = 'iv2-hsn-search-dialog';
         dialog.style.cssText = 'width:min(960px,94vw);max-height:92vh;border:1px solid #cad6e4;border-radius:12px;padding:12px';

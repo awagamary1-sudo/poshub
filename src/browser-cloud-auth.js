@@ -7,7 +7,7 @@ const opaque = (value) => typeof value === 'string' && /^[A-Za-z0-9_-]{43}$/.tes
 
 // The verifier, authorization code and device token never enter the renderer.
 class BrowserCloudAuth {
-  constructor({ openExternal, fetch: request = globalThis.fetch, website = 'https://www.posnic.com', timeoutMs = 15 * 60_000 }) {
+  constructor({ openExternal, fetch: request = globalThis.fetch, website = 'https://www.posghana.shop', timeoutMs = 15 * 60_000 }) {
     this.openExternal = openExternal;
     this.request = request;
     this.website = cloudServerUrl(website);

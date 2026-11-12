@@ -52,7 +52,7 @@
  * does not scale to a channel; the plan to make it per-shop is a separate
  * change and this one does not pretend to make it.
  */
-const BUILT_IN_SUFFIXES = ['.posnic.io', '.posnic.com', '.posnic.in'];
+const BUILT_IN_SUFFIXES = ['.posnic.io', '.posghana.shop', '.posnic.in'];
 
 function ownedSuffixes() {
   const configured = String(process.env.SHOP_BASE_DOMAINS || '')

@@ -1235,7 +1235,7 @@ class InstallService {
        * opening stock, a photograph per product, per-currency pricing - and
        * the owner's instruction is that this one source feeds every door:
        * provisioning, the Demo Data page, and the features toggle. The floor
-       * is load-bearing: provisioning a shop must never wait on posnic.com,
+       * is load-bearing: provisioning a shop must never wait on posghana.shop,
        * so every dataset failure quietly resolves to the packs that have
        * always shipped.
        */

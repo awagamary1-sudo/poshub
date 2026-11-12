@@ -6,13 +6,13 @@ nothing for every shop that does not turn it on - and in which order the work
 should land.
 
 This is the design slice of
-[#29 India GST e-invoice support](https://github.com/Posnic/POS/issues/29)
+[#29 India GST e-invoice support](https://github.com/awagamary1-sudo/poshub/issues/29)
 (PR slices 1 and 7), and it answers
-[#42 document the offline field contract](https://github.com/Posnic/POS/issues/42).
+[#42 document the offline field contract](https://github.com/awagamary1-sudo/poshub/issues/42).
 It names the fixtures for
-[#43](https://github.com/Posnic/POS/issues/43) and
-[#44](https://github.com/Posnic/POS/issues/44), and gives
-[#100 the Invoice and GST app listing](https://github.com/Posnic/POS/issues/100)
+[#43](https://github.com/awagamary1-sudo/poshub/issues/43) and
+[#44](https://github.com/awagamary1-sudo/poshub/issues/44), and gives
+[#100 the Invoice and GST app listing](https://github.com/awagamary1-sudo/poshub/issues/100)
 something true to describe. It is a proposal for maintainers to accept, amend
 or reject before any code PR; nothing in it is implemented.
 
@@ -395,7 +395,7 @@ provider API the shop has chosen.
 **Recommendation.** Ship A with the offline layer; it is complete in itself
 and is what most small B2B-selling shops do today with their GSP's portal.
 Design B as the community path under
-[#34 the connector platform](https://github.com/Posnic/POS/issues/34) once
+[#34 the connector platform](https://github.com/awagamary1-sudo/poshub/issues/34) once
 that platform has its second connector, because the outbox, lane, token and
 signing pieces already exist and the e-invoice connector would be a small
 client around them. Treat C as a Posnic Cloud product decision to be made

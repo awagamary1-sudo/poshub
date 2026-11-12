@@ -19,7 +19,7 @@
  *                  latest.yml byte-match) and uploads into the same draft
  *   6. verify      the draft must hold every platform before anyone sees it
  *   7. publish     draft -> public. That single event fans out on its own:
- *                  publish-apt.yml fills packages.posnic.com, publish-snap.yml
+ *                  publish-apt.yml fills packages.posghana.shop, publish-snap.yml
  *                  pushes to the Snap Store (once credentials exist), and
  *                  notify-site-of-release.yml tells the website.
  *
@@ -238,7 +238,7 @@ async function main() {
   const pub = tryRun('gh', ['release', 'edit', tag, '--draft=false', '--prerelease=false', '--latest']);
   if (!pub.ok) fail('Publishing failed: ' + pub.out.trim());
   console.log('\n  ' + tag + ' is PUBLIC.');
-  console.log('  Now running on their own: packages.posnic.com (APT), Snap Store');
+  console.log('  Now running on their own: packages.posghana.shop (APT), Snap Store');
   console.log('  (when credentials exist), and the website release notice.');
   console.log('  Tills in the field pick it up through latest*.yml - silently, next close.\n');
 }

@@ -6,7 +6,7 @@
  * Two mistakes are easy here and both are silent.
  *
  * SHOWING IT TO THE WRONG SHOP. A community install has no account. Sending
- * its owner to posnic.com/account to be told "no account found" is worse than
+ * its owner to posghana.shop/account to be told "no account found" is worse than
  * never offering the link, and it is the sort of thing nobody reports - they
  * just decide the software is confused.
  *
@@ -86,7 +86,7 @@ test('a community install is never sent to an account page', () => {
 test('a white-labelled build never mentions Posnic', () => {
   /*
    * That shop was sold something with somebody else's name on it. Sending its
-   * owner to posnic.com would undo the rebrand they paid for.
+   * owner to posghana.shop would undo the rebrand they paid for.
    */
   assert.equal(features({ POSNIC_KEY: 'k', WHITE_LABEL_NAME: 'Acme POS' }).account, false);
   assert.equal(features({ POSNIC_DESKTOP: '1', POSNIC_SYNC_PAIRED: '1', WHITE_LABEL_NAME: 'Acme POS' }).account, false);

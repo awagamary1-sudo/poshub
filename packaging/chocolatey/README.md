@@ -16,5 +16,5 @@ Before publishing a release:
 5. Submit the resulting package only from the Posnic-maintained Chocolatey
    account and retain access to moderation notices.
 
-The package page must use `https://www.posnic.com/` as the project website and
+The package page must use `https://www.posghana.shop/` as the project website and
 `https://github.com/Posnic/POS` as the source repository.

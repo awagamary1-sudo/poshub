@@ -98,7 +98,7 @@ async function shadowLogin(req, res) {
    * tokens minted by an older web-api keep working.
    */
   const shadowActor =
-    claims.actor === 'owner' || claims.reason === 'owner sign-in from posnic.com'
+    claims.actor === 'owner' || claims.reason === 'owner sign-in from posghana.shop'
       ? 'owner'
       : 'support';
   try {

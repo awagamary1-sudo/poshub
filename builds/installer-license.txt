@@ -25,7 +25,7 @@ YOUR DATA STAYS ON THIS COMPUTER
 The Community Edition sends nothing anywhere. There is no account, no
 telemetry and no usage tracking. If you later subscribe to PosHub Cloud,
 separate terms apply to that service and are shown when you sign up:
-https://www.poshub.com/terms.html
+https://www.posghana.shop/terms.html
 
 IF YOU MODIFY AND DISTRIBUTE POSHUB
 The AGPL requires that anyone you give a modified version to - including

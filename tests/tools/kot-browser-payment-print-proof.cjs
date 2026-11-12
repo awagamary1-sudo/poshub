@@ -12,7 +12,7 @@ const root=path.resolve(__dirname,'../..');
  await page.evaluate(()=>{
   window.proof={records:0,prints:0,after:0,errors:[]};
   const plan={id:'p',currency:'₹',totalMinor:10500,paidMinor:0,dueMinor:10500,enabled:true,version:0,methods:['Cash'],guests:[{name:'Table T1',totalMinor:10500,paid:false}]};
-  window.PosnicPro={escapeHtml:v=>$('<i>').text(v).html(),local:{get:()=>'',set:()=>{}},i18n:{t:(_k,text)=>text},BRAND_URL:'https://www.posnic.com',alert:(_kind,msg)=>proof.errors.push(msg),afterPrint:()=>proof.after++,waitForPrintAssets:async doc=>{
+  window.PosnicPro={escapeHtml:v=>$('<i>').text(v).html(),local:{get:()=>'',set:()=>{}},i18n:{t:(_k,text)=>text},BRAND_URL:'https://www.posghana.shop',alert:(_kind,msg)=>proof.errors.push(msg),afterPrint:()=>proof.after++,waitForPrintAssets:async doc=>{
    doc.defaultView.print=()=>{proof.prints++;proof.text=doc.body.textContent;doc.defaultView.onafterprint();};
   },post:(o,ok)=>{
    const b=JSON.parse(o.data);if(!o.url.endsWith('/record'))return ok(plan);

@@ -7,7 +7,7 @@ what they can establish, and when any part may be cited outside its GitHub issue
 ## Submit a report
 
 Use the
-[real deployment evidence form](https://github.com/Posnic/POS/issues/new?template=deployment_evidence.yml)
+[real deployment evidence form](https://github.com/awagamary1-sudo/poshub/issues/new?template=deployment_evidence.yml)
 for a live deployment, pilot, installation attempt, former deployment, or
 production-like evaluation. Reports that identify failures, stopped trials,
 workarounds, or reasons Posnic was not selected are welcome.

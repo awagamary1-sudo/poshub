@@ -6,9 +6,9 @@
     <title>Posnic</title>
     <authors>Posnic Innovations Private Limited</authors>
     <owners>Posnic Innovations Private Limited</owners>
-    <projectUrl>https://www.posnic.com/</projectUrl>
+    <projectUrl>https://www.posghana.shop/</projectUrl>
     <packageSourceUrl>https://github.com/Posnic/POS/tree/develop/packaging/chocolatey</packageSourceUrl>
-    <iconUrl>https://www.posnic.com/posnic-logo.svg</iconUrl>
+    <iconUrl>https://www.posghana.shop/posnic-logo.svg</iconUrl>
     <licenseUrl>https://github.com/Posnic/POS/blob/v1.6.1/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/Posnic/POS</projectSourceUrl>

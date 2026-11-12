@@ -16,7 +16,7 @@ source.
 Companions: [INDIA_EINVOICING_READINESS.md](INDIA_EINVOICING_READINESS.md)
 (what the code has) and [INDIA_EINVOICING_DESIGN.md](INDIA_EINVOICING_DESIGN.md)
 (what to build). Parent issue:
-[#29](https://github.com/Posnic/POS/issues/29). This is not tax advice.
+[#29](https://github.com/awagamary1-sudo/poshub/issues/29). This is not tax advice.
 
 ## 1. Who must e-invoice, and for which documents
 

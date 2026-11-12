@@ -34,7 +34,7 @@ it here so it is also a contractual one.
 - Give accurate registration details and keep them current.
 - You are responsible for what happens under your account, including actions by
   your staff.
-- Keep your credentials secure. Tell us at **info@posnic.com** promptly if you
+- Keep your credentials secure. Tell us at **info@posghana.shop** promptly if you
   believe they have been compromised.
 - You must be able to enter a contract under Indian law.
 
@@ -46,7 +46,7 @@ it here so it is also a contractual one.
   the renewal date. Renewals are charged at the then-current rate; an
   introductory discount applies to the first term only.
 - Payments are processed by Razorpay. We do not see or store your card number.
-- **Cancel any time**, by writing to info@posnic.com. Cancellation stops the
+- **Cancel any time**, by writing to info@posghana.shop. Cancellation stops the
   next renewal; the service runs to the end of the period you have paid for, so
   cancelling on the 25th when you are billed on the 10th keeps you running until
   the 10th of the following month.
@@ -101,7 +101,7 @@ in a documented format before it stops.
   [DATA_PROCESSING_ADDENDUM.md](DATA_PROCESSING_ADDENDUM.md).
 
 **Export and deletion.** You can export at any time. On request at
-**info@posnic.com** we delete your cloud data within **30 days**, other than
+**info@posghana.shop** we delete your cloud data within **30 days**, other than
 what we must keep for tax or legal reasons. Your local copy is yours and is not
 affected.
 
@@ -186,7 +186,7 @@ rarely apply — but a clause that tried to remove those rights would not be
 enforceable anyway, and it is better to say so than to let a customer believe
 otherwise.
 
-**Talk to us first.** Write to info@posnic.com and we will make a genuine
+**Talk to us first.** Write to info@posghana.shop and we will make a genuine
 attempt to resolve it before anyone involves a court.
 
 ## 13. Intellectual property
@@ -209,7 +209,7 @@ deleted.
 
 - **To you:** by email to your account address, or in the dashboard. Treated as
   received the next working day.
-- **To us:** info@posnic.com, or by post to Posnic Innovations, Tamil Nadu,
+- **To us:** info@posghana.shop, or by post to Posnic Innovations, Tamil Nadu,
   India. Urgent support is the phone number in
   [SUPPORT_LIFECYCLE.md](SUPPORT_LIFECYCLE.md), not a notice address.
 
@@ -230,6 +230,6 @@ still counts as given.
 
 ---
 
-**Questions:** info@posnic.com
+**Questions:** info@posghana.shop
 **Security:** [SECURITY.md](../.github/SECURITY.md)
 **Posnic Innovations**, Tamil Nadu, India

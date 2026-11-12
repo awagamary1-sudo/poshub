@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Build the signed APT repository tree for packages.posnic.com
+# Build the signed APT repository tree for packages.posghana.shop
 # (RELEASE_TRUST_PLAN §4).
 #
 # An APT repo is just files - dists/ metadata signed by our GPG key and a

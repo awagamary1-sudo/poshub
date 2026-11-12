@@ -64,7 +64,7 @@
             run: function () { PosnicPro.shiftWidget.openReport(); },
         },
         {
-            name: 'About Posnic', keywords: 'version build cache info support help about this till',
+            name: 'About PosHub', keywords: 'version build cache info support help about this till',
             visible: function () { return !!PosnicPro.versionBadge; },
             run: function () { PosnicPro.versionBadge.show(); },
         },

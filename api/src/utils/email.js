@@ -222,7 +222,7 @@ const resolveShopTransport = (branchDoc, { scheduledReport = false } = {}) => {
           const m = String(mail.from || '').match(/^(.*)<([^>]+)>\s*$/);
           const sender = m
             ? { name: m[1].trim().replace(/(^"|"$)/g, ''), email: m[2].trim() }
-            : { email: String(mail.from || process.env.EMAIL_FROM || 'info@posnic.com').trim() };
+            : { email: String(mail.from || process.env.EMAIL_FROM || 'info@posghana.shop').trim() };
           const to = String(mail.to || '')
             .split(',')
             .map((e) => ({ email: e.trim() }))
@@ -258,7 +258,7 @@ const resolveShopTransport = (branchDoc, { scheduledReport = false } = {}) => {
           };
         },
       },
-      from: whiteLabelFrom || process.env.EMAIL_FROM || 'info@posnic.com',
+      from: whiteLabelFrom || process.env.EMAIL_FROM || 'info@posghana.shop',
       shopOwned: false,
       branch: b,
     };

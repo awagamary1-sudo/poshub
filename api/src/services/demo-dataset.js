@@ -4,7 +4,7 @@
  * Demo data from the website's dataset library.
  *
  * Owner: "if you look for web-frontend you can see dataset folder.
- * posnic.com/dataset/INR/auto_parts.zip - inside all demo data will be there
+ * posghana.shop/dataset/INR/auto_parts.zip - inside all demo data will be there
  * with images. so every currency will have its own data... this functionality
  * is common for both from website and as well from app installing demo data
  * also features demo data toggle."
@@ -16,7 +16,7 @@
  * make sense where they trade.
  *
  * THE RULE THAT SHAPES EVERYTHING HERE: the website is OPTIONAL. Provisioning
- * a shop must never wait on posnic.com being up, slow, or reachable - a shop
+ * a shop must never wait on posghana.shop being up, slow, or reachable - a shop
  * that cannot be created because a marketing site hiccuped is an outage
  * nobody would think to connect to its cause. Every failure in this file -
  * timeout, size cap, bad zip, missing manifest - resolves to null, and the
@@ -35,7 +35,7 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 
-const DATASET_HOST = process.env.POSNIC_DATASET_BASE || 'https://www.posnic.com/dataset';
+const DATASET_HOST = process.env.POSNIC_DATASET_BASE || 'https://www.posghana.shop/dataset';
 const FETCH_TIMEOUT_MS = 12000;
 const MAX_ZIP_BYTES = 25 * 1024 * 1024;
 
@@ -354,7 +354,7 @@ async function loadDatasetPack({ currency, businessType, uploadsRoot }) {
  * Is the zip there for this currency? A HEAD, remembered for ten minutes.
  *
  * The Demo Data page calls this per trade on open; without the memory every
- * page open would pay one round trip to posnic.com per trade, and the page
+ * page open would pay one round trip to posghana.shop per trade, and the page
  * is exactly where somebody impatient is standing.
  */
 const availability = new Map();

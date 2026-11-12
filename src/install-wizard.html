@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Posnic - First Time Setup</title>
+    <title>PosHub - First Time Setup</title>
     <style>
         * {
             margin: 0;
@@ -729,8 +729,8 @@
 <body class="choosing desktop-window" data-desktop-window="setup">
     <div class="wizard-container">
         <div class="wizard-header">
-            <img src="../builds/512-posnic.png" alt="Posnic" class="wizard-logo">
-            <span class="setup-brand">Posnic</span>
+            <img src="../builds/512-posnic.png" alt="PosHub" class="wizard-logo">
+            <span class="setup-brand">PosHub</span>
             <button type="button" id="setupLaterBtn" title="Close setup. Open the desktop shortcut whenever you are ready.">Set up later <span aria-hidden="true">×</span></button>
             <p>Point of Sale that never goes down</p>
         </div>
@@ -752,7 +752,7 @@
                 </div>
 
                 <h1 class="success-title">🎉 Installation Complete!</h1>
-                <p class="success-subtitle">Your Posnic account has been created successfully</p>
+                <p class="success-subtitle">Your PosHub account has been created successfully</p>
 
                 <div class="success-details">
                     <div class="success-detail-item">
@@ -783,7 +783,7 @@
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                         </svg>
-                        <span>Ready to start using Posnic</span>
+                        <span>Ready to start using PosHub</span>
                     </div>
                 </div>
 
@@ -799,7 +799,7 @@
             <div class="form-section" id="stepFresh" style="display:none"><h2>Start fresh on this computer</h2><p class="simple-intro">Replace the current business data. Your cloud data stays unchanged.</p><label class="simple-check"><input type="checkbox" id="freshKeepHardware" checked><span>Keep this computer’s hardware settings<small>Weighing scales, printers and kitchen screens.</small></span></label><p class="simple-note">We’ll save and verify a recovery copy before replacing your data. Any unsynced work stays in that copy and will not upload automatically.</p><div id="freshStatus" role="status" aria-live="polite"></div><div class="btn-container"><button class="btn btn-secondary" id="freshBack" type="button">Back</button><button class="btn btn-primary" id="startFresh" type="button">Save recovery copy &amp; continue</button></div></div>
             <!-- Cloud enrollment is separate from everyday local staff login. -->
 <div class="form-section setup-design" id="step0" style="display: block;">
-<h2>How would you like to use Posnic?</h2>
+<h2>How would you like to use PosHub?</h2>
 <p class="intro">Choose the setup that suits your shop.</p>
 <div class="choices simple-options">
 <section class="option cloud">
@@ -814,7 +814,7 @@
 <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="refresh-cw" aria-hidden="true" class="lucide lucide-refresh-cw"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path><path d="M8 16H3v5"></path></svg><span><strong>Sync when connected</strong><small>Updates sync when internet returns.</small></span></li>
 <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="monitor-smartphone" aria-hidden="true" class="lucide lucide-monitor-smartphone"><path d="M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8"></path><path d="M10 19v-3.96 3.15"></path><path d="M7 19h5"></path><rect width="6" height="10" x="16" y="12" rx="2"></rect></svg><span><strong>Access your shop online</strong><small>View your shop from other devices.</small></span></li>
 </ul>
-<p class="provider">Use <strong>Posnic Cloud</strong> or <strong>your own server</strong>.<br>Internet needed for the first connection.</p>
+<p class="provider">Use <strong>PosHub Cloud</strong> or <strong>your own server</strong>.<br>Internet needed for the first connection.</p>
 <button class="primary cursor-interaction" id="chooseCloudBtn" type="button">Connect to cloud <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" aria-hidden="true" class="lucide lucide-arrow-right"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
 </section>
 <section class="option local">
@@ -838,20 +838,20 @@
             <div class="form-section setup-design connect" id="stepCloud" style="display:none;">
 <button class="back cursor-interaction" id="cloudBackBtn" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-left" aria-hidden="true" class="lucide lucide-arrow-left"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>Back</button><div class="cloud-welcome">
 <div class="cloud-emblem"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="cloud" aria-hidden="true" class="lucide lucide-cloud"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg></div>
-<p class="cloud-wordmark">Posnic Cloud</p>
+<p class="cloud-wordmark">PosHub Cloud</p>
 <h2>Your shop. Connected.</h2>
 <p class="note">Connect this till to your shop and keep selling online or offline.</p>
 </div><div class="account-panel">
-<p class="account-label">Already have a Posnic account?</p>
+<p class="account-label">Already have a PosHub account?</p>
 <button class="primary cursor-interaction" id="browserSignInBtn" type="button">Sign in with browser <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" aria-hidden="true" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></button>
 <p class="account-help">Sign in securely, then approve this computer.</p>
-<div class="account-divider">New to Posnic?</div>
+<div class="account-divider">New to PosHub?</div>
 <button class="trial cursor-interaction" id="cloudSignupLink" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user-plus" aria-hidden="true" class="lucide lucide-user-plus"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><line x1="19" x2="19" y1="8" y2="14"></line><line x1="22" x2="16" y1="11" y2="11"></line></svg>Create account &amp; start trial</button>
 <p class="account-help">Create your account and approve this computer.<br>Setup continues here automatically.</p>
 </div>
                 <div id="browserWait" style="display:none;margin:16px 0" role="status" aria-live="polite"><p>Finish approval in your browser. Setup will continue here automatically.</p><div class="btn-container"><button type="button" class="btn btn-secondary" id="reopenBrowserBtn">Open browser again</button><button type="button" class="btn btn-secondary" id="cancelBrowserBtn">Cancel</button></div></div>
-                <input type="hidden" id="cloudServer" value="https://gateway.posnic.com">
-                <details id="pairDetails"><summary>Use a pairing code instead</summary><div class="form-group" id="pairRow"><label for="pairServer">Server address</label><input type="url" id="pairServer" value="https://gateway.posnic.com" required autocomplete="off"><p class="field-hint">Already filled for Posnic Cloud. For your own server, use the address supplied with your code.</p><label for="pairCode">Code from your shop owner</label><input type="text" id="pairCode" placeholder="Enter pairing code" autocomplete="off"><button type="button" class="btn btn-secondary" id="pairBtn">Pair this computer</button></div></details>
+                <input type="hidden" id="cloudServer" value="https://gateway.posghana.shop">
+                <details id="pairDetails"><summary>Use a pairing code instead</summary><div class="form-group" id="pairRow"><label for="pairServer">Server address</label><input type="url" id="pairServer" value="https://gateway.posghana.shop" required autocomplete="off"><p class="field-hint">Already filled for PosHub Cloud. For your own server, use the address supplied with your code.</p><label for="pairCode">Code from your shop owner</label><input type="text" id="pairCode" placeholder="Enter pairing code" autocomplete="off"><button type="button" class="btn btn-secondary" id="pairBtn">Pair this computer</button></div></details>
                 <details id="customServerDetails"><summary>Connect to a custom server</summary><div class="form-group"><label for="cloudServerVisible">Server URL</label><input type="url" id="cloudServerVisible" placeholder="https://your-server.com" required autocomplete="off"><div class="field-hint">Use the address provided by your administrator.</div></div><button type="button" id="customServerBtn" class="btn btn-secondary">Continue with this server</button></details>
                 <div hidden><a id="cloudServerToggle"></a><div id="cloudServerRow"></div><input id="cloudEmail"><input id="cloudPassword" type="password"><button id="cloudConnectBtn"></button></div>
                 <div id="cloudError" role="alert" style="display:none;color:#b91c1c;margin:12px 0;"></div>
@@ -1496,7 +1496,7 @@ const form = document.getElementById('installForm');
             [22, 'Creating your database',          'Setting up local data storage'],
             [42, 'Securing your data',              'Generating credentials and enabling database authentication'],
             [62, 'Creating your business profile',  'Store details, admin account, taxes and defaults'],
-            [78, 'Configuring automatic backups',   'Daily backups to Documents\\Posnic-Backups'],
+            [78, 'Configuring automatic backups',   'Daily backups to Documents\\PosHub-Backups'],
             [90, 'Finishing touches',               'Optimizing indexes and settings']
         ];
 
@@ -1555,7 +1555,7 @@ const form = document.getElementById('installForm');
                 return;
             }
 
-            let backupPathValue = 'Documents\\Posnic-Backups';
+            let backupPathValue = 'Documents\\PosHub-Backups';
             try {
                 if (window.electron && window.electron.getDefaultBackupPath) {
                     const p = await window.electron.getDefaultBackupPath();
@@ -2183,11 +2183,11 @@ const form = document.getElementById('installForm');
                     const defaultPath = await window.electron.getDefaultBackupPath();
                     if (defaultPath) backupPath.value = defaultPath;
                 } else {
-                    backupPath.value = 'Documents\\Posnic-Backups';
+                    backupPath.value = 'Documents\\PosHub-Backups';
                 }
             } catch (e) {
                 console.error('Failed to get default backup path:', e);
-                backupPath.value = 'Documents\\Posnic-Backups';
+                backupPath.value = 'Documents\\PosHub-Backups';
             }
         }
         initBackupDefaults();

@@ -11,7 +11,7 @@ const readme = fs.readFileSync(path.join(ROOT, 'README.md'), 'utf8');
 test('CodeMeta declares a current SoftwareSourceCode identity', () => {
   assert.equal(metadata['@context'], 'https://w3id.org/codemeta/3.0');
   assert.equal(metadata['@type'], 'SoftwareSourceCode');
-  assert.equal(metadata['@id'], 'https://github.com/Posnic/POS');
+  assert.equal(metadata['@id'], 'https://github.com/awagamary1-sudo/poshub');
   assert.equal(metadata.name, 'Posnic POS');
   assert.match(metadata.description, /point-of-sale software/i);
   assert.match(metadata.description, /AGPL-3\.0-only/i);
@@ -23,16 +23,16 @@ test('CodeMeta declares a current SoftwareSourceCode identity', () => {
 
 test('CodeMeta keeps source, support and licence identity canonical', () => {
   assert.equal(metadata.url, pkg.homepage);
-  assert.equal(metadata.codeRepository, 'https://github.com/Posnic/POS');
+  assert.equal(metadata.codeRepository, 'https://github.com/awagamary1-sudo/poshub');
   assert.equal(metadata.issueTracker, pkg.bugs.url);
   assert.equal(metadata.license, 'https://spdx.org/licenses/AGPL-3.0-only.html');
-  assert.equal(metadata.readme, 'https://github.com/Posnic/POS/blob/main/README.md');
+  assert.equal(metadata.readme, 'https://github.com/awagamary1-sudo/poshub/blob/main/README.md');
   assert.equal(
     metadata.continuousIntegration,
-    'https://github.com/Posnic/POS/actions',
+    'https://github.com/awagamary1-sudo/poshub/actions',
   );
   assert.equal(metadata.author?.name, 'Posnic Innovations Private Limited');
-  assert.equal(metadata.author?.url, 'https://www.posnic.com/about');
+  assert.equal(metadata.author?.url, 'https://www.posghana.shop/about');
   assert.equal(metadata.publisher?.name, metadata.author?.name);
 });
 
@@ -42,7 +42,7 @@ test('CodeMeta identifies point-of-sale scope without promoting development as r
   assert.deepEqual(metadata.runtimePlatform, ['Electron', 'Node.js', 'MongoDB']);
   assert.equal(metadata.isSourceCodeOf?.['@type'], 'SoftwareApplication');
   assert.equal(metadata.isSourceCodeOf?.name, 'Posnic POS');
-  assert.equal(metadata.isSourceCodeOf?.url, 'https://www.posnic.com/');
+  assert.equal(metadata.isSourceCodeOf?.url, 'https://www.posghana.shop/');
   assert.equal(metadata.developmentStatus, 'active');
   assert.doesNotMatch(metadata.developmentStatus, /not a tagged release/i);
   assert.doesNotMatch(JSON.stringify(metadata), /aggregateRating|reviewRating|customer count/i);
@@ -52,15 +52,15 @@ test('public repository discovery surfaces both machine-readable metadata files'
   assert.match(readme, /\[CodeMeta metadata\]\(codemeta\.json\)/);
   assert.match(readme, /\[Citation metadata\]\(CITATION\.cff\)/);
   assert.ok(metadata.citation.includes(
-    'https://github.com/Posnic/POS/blob/main/CITATION.cff',
+    'https://github.com/awagamary1-sudo/poshub/blob/main/CITATION.cff',
   ));
   assert.ok(metadata.relatedLink.includes(
-    'https://github.com/Posnic/POS/blob/main/docs/ADOPTION_EVIDENCE.md',
+    'https://github.com/awagamary1-sudo/poshub/blob/main/docs/ADOPTION_EVIDENCE.md',
   ));
   assert.ok(metadata.relatedLink.includes(
-    'https://github.com/Posnic/POS/blob/main/docs/PRIVACY.md',
+    'https://github.com/awagamary1-sudo/poshub/blob/main/docs/PRIVACY.md',
   ));
   assert.ok(metadata.relatedLink.includes(
-    'https://github.com/Posnic/POS/blob/main/docs/GOVERNANCE.md',
+    'https://github.com/awagamary1-sudo/poshub/blob/main/docs/GOVERNANCE.md',
   ));
 });

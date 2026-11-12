@@ -1,6 +1,6 @@
 {
-  "name": "Posnic POS",
-  "short_name": "Posnic",
+  "name": "PosHub POS",
+  "short_name": "PosHub",
   "description": "Point of sale, inventory and billing",
   "start_url": "../dashboard.html",
   "scope": "../",

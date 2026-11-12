@@ -108,10 +108,10 @@ test('a suffix that merely contains our domain is not our domain', () => {
   /* endsWith on ".posnic.io" is the check; "xposnic.io" and "posnic.io.evil"
      are the two ways a careless one lets an attacker through. */
   assert.ok(isOwnHost('a.posnic.io'));
-  assert.ok(isOwnHost('shop.posnic.com'));
+  assert.ok(isOwnHost('shop.posghana.shop'));
   assert.ok(!isOwnHost('xposnic.io'));
   assert.ok(!isOwnHost('posnic.io.evil.example'));
-  assert.ok(!isOwnHost('evilposnic.com'));
+  assert.ok(!isOwnHost('evilposghana.shop'));
 });
 
 test('what an operator configured wins over anything a caller sends', () => {

@@ -12,7 +12,7 @@ function select(policy, saleNumber, existing) {
           text: v.lines.join('\n'),
           number: v.number,
           ...(policy.showQr === true
-            ? { qr: v.qr, url: 'https://www.posnic.com/tools/thirukural/' + v.number }
+            ? { qr: v.qr, url: 'https://www.posghana.shop/tools/thirukural/' + v.number }
             : {}),
         }))
       : policy.source === 'custom' && Array.isArray(policy.quotes)

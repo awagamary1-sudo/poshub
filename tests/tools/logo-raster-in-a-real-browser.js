@@ -55,7 +55,7 @@ function jqueryPath() {
 function pageScript(receiptData, logoUrl) {
   return `(async () => {
     window.PosnicPro = {
-      BRAND_URL: 'https://www.posnic.com',
+      BRAND_URL: 'https://www.posghana.shop',
       local: { get: () => '' },
     };
     ${receiptData}

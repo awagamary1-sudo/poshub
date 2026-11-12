@@ -19,11 +19,11 @@ test('HSN selection requires exact origin, iframe, nonce and valid code; never c
   const data = { type: 'posnic.hsn.selected', version: 1, requestId: 'request-test', selection: { code: '39251000', kind: 'HSN', description: 'Tanks >300 L', context: 'Plastic' } };
   function send(origin, sourceWindow, payload = data) { window.dispatchEvent(new window.MessageEvent('message', { origin, source: sourceWindow, data: payload })); }
   send('https://evil.example', frame.contentWindow);
-  send('https://www.posnic.com', window);
-  send('https://www.posnic.com', frame.contentWindow, { ...data, requestId: 'old' });
-  send('https://www.posnic.com', frame.contentWindow, { ...data, selection: { ...data.selection, code: '<script>' } });
+  send('https://www.posghana.shop', window);
+  send('https://www.posghana.shop', frame.contentWindow, { ...data, requestId: 'old' });
+  send('https://www.posghana.shop', frame.contentWindow, { ...data, selection: { ...data.selection, code: '<script>' } });
   assert.equal(ctx.el('hsn').value, '');
-  send('https://www.posnic.com', frame.contentWindow);
+  send('https://www.posghana.shop', frame.contentWindow);
   assert.equal(ctx.el('hsn').value, '39251000');
   assert.equal(ctx.el('hsn-description').value, 'Plastic — Tanks >300 L');
   assert.equal(ctx.el('tax').value, '18');

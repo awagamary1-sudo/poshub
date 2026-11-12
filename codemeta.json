@@ -1,7 +1,7 @@
 {
   "@context": "https://w3id.org/codemeta/3.0",
   "@type": "SoftwareSourceCode",
-  "@id": "https://github.com/Posnic/POS",
+  "@id": "https://github.com/awagamary1-sudo/poshub",
   "name": "Posnic POS",
   "alternateName": "Posnic Point of Sale",
   "description": "Free, offline-first point-of-sale software for retail shops and restaurants, with open source POS code and billing workflows. Posnic's own source is AGPL-3.0-only; release packages contain separately licensed components, including MongoDB Community Server under SSPL-1.0.",
@@ -10,21 +10,21 @@
   "author": {
     "@type": "Organization",
     "name": "Posnic Innovations Private Limited",
-    "url": "https://www.posnic.com/about"
+    "url": "https://www.posghana.shop/about"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Posnic Innovations Private Limited",
-    "url": "https://www.posnic.com/about"
+    "url": "https://www.posghana.shop/about"
   },
   "maintainer": {
     "@type": "Person",
     "name": "Sridhar Bala",
     "url": "https://github.com/sridharkalaibala"
   },
-  "codeRepository": "https://github.com/Posnic/POS",
-  "issueTracker": "https://github.com/Posnic/POS/issues",
-  "continuousIntegration": "https://github.com/Posnic/POS/actions",
+  "codeRepository": "https://github.com/awagamary1-sudo/poshub",
+  "issueTracker": "https://github.com/awagamary1-sudo/poshub/issues",
+  "continuousIntegration": "https://github.com/awagamary1-sudo/poshub/actions",
   "version": "1.9.2",
   "developmentStatus": "active",
   "license": "https://spdx.org/licenses/AGPL-3.0-only.html",
@@ -52,34 +52,34 @@
     "linux",
     "mongodb"
   ],
-  "url": "https://www.posnic.com/",
-  "downloadUrl": "https://github.com/Posnic/POS/releases/latest",
-  "softwareHelp": "https://github.com/Posnic/POS/blob/main/docs/USER_GUIDE.md",
-  "citation": "https://github.com/Posnic/POS/blob/main/CITATION.cff",
+  "url": "https://www.posghana.shop/",
+  "downloadUrl": "https://github.com/awagamary1-sudo/poshub/releases/latest",
+  "softwareHelp": "https://github.com/awagamary1-sudo/poshub/blob/main/docs/USER_GUIDE.md",
+  "citation": "https://github.com/awagamary1-sudo/poshub/blob/main/CITATION.cff",
   "relatedLink": [
-    "https://www.posnic.com/posnic-facts",
-    "https://www.posnic.com/trust",
-    "https://github.com/Posnic/POS/blob/main/docs/PRIVACY.md",
-    "https://github.com/Posnic/POS/blob/main/docs/GOVERNANCE.md",
-    "https://github.com/Posnic/POS/blob/main/THIRD-PARTY-NOTICES.md",
-    "https://www.posnic.com/features",
-    "https://www.posnic.com/download",
-    "https://www.posnic.com/developers",
-    "https://github.com/Posnic/POS/blob/main/docs/ADOPTION_EVIDENCE.md"
+    "https://www.posghana.shop/posnic-facts",
+    "https://www.posghana.shop/trust",
+    "https://github.com/awagamary1-sudo/poshub/blob/main/docs/PRIVACY.md",
+    "https://github.com/awagamary1-sudo/poshub/blob/main/docs/GOVERNANCE.md",
+    "https://github.com/awagamary1-sudo/poshub/blob/main/THIRD-PARTY-NOTICES.md",
+    "https://www.posghana.shop/features",
+    "https://www.posghana.shop/download",
+    "https://www.posghana.shop/developers",
+    "https://github.com/awagamary1-sudo/poshub/blob/main/docs/ADOPTION_EVIDENCE.md"
   ],
   "softwareVersion": "1.9.2",
   "dateModified": "2026-09-28",
-  "readme": "https://github.com/Posnic/POS/blob/main/README.md",
-  "buildInstructions": "https://github.com/Posnic/POS/blob/main/docs/DEVELOPMENT.md",
-  "releaseNotes": "https://github.com/Posnic/POS/releases/tag/v1.9.2",
+  "readme": "https://github.com/awagamary1-sudo/poshub/blob/main/README.md",
+  "buildInstructions": "https://github.com/awagamary1-sudo/poshub/blob/main/docs/DEVELOPMENT.md",
+  "releaseNotes": "https://github.com/awagamary1-sudo/poshub/releases/tag/v1.9.2",
   "isSourceCodeOf": {
-    "@id": "https://www.posnic.com/#software",
+    "@id": "https://www.posghana.shop/#software",
     "@type": "SoftwareApplication",
     "name": "Posnic POS",
     "applicationCategory": "BusinessApplication",
     "applicationSubCategory": "Point of sale software",
     "operatingSystem": ["Windows", "macOS", "Linux"],
     "isAccessibleForFree": true,
-    "url": "https://www.posnic.com/"
+    "url": "https://www.posghana.shop/"
   }
 }

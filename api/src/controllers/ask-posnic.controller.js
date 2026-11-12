@@ -193,7 +193,7 @@ class AskPosnicController {
         billing_unavailable: billingUnavailable,
         billing_url:
           isOwner(req) && process.env.ASK_POSNIC_BILLING_URL
-            ? 'https://www.posnic.com/account#managed-ai'
+            ? 'https://www.posghana.shop/account#managed-ai'
             : null,
         admin: isOwner(req),
         preferences,

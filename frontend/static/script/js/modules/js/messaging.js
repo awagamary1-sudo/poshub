@@ -260,7 +260,7 @@ PosnicPro.messaging = {
         p.name +
         " account and connect your WhatsApp Business number.",
       "Copy the credentials and sender details below from that account. SMS credentials do not automatically enable WhatsApp.",
-      "For templates, use an approved text-body template with one variable for the Posnic message. Media, buttons and multiple variables are not supported here yet.",
+      "For templates, use an approved text-body template with one variable for the PosHub message. Media, buttons and multiple variables are not supported here yet.",
       "Save, send one test to your own number, then check delivery in your provider account.",
     ].forEach(function (text) {
       list.append($('<li class="mb-1">').text(text));
@@ -276,7 +276,7 @@ PosnicPro.messaging = {
     wrap.append(
       $('<p class="small text-muted">').text(
         id === "msg91"
-          ? "MSG91 uses an approved template. The Posnic message fills body variable 1."
+          ? "MSG91 uses an approved template. The PosHub message fills body variable 1."
           : "Leave the template blank only for replies within an active WhatsApp conversation. Receipts, scheduled reports and campaigns normally need an approved template.",
       ),
     );

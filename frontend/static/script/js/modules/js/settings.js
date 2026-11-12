@@ -6295,16 +6295,16 @@ PosnicPro.features = {
             return '<b><lang class="lang_you_are_in_the_desktop_app">You are in the desktop app.</lang></b> Your data lives on this computer, so ' +
                 'selling works with no internet at all. The same shop also opens in any web ' +
                 'browser - the address is in your welcome email, and under ' +
-                '<b><lang class="lang_my_account">My Account</lang></b> on posnic.com.';
+                '<b><lang class="lang_my_account">My Account</lang></b> on posghana.shop.';
         }
         if (ctx === 'web') {
             return '<b><lang class="lang_you_are_in_the_web_version">You are in the web version.</lang></b> The address of this shop is ' +
                 '<b>' + esc(window.location.hostname) + '</b> - it opens on any computer or ' +
                 'phone, so share it with your staff. For a till that keeps selling when the ' +
-                'internet drops, the free desktop app is at <b>posnic.com/download</b>.';
+                'internet drops, the free desktop app is at <b>posghana.shop/download</b>.';
         }
         return '<b><lang class="lang_you_are_on_the_shop_network">You are on the shop network.</lang></b> This till runs from the shop computer ' +
-            'and works with no internet. If you signed up on posnic.com, the same shop ' +
+            'and works with no internet. If you signed up on posghana.shop, the same shop ' +
             'also opens in any browser - the address is under <b><lang class="lang_my_account">My Account</lang></b> there.';
     },
 

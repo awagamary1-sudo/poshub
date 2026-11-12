@@ -43,7 +43,7 @@ const PAGES = [
 
 /* Words on the pages that are not English sentences: the brand line, the
    placeholders data replaces, the toggle's own label. */
-const NOT_SENTENCES = new Set(['POS', 'DINE IN', 'Upi', 'Powered by Posnic · www.posnic.com', 'தமிழ்', '--', 'Order']);
+const NOT_SENTENCES = new Set(['POS', 'DINE IN', 'Upi', 'Powered by Posnic · www.posghana.shop', 'தமிழ்', '--', 'Order']);
 
 /** Every sentence a customer can see in the markup of one page. */
 function sentences(file) {

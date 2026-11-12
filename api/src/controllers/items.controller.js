@@ -1506,7 +1506,7 @@ class ItemsController extends BaseController {
       /*
        * Plus the website's per-currency trades, when this shop's currency has
        * the zip. The probe is cached ten minutes and can only ADD rows - a
-       * posnic.com hiccup costs the extra trades, never the page.
+       * posghana.shop hiccup costs the extra trades, never the page.
        */
       try {
         const demoDatasetSvc = require('../services/demo-dataset');

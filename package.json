@@ -609,7 +609,7 @@
       "icon": "builds/512-posnic.png",
       "syncDesktopName": true,
       "category": "Office",
-      "maintainer": "info@posnic.com",
+      "maintainer": "info@posghana.shop",
       "target": [
         {
           "target": "AppImage",
@@ -706,12 +706,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Posnic/POS.git"
+    "url": "git+https://github.com/awagamary1-sudo/poshub.git"
   },
   "bugs": {
-    "url": "https://github.com/Posnic/POS/issues"
+    "url": "https://github.com/awagamary1-sudo/poshub/issues"
   },
-  "homepage": "https://www.posnic.com/",
+  "homepage": "https://www.posghana.shop/",
   "keywords": [
     "pos",
     "open-source-pos",

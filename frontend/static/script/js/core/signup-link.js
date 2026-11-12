@@ -1,7 +1,7 @@
 /*
  * Where a signup came from, inside our own estate.
  *
- * Owner: "letsay create new account comes from demo.posnic.com send utm source
+ * Owner: "letsay create new account comes from demo.posghana.shop send utm source
  * as demo or something else. within our eco system i want to know where its
  * comes from. if user comes desktop app then name that too."
  *
@@ -32,7 +32,7 @@
 (function () {
     'use strict';
 
-    var SIGNUP_URL = 'https://www.posnic.com/signup.html';
+    var SIGNUP_URL = 'https://www.posghana.shop/signup.html';
 
     /* A cookie read that cannot throw: this runs on every page, and a signup
        link that breaks the page is worse than one with no attribution. */

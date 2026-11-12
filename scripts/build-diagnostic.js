@@ -5,7 +5,7 @@ const { execFileSync } = require('node:child_process');
 const crypto = require('node:crypto');
 const fs = require('node:fs');
 const path = require('node:path');
-const endpoint = process.env.POSNIC_DIAGNOSTIC_ENDPOINT || 'https://support.posnic.com';
+const endpoint = process.env.POSNIC_DIAGNOSTIC_ENDPOINT || 'https://support.posghana.shop';
 const url = new URL(endpoint);
 if (url.protocol !== 'https:' || url.username || url.password || url.pathname !== '/' || url.search || url.hash) throw Error('POSNIC_DIAGNOSTIC_ENDPOINT must be an HTTPS origin');
 const root = path.join(__dirname, '..');

@@ -363,7 +363,7 @@ and settings stay consistent across every till and branch, and you get a
 dashboard you can check from anywhere.
 
 Without Cloud, each till is complete and independent. With it, they are one
-business. Details at [posnic.com](https://www.posnic.com).
+business. Details at [posghana.shop](https://www.posghana.shop).
 
 ---
 
@@ -401,7 +401,7 @@ for storage advice and what to do if every owner is locked out without codes.
   — say what you did, what happened, and attach the log
 - **A question:** [Discussions](https://github.com/Posnic/POS/discussions)
 - **A security problem:** see [SECURITY.md](../.github/SECURITY.md), not a public issue
-- **Paid support or Cloud:** info@posnic.com
+- **Paid support or Cloud:** info@posghana.shop
 
 Posnic is free software. Nobody is obliged to answer, but people usually do —
 and a clear report with a log attached gets answered fastest.

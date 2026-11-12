@@ -25,7 +25,7 @@ function till() {
         gst_action: 'disable', print_width: '80', print_type: 'standard' };
     win.PosnicPro = {
         sales: { SaleAction: 'add', charges: [] }, measuredUnits: ['kg', 'g'], baseUrl: 'http://localhost/',
-        BRAND_URL: 'https://www.posnic.com',
+        BRAND_URL: 'https://www.posghana.shop',
         local: { get: (key) => settings[key] || '' }, i18n: { t: (_key, fallback) => fallback },
         escapeHtml: (value) => $('<i>').text(value).html(),
         printBarcode: () => assert.fail('Preview generated a sale barcode'),
@@ -88,7 +88,7 @@ for (const layout of ['80', '58', 'a4']) {
         assert.match(result.find('.print-total').text(), /1,520\.00/);
         assert.match(result.text(), /Delivery/);
         assert.match(result.text(), /Handle with care/);
-        assert.equal(result.find('.receipt-brand-url').text(), 'https://www.posnic.com');
+        assert.equal(result.find('.receipt-brand-url').text(), 'https://www.posghana.shop');
         assert.equal(result.find('.print-title').text(), 'BILL');
         assert.equal(result.find('.print_view_id')[0].style.display, 'none');
         assert.equal($('.print-modal-body').html(), before, 'Print modal was mutated');
@@ -230,7 +230,7 @@ test('desktop preview decodes actual receipt bytes, including logo, QR and euro 
     assert.equal(raw.billNo, '', 'Unsaved sale has a fake receipt number');
     assert.equal(raw.total, 1520);
     assert.equal(raw.title, 'BILL', 'Customer section replaced the document title');
-    assert.equal(raw.footer.split('\n').at(-1), 'https://www.posnic.com');
+    assert.equal(raw.footer.split('\n').at(-1), 'https://www.posghana.shop');
     // Already-rasterised one-byte images exercise the actual byte parser.
     raw.logo = { width: 8, height: 1, data: 'gA==' };
     raw.footerImage = { width: 8, height: 1, data: '/w==' };

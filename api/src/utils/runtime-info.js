@@ -65,7 +65,7 @@ function resolveMode(env) {
  * that was never offered the link.
  *
  * A white-labelled build never offers it: that installation is not called
- * Posnic, and sending its owner to posnic.com would break the rebrand it was
+ * Posnic, and sending its owner to posghana.shop would break the rebrand it was
  * sold as.
  */
 function hasAccount(env, mode) {
@@ -94,7 +94,7 @@ function buildRuntimeInfo(env = process.env, apiRoot = path.join(__dirname, '..'
     // unconditionally; a flag that is absent reads as false, which is always
     // the safe direction here.
     features: {
-      /* Show a link to posnic.com/account. See hasAccount() for why this is
+      /* Show a link to posghana.shop/account. See hasAccount() for why this is
          not simply `edition === 'cloud'`. */
       account: hasAccount(env, mode),
 

@@ -5,7 +5,7 @@ const os = require('node:os');
 const crypto = require('node:crypto');
 const verses = require('../data/thirukkural/verses.json');
 const qr = require('../data/thirukkural/qr.json');
-const URL = 'https://www.posnic.com/assets/thirukural/thirukural.v1.json';
+const URL = 'https://www.posghana.shop/assets/thirukural/thirukural.v1.json';
 const HASH = '6dab3e8267124f0e078bf3ecaadf30a3f8b18c6aab52d485e9f649a953f91522';
 const cacheDir = path.join(process.env.LOCALAPPDATA || os.homedir(), 'Posnic', 'public-content');
 let loaded;

@@ -17,7 +17,7 @@ const documents = chapters.map((chapter) => {
     ]),
   ].filter(Boolean).join('\n\n');
   const hash = crypto.createHash('sha256').update(content).digest('hex');
-  return { _id: chapter.slug, title: chapter.title, kind: 'markdown', revision: hash.slice(0, 16), content, source_url: `https://www.posnic.com/guides/posnic-pos-complete-user-guide/${chapter.slug}/`, sha256: hash };
+  return { _id: chapter.slug, title: chapter.title, kind: 'markdown', revision: hash.slice(0, 16), content, source_url: `https://www.posghana.shop/guides/posnic-pos-complete-user-guide/${chapter.slug}/`, sha256: hash };
 });
 if (!documents.length || new Set(documents.map((doc) => doc._id)).size !== documents.length) throw new Error('The manual contains missing or duplicate chapter IDs.');
 fs.writeFileSync(destination, JSON.stringify({ purpose: 'Evaluation snapshot; not published knowledge', source: 'web-frontend/tools/generate-posnic-manual.js', documents }, null, 2) + '\n');

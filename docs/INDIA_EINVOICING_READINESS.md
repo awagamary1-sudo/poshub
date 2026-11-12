@@ -6,9 +6,9 @@ Registration Portal (IRP). Written from the code on `develop`, not from the
 feature list.
 
 This is the first deliverable of
-[#42 GST e-invoice: document the offline field contract](https://github.com/Posnic/POS/issues/42),
+[#42 GST e-invoice: document the offline field contract](https://github.com/awagamary1-sudo/poshub/issues/42),
 a slice of the parent
-[#29 India GST e-invoice support](https://github.com/Posnic/POS/issues/29).
+[#29 India GST e-invoice support](https://github.com/awagamary1-sudo/poshub/issues/29).
 It changes no behaviour. Read it with:
 
 - [INDIA_EINVOICING_RESEARCH.md](INDIA_EINVOICING_RESEARCH.md) - what the

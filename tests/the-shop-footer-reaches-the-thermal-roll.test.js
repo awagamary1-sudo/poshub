@@ -55,10 +55,10 @@ const SHOP_FOOTER = ['No exchange without this bill.', 'Open 7am - 11pm, all day
 /*
  * The brand URL prints as its OWN LINE, and that is what these assert.
  *
- * They used to ask whether the footer CONTAINED "posnic.com", which CodeQL
+ * They used to ask whether the footer CONTAINED "posghana.shop", which CodeQL
  * flags as js/incomplete-url-substring-sanitization and is right to: a
  * substring test on a URL is the shape of an auth bypass, because
- * "evil-posnic.com.attacker.net" contains it too. Nothing here is deciding
+ * "evil-posghana.shop.attacker.net" contains it too. Nothing here is deciding
  * whether to trust a host - but a rule cannot know that, and the fix is
  * better testing rather than an exemption.
  *
@@ -66,7 +66,7 @@ const SHOP_FOOTER = ['No exchange without this bill.', 'Open 7am - 11pm, all day
  * somewhere" would pass on a shop whose own footer said it; "one of these
  * lines IS the brand URL" is the thing the switch actually controls.
  */
-const BRAND_LINE = 'https://www.posnic.com';
+const BRAND_LINE = 'https://www.posghana.shop';
 const lineIs = (text, wanted) =>
   String(text === null || text === undefined ? '' : text)
     .split(NL)
@@ -92,7 +92,7 @@ function till({ printUrl }) {
 
   const win = dom.window;
   win.PosnicPro = {
-    BRAND_URL: 'https://www.posnic.com',
+    BRAND_URL: 'https://www.posghana.shop',
     local: {
       get(key) {
         return key === 'print_url' ? String(printUrl) : '';

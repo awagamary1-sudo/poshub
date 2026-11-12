@@ -1617,7 +1617,7 @@ ipcMain.handle('cloud:syncNow', async () => {
   }
 });
 
-ipcMain.handle('cloud:signup', () => shell.openExternal('https://www.posnic.com/cloud'));
+ipcMain.handle('cloud:signup', () => shell.openExternal('https://www.posghana.shop/cloud'));
 /*
  * Pairing this till with a code, instead of the shop's password.
  *
@@ -1632,7 +1632,7 @@ ipcMain.handle('cloud:signup', () => shell.openExternal('https://www.posnic.com/
 ipcMain.handle('cloud:pair', async (_event, { serverUrl, code, waitForShopMs } = {}) => {
   try {
     if (!code) return { ok: false, error: 'Enter the pairing code' };
-    const base = cloudServerUrl(String(serverUrl || 'https://gateway.posnic.com').trim());
+    const base = cloudServerUrl(String(serverUrl || 'https://gateway.posghana.shop').trim());
     const deadline = Date.now() + Math.max(0, Number(waitForShopMs) || 0);
     let response;
     for (;;) {
@@ -1669,7 +1669,7 @@ ipcMain.handle('cloud:pair', async (_event, { serverUrl, code, waitForShopMs } =
 /*
  * Opening an account without leaving the till.
  *
- * The old answer to "I do not have an account yet" was to open posnic.com in a
+ * The old answer to "I do not have an account yet" was to open posghana.shop in a
  * browser, which ends the installation: they sign up somewhere else, wait for
  * an email, and come back later if they come back at all. Somebody standing in
  * front of a machine they just installed should be able to finish on it.
@@ -1685,7 +1685,7 @@ ipcMain.handle('cloud:pair', async (_event, { serverUrl, code, waitForShopMs } =
  * unauthenticated create-a-shop call on the public internet, since the flag
  * saying "I am the desktop app" is trivially forged.
  */
-const WEBSITE_API = process.env.POSNIC_WEBSITE_API || 'https://www.posnic.com';
+const WEBSITE_API = process.env.POSNIC_WEBSITE_API || 'https://www.posghana.shop';
 const browserCloudAuth = new (require('./browser-cloud-auth').BrowserCloudAuth)({
   website: WEBSITE_API,
   openExternal: (url) => shell.openExternal(url),
@@ -1709,7 +1709,7 @@ ipcMain.handle('cloud:authorize-browser', async (_event, { intent = 'login', ser
     } catch (error) {
       console.warn('[Cloud] Could not foreground the authorization window:', error.message);
     }
-    return await connectCloudDevice(activation, serverUrl ? cloudServerUrl(serverUrl) : 'https://gateway.posnic.com');
+    return await connectCloudDevice(activation, serverUrl ? cloudServerUrl(serverUrl) : 'https://gateway.posghana.shop');
   } catch (error) {
     return { ok: false, error: /fetch failed|ENOTFOUND|abort/i.test(error.message)
       ? 'Could not reach PosHub Cloud. Check your internet connection and try again.' : error.message };
@@ -1926,7 +1926,7 @@ ipcMain.handle('desktop:open', (_event, target) => {
     case 'voices':
       if (process.platform === 'win32') shell.openExternal('ms-settings:speech');
       else if (process.platform === 'darwin') shell.openExternal('x-apple.systempreferences:com.apple.preference.universalaccess?TextToSpeech');
-      else shell.openExternal('https://www.posnic.com/help/kitchen-voices');
+      else shell.openExternal('https://www.posghana.shop/help/kitchen-voices');
       break;
     default: return false;
   }
@@ -2942,21 +2942,21 @@ function applyWindowChrome(theme) {
  * This is open source and people run their own. A shop whose till syncs to
  * gateway.theirsupplier.com should reach *their* supplier when they press
  * Contact Support - not us, who have never heard of them and cannot help.
- * Hardcoding posnic.com would make the button actively misleading for every
+ * Hardcoding posghana.shop would make the button actively misleading for every
  * deployment that is not ours.
  *
  * The rule is: take the host the till syncs to and drop the leftmost label.
  *
- *   gateway.posnic.com      -> posnic.com
+ *   gateway.posghana.shop      -> posghana.shop
  *   sync.theirsupplier.com  -> theirsupplier.com
- *   posnic.com              -> posnic.com      (already the bare domain)
+ *   posghana.shop              -> posghana.shop      (already the bare domain)
  *
  * Two labels are left alone, so a gateway that is already the apex is not
  * reduced to a public suffix. A till with no cloud configured falls back to
  * ours, because a Community Edition user has nobody else to ask and we would
  * rather hear from them.
  */
-const SUPPORT_FALLBACK = 'https://www.posnic.com';
+const SUPPORT_FALLBACK = 'https://www.posghana.shop';
 
 function supportBaseUrl() {
   try {
@@ -3274,7 +3274,7 @@ function openAboutWindow() {
   /*
    * An allowlist, extended to whoever runs this shop's cloud.
    *
-   * It was posnic.com and github.com only - so the moment the links above
+   * It was posghana.shop and github.com only - so the moment the links above
    * started following the provider, a white-label customer's support link
    * would have been silently dropped and the link would have done nothing.
    * A silent no-op is the worst of the three outcomes here.
@@ -3282,7 +3282,7 @@ function openAboutWindow() {
    * Still an allowlist rather than "any https": this window has a preload,
    * and the point is that it never navigates to a page we did not choose.
    */
-  const allowedOrigins = new Set(['https://www.posnic.com', 'https://github.com']);
+  const allowedOrigins = new Set(['https://www.posghana.shop', 'https://github.com']);
   try { allowedOrigins.add(new URL(provider).origin); } catch (e) { /* keep the defaults */ }
   const opensExternally = (url) => {
     try { return allowedOrigins.has(new URL(url).origin); } catch (e) { return false; }

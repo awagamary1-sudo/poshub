@@ -121,11 +121,11 @@ test('MSG91 receipt variables stay separate from general message templates', () 
   const spec = p.build(config, '+919008427482', 'unused', {
     purpose: 'receipt',
     name: 'Posnic TEST',
-    url: 'https://www.posnic.com/',
+    url: 'https://www.posghana.shop/',
   });
   expect(spec.body.template_id).toBe('receipt');
   expect(spec.body.recipients).toEqual([
-    { mobiles: '919008427482', name: 'Posnic TEST', url: 'https://www.posnic.com/' },
+    { mobiles: '919008427482', name: 'Posnic TEST', url: 'https://www.posghana.shop/' },
   ]);
   expect(() => p.build(config, '+919008427482', 'campaign')).toThrow('approved message template');
   expect(() => p.build(config, '+919008427482', 'receipt', { purpose: 'receipt' })).toThrow(

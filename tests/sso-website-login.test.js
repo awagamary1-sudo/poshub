@@ -3,9 +3,9 @@
 /*
  * "Go to website" stops depending on a machine that no longer exists.
  *
- * The till's account menu offers a jump to the owner's posnic.com account,
+ * The till's account menu offers a jump to the owner's posghana.shop account,
  * already signed in, so nobody has to remember a password last typed at
- * signup. It worked by posting to `api.posnic.com/user.php?action=ssoToken` -
+ * signup. It worked by posting to `api.posghana.shop/user.php?action=ssoToken` -
  * a PHP script on a separate box.
  *
  * That box was deleted on 2026-08-29, and the button had already been failing
@@ -44,7 +44,7 @@ test('nothing points at the PHP endpoint any more', () => {
   assert.ok(!/user\.php/.test(body),
     'still calling user.php - that script and the machine serving it are gone');
   assert.ok(!/api\.posnic\.com/.test(body),
-    'still naming api.posnic.com, whose DNS record points at a released IP');
+    'still naming api.posghana.shop, whose DNS record points at a released IP');
 });
 
 test('it calls the website, and the website is configurable', () => {
@@ -58,7 +58,7 @@ test('it calls the website, and the website is configurable', () => {
 
 test('the returned link has exactly one slash before ssoauth', () => {
   /*
-   * The old line joined 'https://www.posnic.com/' to '/ssoauth.html' and put a
+   * The old line joined 'https://www.posghana.shop/' to '/ssoauth.html' and put a
    * double slash in every link it ever produced. It happened to work; it
    * should not be reintroduced by someone tidying the base URL.
    */
@@ -132,7 +132,7 @@ test('the website mints and consumes the token safely', (t) => {
 
 test('the SSO routes forbid caching', (t) => {
   /*
-   * posnic.com sits behind CloudFront, and it demonstrably caches on this
+   * posghana.shop sits behind CloudFront, and it demonstrably caches on this
    * path: a 404 served before the route existed was still being returned
    * afterwards, and only a cache-busting parameter got through.
    *

@@ -50,7 +50,7 @@
           var detail = xhr.responseJSON && xhr.responseJSON.error;
           var error = new Error(
             (detail && detail.message) ||
-              "Unable to reach Posnic. Check the connection and retry.",
+              "Unable to reach PosHub. Check the connection and retry.",
           );
           error.code = (detail && detail.code) || "EXTENSION_CONNECTION_FAILED";
           reject(error);
@@ -106,7 +106,7 @@
         ? state.pending.id +
           " " +
           state.pending.version +
-          " is queued. Finish pending transactions, close Posnic and reopen it to apply the package."
+          " is queued. Finish pending transactions, close PosHub and reopen it to apply the package."
         : "An installation is queued for another shop on this host.";
       if (state.pending) {
         var cancel = document.createElement("button");
@@ -306,7 +306,7 @@
         if (data.canManage) tab("Install or update", "installation", installing);
         content.append(tabs);
         if (installing) {
-          status("Install a signed package supplied by Posnic.");
+          status("Install a signed package supplied by PosHub.");
           await installationControls(run);
           return;
         }

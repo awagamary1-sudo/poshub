@@ -88,9 +88,9 @@ test('CodeMeta uses only secure canonical links', () => {
   ];
 
   for (const link of links) assert.match(link, /^https:\/\//);
-  assert.equal(packageJson.homepage, 'https://www.posnic.com/');
-  assert.equal(metadata.url, 'https://www.posnic.com/');
-  assert.equal(metadata.isSourceCodeOf.url, 'https://www.posnic.com/');
+  assert.equal(packageJson.homepage, 'https://www.posghana.shop/');
+  assert.equal(metadata.url, 'https://www.posghana.shop/');
+  assert.equal(metadata.isSourceCodeOf.url, 'https://www.posghana.shop/');
 });
 
 test('README exposes the public POS evaluation and recovery resources', () => {

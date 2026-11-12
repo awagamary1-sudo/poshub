@@ -199,7 +199,7 @@ function buildSbom({
     purl: sourceRef,
     licenses: license("AGPL-3.0-only"),
     externalReferences: [
-      { type: "website", url: "https://www.posnic.com/" },
+      { type: "website", url: "https://www.posghana.shop/" },
       { type: "vcs", url: `https://github.com/Posnic/POS/tree/${commit}` },
     ],
   };
@@ -269,7 +269,7 @@ function buildSbom({
         "bom-ref": artifactRef,
         hashes: [{ alg: "SHA-256", content: artifactHash }],
         externalReferences: [
-          { type: "website", url: "https://www.posnic.com/" },
+          { type: "website", url: "https://www.posghana.shop/" },
           { type: "vcs", url: `https://github.com/Posnic/POS/tree/${commit}` },
         ],
         properties: [

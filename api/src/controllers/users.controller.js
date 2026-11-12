@@ -2951,7 +2951,7 @@ class UsersController extends BaseController {
 
   /**
    * PHP: ssoToken() - internal endpoint
-   * Generate SSO token for a user (used by external posnic.com)
+   * Generate SSO token for a user (used by external posghana.shop)
    */
   async ssoToken(req, res) {
     const mongoose = require('mongoose');
@@ -3048,7 +3048,7 @@ class UsersController extends BaseController {
 
   /**
    * PHP: ssoClientLogin()
-   * Redirect user to SSO login on posnic.com
+   * Redirect user to SSO login on posghana.shop
    */
   async ssoClientLogin(req, res) {
     const axios = require('axios');
@@ -3078,7 +3078,7 @@ class UsersController extends BaseController {
       /*
        * The website mints the token now, not a PHP script.
        *
-       * This pointed at api.posnic.com/user.php on a machine that has since
+       * This pointed at api.posghana.shop/user.php on a machine that has since
        * been deleted - and it had already stopped working before that, because
        * that origin no longer answered HTTPS, so Cloudflare returned 522 and
        * this button failed silently for anyone who pressed it.
@@ -3086,7 +3086,7 @@ class UsersController extends BaseController {
        * SSO_URL still overrides, for local work against a dev website.
        */
       const ssoUrlFromEnv = process.env.SSO_URL;
-      const siteBase = (process.env.POSNIC_SITE_URL || 'https://www.posnic.com').replace(
+      const siteBase = (process.env.POSNIC_SITE_URL || 'https://www.posghana.shop').replace(
         /\/+$/,
         ''
       );
@@ -3125,10 +3125,10 @@ class UsersController extends BaseController {
       console.log('[ssoClientLogin] SSO API response:', JSON.stringify(response.data, null, 2));
 
       if (response.data?.data?.token) {
-        /* One slash. The old line joined 'https://www.posnic.com/' to
+        /* One slash. The old line joined 'https://www.posghana.shop/' to
            '/ssoauth.html' and produced a double slash in every link it ever
            made. And the page is a route now, not a .html file. */
-        /* /api/... because posnic.com is fronted by CloudFront, which forwards
+        /* /api/... because posghana.shop is fronted by CloudFront, which forwards
            only that prefix to the service; a bare /ssoauth answers 403 from the
            CDN, exactly as the old /ssoauth.html did. */
         const path = `${siteBase}/api/sso/auth?token=${encodeURIComponent(response.data.data.token)}`;
@@ -3175,7 +3175,7 @@ class UsersController extends BaseController {
 
   /**
    * PHP: planUpdate()
-   * Update user plan (internal endpoint for posnic.com)
+   * Update user plan (internal endpoint for posghana.shop)
    */
   async planUpdate(req, res) {
     const mongoose = require('mongoose');

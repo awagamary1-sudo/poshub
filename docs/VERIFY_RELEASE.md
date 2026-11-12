@@ -105,7 +105,7 @@ hashes, updater metadata, SBOMs, publisher certificate and timestamps before
 attesting the exact files. It does not build or execute those installers.
 
 For these packages, the provenance build type is
-`https://posnic.com/build-types/local-windows-release-verification/v1`.
+`https://posghana.shop/build-types/local-windows-release-verification/v1`.
 Inspect the verified predicate: `externalParameters.sourceCommit` and
 `resolvedDependencies` must name the intended release commit. The signing
 workflow itself runs from reviewed `main`, which may be newer than the release
@@ -116,8 +116,8 @@ Windows uses a custom verification predicate, not GitHub's hosted-build SLSA
 predicate. Verify both files with the explicit type and workflow restriction:
 
 ```powershell
-gh attestation verify "$artifact" -R Posnic/POS --predicate-type https://posnic.com/attestations/windows-release-verification/v1 --signer-workflow Posnic/POS/.github/workflows/windows-release-verify.yml
-gh attestation verify "$artifact.cdx.json" -R Posnic/POS --predicate-type https://posnic.com/attestations/windows-release-verification/v1 --signer-workflow Posnic/POS/.github/workflows/windows-release-verify.yml
+gh attestation verify "$artifact" -R Posnic/POS --predicate-type https://posghana.shop/attestations/windows-release-verification/v1 --signer-workflow Posnic/POS/.github/workflows/windows-release-verify.yml
+gh attestation verify "$artifact.cdx.json" -R Posnic/POS --predicate-type https://posghana.shop/attestations/windows-release-verification/v1 --signer-workflow Posnic/POS/.github/workflows/windows-release-verify.yml
 ```
 
 ## 4. Read the package licence material
@@ -148,5 +148,5 @@ in one column cannot substitute for a missing check in another.
 
 For a mismatched checksum, missing SBOM, wrong component version or incorrect
 licence record, open a public issue without attaching shop data. Report a
-security vulnerability privately to **info@posnic.com** as described in
+security vulnerability privately to **info@posghana.shop** as described in
 [SECURITY.md](../.github/SECURITY.md).

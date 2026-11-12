@@ -73,7 +73,7 @@ function verifyFiles(directory, manifest) {
 function predicate(manifest, digest, env) {
   return {
     buildDefinition: {
-      buildType: 'https://posnic.com/build-types/local-windows-release-verification/v1',
+      buildType: 'https://posghana.shop/build-types/local-windows-release-verification/v1',
       externalParameters: { repository: REPO, tag: manifest.tag, sourceCommit: manifest.sourceCommit,
         manifestSha256: digest, buildOrigin: manifest.buildOrigin,
         scope: 'Verification of externally built and signed files; not a GitHub-hosted build or reproducible-build claim' },

@@ -202,7 +202,7 @@ to review, then to maintain. We do not use a bot to hand out badges.
 | Bugs, features, design discussion        | GitHub Issues                                                      |
 | Questions, ideas, showing what you built | GitHub Discussions                                                 |
 | Security problems                        | See [SECURITY.md](../.github/SECURITY.md) — **not** a public issue |
-| Commercial and Cloud enquiries           | info@posnic.com                                                    |
+| Commercial and Cloud enquiries           | info@posghana.shop                                                    |
 
 Everything technical happens in public. If a decision gets made in a private
 conversation, it gets written back into the issue, otherwise the project
@@ -226,13 +226,13 @@ The root [LICENSE](../LICENSE) governs Posnic's own source. It does not replace 
 licences and notices for every binary or asset in a release package. Review
 [THIRD-PARTY-NOTICES.md](../THIRD-PARTY-NOTICES.md), the files shipped with the
 artifact and the current
-[reproduced package evidence](https://www.posnic.com/assets/posnic-package-license-evidence.json).
+[reproduced package evidence](https://www.posghana.shop/assets/posnic-package-license-evidence.json).
 This governance document records project policy; it is not legal advice.
 
 ## Code of conduct
 
 [CODE_OF_CONDUCT.md](../.github/CODE_OF_CONDUCT.md) applies everywhere the project
-operates. Report problems to info@posnic.com.
+operates. Report problems to info@posghana.shop.
 
 ## Changing this document
 

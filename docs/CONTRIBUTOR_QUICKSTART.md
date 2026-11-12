@@ -13,15 +13,15 @@ Start with one small, reviewable change.
 
 | I want to help with | Good first place |
 |---|---|
-| A small bug or test | Issues labelled [`good first issue`](https://github.com/Posnic/POS/labels/good%20first%20issue) |
-| Translation work | [#32 Language pack contributions](https://github.com/Posnic/POS/issues/32) |
-| Translation tooling | [#31 Localization framework](https://github.com/Posnic/POS/issues/31) |
-| India e-invoicing | [#29 India GST e-invoice support](https://github.com/Posnic/POS/issues/29) |
-| GST reports and exports | [#30 India GST return preparation](https://github.com/Posnic/POS/issues/30) |
-| In-app help or AI assistant | [#33 In-app helper and AI assistant](https://github.com/Posnic/POS/issues/33) |
-| External integrations | [#34 Optional connector framework](https://github.com/Posnic/POS/issues/34) |
-| Hardware testing | [#12 Hardware evidence](https://github.com/Posnic/POS/issues/12) |
-| Bigger roadmap work | [#35 Contributor roadmap](https://github.com/Posnic/POS/issues/35) |
+| A small bug or test | Issues labelled [`good first issue`](https://github.com/awagamary1-sudo/poshub/labels/good%20first%20issue) |
+| Translation work | [#32 Language pack contributions](https://github.com/awagamary1-sudo/poshub/issues/32) |
+| Translation tooling | [#31 Localization framework](https://github.com/awagamary1-sudo/poshub/issues/31) |
+| India e-invoicing | [#29 India GST e-invoice support](https://github.com/awagamary1-sudo/poshub/issues/29) |
+| GST reports and exports | [#30 India GST return preparation](https://github.com/awagamary1-sudo/poshub/issues/30) |
+| In-app help or AI assistant | [#33 In-app helper and AI assistant](https://github.com/awagamary1-sudo/poshub/issues/33) |
+| External integrations | [#34 Optional connector framework](https://github.com/awagamary1-sudo/poshub/issues/34) |
+| Hardware testing | [#12 Hardware evidence](https://github.com/awagamary1-sudo/poshub/issues/12) |
+| Bigger roadmap work | [#35 Contributor roadmap](https://github.com/awagamary1-sudo/poshub/issues/35) |
 
 For anything non-trivial, comment on the issue before opening a large PR. A
 small design note saves everybody time.
@@ -64,7 +64,7 @@ the app starts, check the Node version first.
 ## Get the code running
 
 ```bash
-git clone https://github.com/Posnic/POS.git
+git clone https://github.com/awagamary1-sudo/poshub.git
 cd POS
 npm install
 npm --prefix api install
@@ -159,7 +159,7 @@ adds a new failure, fix that before asking for review.
 
 ### Translation PR
 
-1. Check [#32](https://github.com/Posnic/POS/issues/32) and say which language
+1. Check [#32](https://github.com/awagamary1-sudo/poshub/issues/32) and say which language
    you want to take.
 2. Keep the PR to one language or one translation-tooling improvement.
 3. Preserve placeholders such as names, amounts, dates, counts, invoice numbers,
@@ -176,8 +176,8 @@ adds a new failure, fix that before asking for review.
 
 ### Tax, GST, or e-invoice PR
 
-1. Start from [#29](https://github.com/Posnic/POS/issues/29) or
-   [#30](https://github.com/Posnic/POS/issues/30). For e-invoicing, read the
+1. Start from [#29](https://github.com/awagamary1-sudo/poshub/issues/29) or
+   [#30](https://github.com/awagamary1-sudo/poshub/issues/30). For e-invoicing, read the
    [research](INDIA_EINVOICING_RESEARCH.md), the
    [readiness inventory](INDIA_EINVOICING_READINESS.md) and the
    [design](INDIA_EINVOICING_DESIGN.md) first; the design names the fixtures
@@ -230,8 +230,8 @@ adds a new failure, fix that before asking for review.
 Before proposing an external app or connector, read the
 [app review checklist](APP_REVIEW_CHECKLIST.md). It shows the required review information and synthetic examples of a submission that passes or fails.
 
-1. Start with design in [#33](https://github.com/Posnic/POS/issues/33) or
-   [#34](https://github.com/Posnic/POS/issues/34).
+1. Start with design in [#33](https://github.com/awagamary1-sudo/poshub/issues/33) or
+   [#34](https://github.com/awagamary1-sudo/poshub/issues/34).
 2. The default local app must send no shop data outside the machine.
 3. Any internet, credential, external API, AI model, or cloud behavior must be
    optional, explicit, and reviewed before implementation.
@@ -329,7 +329,7 @@ through [SECURITY.md](../.github/SECURITY.md), not public issues.
 
 - Setup problem: open a bug with your OS, Node version, command, and log.
 - "How do I do this in Posnic?": ask in
-  [Discussions](https://github.com/Posnic/POS/discussions).
+  [Discussions](https://github.com/awagamary1-sudo/poshub/discussions).
 - Unsure whether a change belongs in the offline app or Cloud: comment on the
   linked feature issue first.
 - No reply after a week: comment once on the issue. That is welcome.

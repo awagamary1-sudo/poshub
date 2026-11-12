@@ -160,5 +160,5 @@ If you have hardware that works, tell us and it goes in the table with the
 right mark — that is how "by standard" becomes "tested". If you have hardware
 that does not, open an issue with the make, model, connection and what happened.
 
-[Issues](https://github.com/Posnic/POS/issues) ·
-[Discussions](https://github.com/Posnic/POS/discussions)
+[Issues](https://github.com/awagamary1-sudo/poshub/issues) ·
+[Discussions](https://github.com/awagamary1-sudo/poshub/discussions)

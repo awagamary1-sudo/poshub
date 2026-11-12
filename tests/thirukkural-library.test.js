@@ -13,7 +13,7 @@ test('all 1330 bundled QR images encode only the exact numbered public URL', () 
   const entries = library.entries();
   assert.equal(entries.length, 1330);
   for (const entry of entries) {
-    const matrix = QR.create('https://www.posnic.com/tools/thirukural/' + entry.number, { errorCorrectionLevel: 'M' }).modules;
+    const matrix = QR.create('https://www.posghana.shop/tools/thirukural/' + entry.number, { errorCorrectionLevel: 'M' }).modules;
     const png = PNG.sync.read(Buffer.from(entry.qr.split(',')[1], 'base64'));
     assert.equal(png.width, (matrix.size + 8) * 4);
     for (let y = 0; y < matrix.size; y++) for (let x = 0; x < matrix.size; x++) {
@@ -26,7 +26,7 @@ test('QR defaults off and saved snapshots keep number, text and QR after policy 
   const policy = { source: 'thirukkural', order: 'sequential' };
   assert.equal(select(policy, 'S222').qr, undefined);
   const saved = select({ ...policy, showQr: true }, 'S222');
-  assert.equal(saved.url, 'https://www.posnic.com/tools/thirukural/222');
+  assert.equal(saved.url, 'https://www.posghana.shop/tools/thirukural/222');
   assert.match(saved.qr, /^data:image\/png;base64,/);
   assert.deepEqual(select({ source: 'none' }, 'S999', saved), saved);
 });

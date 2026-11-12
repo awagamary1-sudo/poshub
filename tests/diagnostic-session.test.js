@@ -41,7 +41,7 @@ test('snapshot sharing, timeout and old-session completion cannot corrupt replac
 
 test('consent is required; remote actions are restricted and credentials never enter reports', async () => {
   let command = { id: '1', type: 'shell', script: 'danger' }; const routes = [];
-  const session = new DiagnosticSession({ baseUrl: 'https://support.posnic.com', request: async (url) => {
+  const session = new DiagnosticSession({ baseUrl: 'https://support.posghana.shop', request: async (url) => {
     routes.push(url.pathname);
     if (url.pathname.endsWith('/connect')) return reply({ id, token });
     if (url.pathname.endsWith('/poll')) return reply({ command });
@@ -56,7 +56,7 @@ test('consent is required; remote actions are restricted and credentials never e
 });
 
 test('initial upload failure retains bounded polling; revocation stops access and capture', async () => {
-  const session = new DiagnosticSession({ baseUrl: 'https://support.posnic.com', request: async url => {
+  const session = new DiagnosticSession({ baseUrl: 'https://support.posghana.shop', request: async url => {
     if (url.pathname.endsWith('/connect')) return reply({ id, token });
     return { ok: false, status: url.pathname.endsWith('/poll') ? 401 : 503 };
   } });
@@ -67,7 +67,7 @@ test('initial upload failure retains bounded polling; revocation stops access an
 
 test('late connection after local stop is revoked, never attached to the next session', async () => {
   let resolve; const paths = [];
-  const session = new DiagnosticSession({ baseUrl: 'https://support.posnic.com', request: async url => {
+  const session = new DiagnosticSession({ baseUrl: 'https://support.posghana.shop', request: async url => {
     paths.push(url.pathname); if (url.pathname.endsWith('/connect')) return new Promise(r => { resolve = r; }); return reply({});
   } });
   session.start(); const pending = session.connect(id + '.' + token, true); session.stop(); session.start();
@@ -88,17 +88,17 @@ test('report stays below upload budget and capture expires without requiring tim
 });
 
 test('endpoint rejects HTTP, paths and redirects; bounded streaming response is cancelled', async () => {
-  const session = new DiagnosticSession({ baseUrl: 'http://support.posnic.com', request: () => { throw Error('should not send'); } });
+  const session = new DiagnosticSession({ baseUrl: 'http://support.posghana.shop', request: () => { throw Error('should not send'); } });
   await assert.rejects(session.call('/api/test', {}, token), /HTTPS origin/);
   let cancelled = false;
-  session.baseUrl = 'https://support.posnic.com';
+  session.baseUrl = 'https://support.posghana.shop';
   session.request = async (_url, opts) => { assert.equal(opts.redirect, 'error'); return { ok: true, body: { getReader: () => ({ read: async () => ({ value: Buffer.alloc(100001), done: false }), cancel: async () => { cancelled = true; }, releaseLock() {} }) } }; };
   await assert.rejects(session.call('/api/test', {}, token), /too large/); assert.equal(cancelled, true);
 });
 
 test('pairing rejects incomplete codes before networking and accepts a complete code with surrounding whitespace', async () => {
   const headers = [];
-  const session = new DiagnosticSession({ baseUrl: 'https://support.posnic.com', request: async (url, options) => {
+  const session = new DiagnosticSession({ baseUrl: 'https://support.posghana.shop', request: async (url, options) => {
     headers.push(options.headers.authorization);
     return url.pathname.endsWith('/connect') ? reply({ id, token }) : reply({});
   } });
@@ -116,7 +116,7 @@ test('pairing rejects incomplete codes before networking and accepts a complete 
 
 test('expired pairing gives recovery instructions and permits a fresh attempt', async () => {
   let reject = true;
-  const session = new DiagnosticSession({ baseUrl: 'https://support.posnic.com', request: async url => {
+  const session = new DiagnosticSession({ baseUrl: 'https://support.posghana.shop', request: async url => {
     if (url.pathname.endsWith('/connect')) return reject ? { ok: false, status: 401 } : reply({ id, token });
     return reply({});
   } });
@@ -133,7 +133,7 @@ test('expired pairing gives recovery instructions and permits a fresh attempt', 
 
 test('connected sessions send fresh reports automatically, but disconnected sessions do not', async () => {
   let time=100000, uploads=0, checks=0;
-  const session=new DiagnosticSession({ now:()=>time, baseUrl:'https://support.posnic.com', providers:{system:()=>{checks++;return {}; }}, request:async url=>{
+  const session=new DiagnosticSession({ now:()=>time, baseUrl:'https://support.posghana.shop', providers:{system:()=>{checks++;return {}; }}, request:async url=>{
     if(url.pathname.endsWith('/report'))uploads++;
     return reply(url.pathname.endsWith('/connect')?{id,token}:{});
   }});

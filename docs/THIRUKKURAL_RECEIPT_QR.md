@@ -2,7 +2,7 @@
 
 Receipt designer → Receipt quotes → Thirukkural → Small QR. The checkbox defaults
 off and is meaningful for Thirukkural only. New sales snapshot the selected verse,
-number, QR PNG and `https://www.posnic.com/tools/thirukural/<number>` URL.
+number, QR PNG and `https://www.posghana.shop/tools/thirukural/<number>` URL.
 QR display size is a branch receipt-design setting: 18, 22 (default), or 26 mm.
 The verse number and QR caption are omitted from printed output. No sale, customer or tenant identifier is in that URL. Reprints use the snapshot.
 58 mm paper stacks the QR below the verse to preserve readability; wider formats

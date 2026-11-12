@@ -51,7 +51,7 @@ function pageScript(receiptData, template, branch, logoUrl, paper) {
   return `(async () => {
     const branch = ${JSON.stringify(branch)};
     window.PosnicPro = {
-      BRAND_URL: 'https://www.posnic.com',
+      BRAND_URL: 'https://www.posghana.shop',
       local: { get: (k) => (k === 'print_url' ? String(branch.print_url) : '') },
     };
     ${receiptData}

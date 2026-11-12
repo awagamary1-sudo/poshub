@@ -11,7 +11,7 @@ const pixel = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAw
 function setup() {
     const dom = new JSDOM('<div id="receipt-designer"></div><div class="form-group"><input id="printall" type="checkbox"></div><div class="form-group"><select id="bill_print_copies"><option>1</option></select></div><div class="form-group"><input id="branch_fssai_number"></div>', { url: 'http://localhost/', runScripts: 'outside-only' });
     const w = dom.window; w.$ = w.jQuery = require('jquery')(w);
-    w.PosnicPro = { escapeHtml: v => w.$('<i>').text(v).html(), local: { get: key => key === 'currencySign' ? '$' : '', set: () => {} }, i18n: { t: (_key, text) => text }, BRAND_URL: 'https://www.posnic.com' };
+    w.PosnicPro = { escapeHtml: v => w.$('<i>').text(v).html(), local: { get: key => key === 'currencySign' ? '$' : '', set: () => {} }, i18n: { t: (_key, text) => text }, BRAND_URL: 'https://www.posghana.shop' };
     w.eval(read('api/src/helpers/sale-payment-summary.js'));
     w.eval(read('api/src/helpers/receipt-design.js'));
     w.eval(read('src/receipt-page-layout.js'));
@@ -131,7 +131,7 @@ test('receipt editor explicitly opts into the Thirukkural QR and saves the optio
     $('#rd-quote-source').val('thirukkural').trigger('change');
     assert.equal(target, undefined);
     $('#rd-quote-qr').prop('checked', true).trigger('change');
-    assert.equal(target, 'https://www.posnic.com/tools/thirukural/1');
+    assert.equal(target, 'https://www.posghana.shop/tools/thirukural/1');
     $('#rd-quote-qr-size').val('18').trigger('change');
     $('[data-action="save"]').trigger('click');
     assert.equal(sent.receipt_designs.quoteFooter.qrSizeMm, 18);
@@ -1411,7 +1411,7 @@ test('custom footer text saves, reloads and renders safely on every paper size',
     assert.equal($('<div>').html(engine.render(sale, '80', false)).find('.rd-branding').length, 0);
     saved.showBranding = true;
     saved.brandingText = '   ';
-    assert.equal($('<div>').html(engine.render(sale, '80', false)).find('.rd-branding').text(), 'Made with Posnic · posnic.com');
+    assert.equal($('<div>').html(engine.render(sale, '80', false)).find('.rd-branding').text(), 'Made with Posnic · posghana.shop');
     assert.throws(() => contract.normalize({ ...saved, brandingText: 'x'.repeat(201) }), /200 characters/);
     assert.throws(() => contract.normalize({ ...saved, brandingText: {} }), /200 characters/);
     dom.window.close();

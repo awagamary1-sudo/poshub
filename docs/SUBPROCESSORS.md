@@ -82,7 +82,7 @@ Before we add one:
 
 We give **30 days' notice** before a new subprocessor starts processing
 customer data, by email to account holders and by updating this page. If you
-object on reasonable data protection grounds, write to info@posnic.com. If we
+object on reasonable data protection grounds, write to info@posghana.shop. If we
 cannot resolve it, you may cancel and we will refund the unused part of your
 period.
 
@@ -94,7 +94,7 @@ it if you wish.
 
 ---
 
-**Questions:** info@posnic.com
+**Questions:** info@posghana.shop
 **Related:** [PRIVACY.md](PRIVACY.md) ·
 [DATA_PROCESSING_ADDENDUM.md](DATA_PROCESSING_ADDENDUM.md) ·
 [TERMS_OF_USE.md](TERMS_OF_USE.md)

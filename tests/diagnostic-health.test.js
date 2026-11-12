@@ -28,7 +28,7 @@ test('checks expose progress while a slow provider is still running', async () =
 test('single support token connects and idle sound polling cannot drown out failures', async () => {
   const token = 'b'.repeat(64); const id = 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee';
   let auth;
-  const session = new DiagnosticSession({ baseUrl: 'https://support.posnic.com', request: async (url, opts) => { if (url.pathname.endsWith('/connect')) auth = opts.headers.authorization; return { ok: true, text: async () => JSON.stringify({ id, token }) }; } });
+  const session = new DiagnosticSession({ baseUrl: 'https://support.posghana.shop', request: async (url, opts) => { if (url.pathname.endsWith('/connect')) auth = opts.headers.authorization; return { ok: true, text: async () => JSON.stringify({ id, token }) }; } });
   session.start();
   try {
     for (let n=0;n<2000;n++) session.record('ipc', { channel:'kitchen-audio:next', success:true });
